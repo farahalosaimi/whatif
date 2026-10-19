@@ -1,0 +1,1859 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="لو | What iF — محاكي تخرج ومعدل لطلاب الإحصاء في جامعة الملك سعود: خريطة مواد تفاعلية، سيناريوهات «لو»، وتوقعات مونت كارلو.">
+<meta property="og:title" content="لو | What iF">
+<meta property="og:description" content="متى تتخرج؟ جرّب مستقبلك قبل ما تعيشه.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 72'%3E%3Cpolygon points='32,3 59,12.5 32,22 5,12.5' fill='%233E3A8C'/%3E%3Crect x='13' y='27' width='38' height='4' rx='2' fill='%233E3A8C'/%3E%3Crect x='13' y='66' width='38' height='4' rx='2' fill='%233E3A8C'/%3E%3Cpath d='M20.5 31h23c0 11.5-9.2 13.6-9.2 17.3s9.2 5.8 9.2 17.3h-23c0-11.5 9.2-13.6 9.2-17.3S20.5 42.5 20.5 31z' fill='%23DDF1EF' stroke='%231E8A85' stroke-width='2'/%3E%3Cpath d='M21.4 65.6C27 65.6 28.2 57.4 32 57.4S37 65.6 42.6 65.6Z' fill='%23EF6351'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}</style>
+<title>لو | What iF</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;600;700&display=swap">
+<style>
+@font-face{font-family:"Thmanyah Sans";src:url("fonts/thmanyahsans-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("fonts/thmanyahsans-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Thmanyah Sans";src:url("fonts/thmanyahsans-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Thmanyah Serif Display";src:url("fonts/thmanyahserifdisplay-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Thmanyah Serif Display";src:url("fonts/thmanyahserifdisplay-Black.woff2") format("woff2");font-weight:900;font-display:swap}
+
+/* Layout: "chart paper" — a faint graph-paper ground; the plan reads like a figure (rows = levels, points = courses),
+   with a number-line GPA gauge and a viridis-inspired palette borrowed from statistical plotting. */
+:root{
+  color-scheme: light;
+  --bg:#F4F6F9;  --grid:#E4E9F0;  --surface:#FFFFFF;  --sunk:#EDF1F6;  --line:#DCE2EB;
+  --ink:#1B2536; --muted:#667389;
+  --accent:#1E8A85;  --accent-soft:#DDF1EF;          /* viridis teal */
+  --deep:#3E3A8C;    --deep-soft:#E7E6F6;            /* viridis indigo */
+  --f:#EF6351;       --f-soft:#FDE6E2;               /* the signature F */
+  --done:#2E9B5B;    --done-soft:#E1F3E8;
+  --open:#3E5BB0;    --open-soft:#E5EBF8;
+  --fail:#D64550;    --fail-soft:#FBE5E7;
+  --lock:#A3ADBD;
+  --retry:#16181D;   --retry-soft:#E3E5EA;
+  --warn:#9A6B00;    --warn-soft:#FBF0D6;
+  --g1:#46327E; --g2:#365C8D; --g3:#277F8E; --g4:#1FA187; --g5:#4AC16D; --g6:#A0DA39; --g7:#D9B70E;
+  --shadow:0 1px 2px rgba(27,37,54,.05),0 6px 20px rgba(27,37,54,.05);
+  --font-display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Arabic",system-ui,sans-serif;
+  --font-th-display:"Thmanyah Serif Display","Thmanyah Sans",Georgia,serif;
+  --font-th-body:"Thmanyah Sans","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  color-scheme: dark;
+  --bg:#0F141C; --grid:#18202B; --surface:#151C26; --sunk:#1B2430; --line:#26303E;
+  --ink:#E4EAF3; --muted:#8C98AB;
+  --accent:#3CC1B8; --accent-soft:#163633;
+  --deep:#9C95F0;   --deep-soft:#24224A;
+  --f:#FF8064;      --f-soft:#3A201B;
+  --done:#5CCB86;   --done-soft:#16301F;
+  --open:#7E9BF0;   --open-soft:#1B2645;
+  --fail:#FF6B74;   --fail-soft:#3A1B20;
+  --lock:#58657A;
+  --retry:#F2F4F8;   --retry-soft:#2B3341;
+  --warn:#E8B64A;   --warn-soft:#33290F;
+  --g1:#8C76E0; --g2:#5E8BD0; --g3:#3FA9B8; --g4:#2FC3A0; --g5:#6BD486; --g6:#B5E35A; --g7:#F0CF3A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#0F141C; --grid:#18202B; --surface:#151C26; --sunk:#1B2430; --line:#26303E;
+  --ink:#E4EAF3; --muted:#8C98AB;
+  --accent:#3CC1B8; --accent-soft:#163633;
+  --deep:#9C95F0;   --deep-soft:#24224A;
+  --f:#FF8064;      --f-soft:#3A201B;
+  --done:#5CCB86;   --done-soft:#16301F;
+  --open:#7E9BF0;   --open-soft:#1B2645;
+  --fail:#FF6B74;   --fail-soft:#3A1B20;
+  --lock:#58657A;
+  --retry:#F2F4F8;   --retry-soft:#2B3341;
+  --warn:#E8B64A;   --warn-soft:#33290F;
+  --g1:#8C76E0; --g2:#5E8BD0; --g3:#3FA9B8; --g4:#2FC3A0; --g5:#6BD486; --g6:#B5E35A; --g7:#F0CF3A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}
+html,body{background-color:var(--bg)}
+body{color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.65;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;background-attachment:fixed}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+#onboard{--font-display:var(--font-th-display);--font-body:var(--font-th-body);font-family:var(--font-th-body)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:18px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--font-mono);font-size:.86em;letter-spacing:.2px}
+.serif{font-family:var(--font-display)}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand .logo{width:44px;height:50px;flex:none}
+.grains circle{animation:fall 1.8s linear infinite}
+.grains circle:nth-child(2){animation-delay:-.6s}.grains circle:nth-child(3){animation-delay:-1.2s}
+@keyframes fall{0%{transform:translateY(-4px);opacity:0}25%{opacity:1}85%{opacity:1}100%{transform:translateY(6px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.grains circle{animation:none}}
+.brand .ar{font-family:var(--font-th-display);font-weight:900;font-size:38px;line-height:1;color:var(--deep)}
+.brand .sep{width:1px;height:22px;background:var(--line);align-self:center}
+.brand .en{font-family:var(--font-th-display);font-weight:700;font-size:22px;direction:ltr;unicode-bidi:isolate;line-height:1.1}
+.en-stack{display:inline-flex;flex-direction:column;align-items:stretch;gap:2px}
+.tagline{font-family:var(--font-body);font-weight:500;color:var(--muted);line-height:1.2;white-space:nowrap;font-size:10px;display:flex;justify-content:flex-start;gap:3px}
+[dir="ltr"] .tagline{font-family:var(--font-mono);font-weight:500;font-size:8.5px;text-transform:uppercase}
+.brand .en b{color:var(--f);font-weight:900}
+.brand small{color:var(--muted);font-size:13px}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:13.5px;transition:border-color .15s,color .15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.danger{color:var(--fail)}
+.icon-btn{width:38px;height:38px;padding:0;display:inline-grid;place-items:center;border-radius:50%}
+.lang-btn{font-family:var(--font-mono);font-weight:500;font-size:13px;min-width:44px}
+.icon-btn svg{width:18px;height:18px}
+.top-left{display:flex;gap:8px;align-items:center}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;padding-block:18px 8px}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(30px,5vw,52px);line-height:1.2;margin:0 0 12px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--f)}
+.hero p{margin:0;color:var(--muted);max-width:56ch;font-size:16px}
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px 10px;box-shadow:var(--shadow)}
+.figure svg{display:block;width:100%;height:auto}
+.figure figcaption{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.curve{fill:none;stroke-width:2.5}
+.curve.main{stroke:var(--deep)}
+.curve.alt{stroke:var(--muted);stroke-dasharray:5 5;opacity:.55}
+.curve.alt2{stroke:var(--accent);stroke-dasharray:2 5;opacity:.8}
+.area{fill:var(--deep-soft)}
+.axis{stroke:var(--line);stroke-width:1.5}
+.tick{stroke:var(--muted);stroke-width:1}
+.tick-label{fill:var(--muted);font-family:var(--font-mono);font-size:11px}
+.marker{stroke:var(--f);stroke-width:2;stroke-dasharray:3 3}
+.marker-dot{fill:var(--f)}
+.marker-label{fill:var(--f);font-family:var(--font-body);font-size:13px;font-weight:700}
+
+.choose{margin-top:26px}
+.gender{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px;font-size:14px;color:var(--muted)}
+.gpill{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 16px;font-size:14.5px;transition:border-color .15s}
+.gpill:hover{border-color:var(--accent)}
+.gpill.on{border-color:var(--deep);background:var(--deep-soft);color:var(--deep);font-weight:700}
+.choose h2{font-family:var(--font-display);font-weight:700;font-size:26px;margin:0 0 4px}
+.choose p{margin:0 0 14px;color:var(--muted);font-size:14px}
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.track{text-align:start;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:12px;box-shadow:var(--shadow);transition:border-color .15s,transform .15s}
+.track:hover{border-color:var(--accent);transform:translateY(-2px)}
+.track .top-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.track .t{font-family:var(--font-display);font-size:21px;font-weight:700}
+.track .h{font-family:var(--font-display);font-size:42px;font-weight:900;color:var(--deep);line-height:1}
+.track.ai .h{color:var(--f)}
+.track .h small{font-family:var(--font-body);font-size:14px;color:var(--muted);font-weight:400;margin-inline-start:6px}
+.stack{display:flex;height:14px;border-radius:4px;overflow:hidden;gap:2px}
+.stack i{display:block;height:100%}
+.keys{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:var(--muted)}
+.keys span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--c);margin-inline-end:5px;vertical-align:middle}
+.go{color:var(--accent);font-size:14px;font-weight:500}
+
+/* summary */
+.summary{display:grid;grid-template-columns:1fr 1.35fr;gap:16px;margin-bottom:20px}
+@media (max-width:860px){.summary{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.label{font-size:12.5px;color:var(--muted)}
+.kpi{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.kpi .big{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.05}
+.kpi .big.th{font-family:var(--font-th-display);font-weight:900;font-size:46px}
+.gpa-row{display:flex;align-items:center;gap:18px}
+.ring{--p:0;width:148px;height:148px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:conic-gradient(var(--deep) calc(var(--p)*1%),var(--sunk) 0)}
+.ring>div{width:130px;height:130px;border-radius:50%;background:var(--surface);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;line-height:1.05}
+.ring b{font-family:var(--font-th-display);font-weight:900;font-size:34px;display:block;margin:2px 0 0}
+.ring .ring-label{margin:0;font-size:11px;color:var(--muted);white-space:nowrap}
+.ring small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.gpa-meta{display:grid;gap:6px;min-width:0}
+.kpi .of{color:var(--muted);font-size:14px}
+.rank{width:fit-content;display:inline-flex;align-items:center;border-radius:999px;padding:2px 10px;font-size:12.5px;background:var(--deep-soft);color:var(--deep)}
+.ruler svg{display:block;width:100%;height:auto;margin-top:10px;direction:ltr}
+.zone1{fill:color-mix(in srgb,var(--accent) 45%,var(--surface))} .zone2{fill:color-mix(in srgb,var(--done) 18%,var(--surface))}
+.honor-keys{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--muted);margin-top:4px}
+.honor-keys span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--c);border:1px solid var(--line);margin-inline-end:6px;vertical-align:middle}
+.honor-keys .mono{color:var(--ink);direction:ltr;unicode-bidi:isolate}
+.zone-label{fill:var(--muted);font-family:var(--font-body);font-size:10.5px}
+.gpa-mark{fill:var(--f)}
+.gpa-text{fill:var(--ink);font-family:var(--font-mono);font-size:12px;font-weight:500}
+.hint{font-size:12.5px;color:var(--muted)}
+.grad .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:12.5px;background:var(--accent-soft);color:var(--accent);width:fit-content}
+.bar{display:flex;height:16px;border-radius:4px;background:var(--sunk);overflow:hidden;margin:14px 0 4px;gap:0}
+.bar i{display:block;height:100%;border-inline-end:1.5px solid var(--surface)}
+.bar-axis{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;color:var(--muted);direction:ltr}
+.bar-legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.bar-legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--c);margin-inline-end:5px;vertical-align:middle}
+.bar-legend b{color:var(--ink);font-weight:500}
+.terms{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);display:grid;gap:6px}
+.terms .line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.terms input[type=range]{flex:1;min-width:140px;accent-color:var(--accent)}
+.terms .est{font-family:var(--font-display);font-weight:700;font-size:20px}
+.terms .est b{color:var(--f);font-weight:900}
+
+.banner{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:14px}
+.banner.sample{background:var(--warn-soft);color:var(--warn)}
+.banner.confirm{background:var(--fail-soft);color:var(--fail);justify-content:flex-start}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);margin:4px 0 6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.pt{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--c)}
+.pt.hollow{background:transparent;border:2px solid var(--c)}
+
+/* plan */
+.section-title{font-family:var(--font-display);font-size:22px;font-weight:700;margin:28px 0 10px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec{margin-top:14px}
+.sec>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;box-shadow:var(--shadow);transition:border-color .15s}
+.sec>summary::-webkit-details-marker{display:none}
+.sec>summary:hover{border-color:var(--accent)}
+.sec>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sec>summary .section-title{margin:0;font-size:20px}
+.sec[open]>summary{margin-bottom:12px}
+.sec-prog{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;direction:ltr}
+.sec-prog .minibar{width:90px;margin:0;--c:var(--accent)}
+.sec-open{display:inline-flex;align-items:center;gap:5px}
+.chev{width:18px;height:18px;transition:transform .2s}
+.sec[open] .chev{transform:rotate(180deg)}
+.section-title .mono{direction:ltr;unicode-bidi:isolate;font-family:var(--font-mono);font-size:12.5px;color:var(--accent);font-weight:500}
+.section-title small{font-family:var(--font-body);font-size:13px;color:var(--muted);font-weight:400}
+.level{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:12px 0;border-top:1px dashed var(--line)}
+.level:first-child{border-top:0;padding-top:0}
+.level:last-child{padding-bottom:0}
+.level .lv{padding-top:8px}
+.level .lv b{display:block;font-family:var(--font-display);font-size:17px;font-weight:700}
+.level .lv span{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.pass-btn{display:block;margin-top:8px;border:1px solid color-mix(in srgb,var(--done) 45%,var(--line));background:var(--done-soft);color:var(--done);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:500;white-space:nowrap}
+.pass-btn:hover{border-color:var(--done)}
+.pass-note{margin:0 0 4px;font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.pass-note b{color:var(--done);font-weight:500;white-space:nowrap}
+.pass-btn.undo{background:transparent;color:var(--muted);border-color:var(--line)}
+@media (max-width:560px){.pass-btn{margin-top:0;margin-inline-start:auto}}
+@media (max-width:560px){.level{grid-template-columns:1fr;gap:8px}.level .lv{padding-top:0;display:flex;gap:10px;align-items:baseline}}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.tile{text-align:start;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;min-height:78px;transition:border-color .12s,box-shadow .12s,opacity .12s,background .12s}
+.tile .code{display:flex;justify-content:space-between;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.tile .code .c{direction:rtl;unicode-bidi:isolate}
+[dir="ltr"] .tile .code .c{direction:ltr}
+.tile .name{font-weight:500;font-size:14px;line-height:1.4}
+.tile .st{font-size:12px;display:flex;align-items:center;gap:6px;margin-top:2px;color:var(--muted)}
+.tile .st .pt{width:8px;height:8px}
+.tile .grade{font-weight:500;color:var(--done);direction:ltr;unicode-bidi:isolate}
+.tile.done{background:var(--done-soft);border-color:transparent}
+.tile.done .st{color:var(--done)}
+.tile.open{border-color:color-mix(in srgb,var(--open) 50%,var(--line))}
+.tile.open .st{color:var(--open)}
+.tile.retry{background:var(--retry-soft);border-color:var(--retry)}
+.tile.retry .st,.tile.retry .grade{color:var(--retry);font-weight:700}
+.tile.locked{background:transparent;border-style:dashed}
+.tile.locked .name{color:var(--muted)}
+.tile.extra{opacity:.55}
+.tile:hover{border-color:var(--accent)}
+.tile.sel{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tile.is-pre{background:var(--fail-soft);border-color:var(--fail);border-style:solid;box-shadow:0 0 0 3px color-mix(in srgb,var(--fail) 18%,transparent)}
+.tile.is-unl{background:var(--open-soft);border-color:var(--open);border-style:solid;box-shadow:0 0 0 3px color-mix(in srgb,var(--open) 18%,transparent)}
+.tile.is-pre .name,.tile.is-unl .name{color:var(--ink)}
+.dim .tile:not(.sel):not(.is-pre):not(.is-unl){opacity:.4}
+
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px}
+.group{min-width:0}
+.group h3{margin:0 0 2px;font-family:var(--font-display);font-size:17px;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.group h3 .num{font-family:var(--font-mono);font-size:13px;color:var(--accent);font-weight:500;direction:ltr}
+.group .note{font-size:12.5px;color:var(--muted);margin:0 0 10px}
+.minibar{height:6px;background:var(--sunk);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.minibar i{display:block;height:100%;background:var(--c)}
+.group .tiles{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+
+/* what-if */
+.wi-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;font-size:13.5px;color:var(--muted)}
+.wi-top select,.mod select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px;max-width:100%}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.plans{grid-template-columns:1fr}}
+.plan-card{display:grid;gap:12px;align-content:start;min-width:0}
+.plan-card.b{border-color:color-mix(in srgb,var(--f) 45%,var(--line))}
+.plan-card h3{margin:0;font-family:var(--font-display);font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px}
+.plan-card h3 .tag{font-family:var(--font-mono);font-size:12px;border-radius:6px;padding:1px 7px;background:var(--deep-soft);color:var(--deep)}
+.plan-card.b h3 .tag{background:var(--f-soft);color:var(--f)}
+.res{display:grid;gap:2px}
+.res .when{font-family:var(--font-th-display);font-weight:900;font-size:26px;line-height:1.2}
+.res .sub{font-size:13px;color:var(--muted)}
+.ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px}
+.ctl input[type=range]{flex:1;min-width:120px;accent-color:var(--f)}
+.plan-card:not(.b) .ctl input[type=range]{accent-color:var(--accent)}
+.switch{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:13.5px}
+.switch input{accent-color:var(--f);width:16px;height:16px}
+.mods{display:grid;gap:8px}
+.mod{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--sunk);border-radius:12px;padding:8px 10px;font-size:13.5px}
+.mod b{font-weight:500}
+.mod select{flex:1;min-width:150px}
+.mod .rm{border:0;background:var(--surface);border-radius:50%;width:24px;height:24px;line-height:1;padding:0;margin-inline-start:auto}
+.add-row{display:flex;gap:8px;flex-wrap:wrap}
+.btn.add{border-style:dashed;color:var(--f);border-color:color-mix(in srgb,var(--f) 50%,var(--line))}
+.verdict{margin-top:16px;display:grid;gap:8px}
+.verdict .head{font-family:var(--font-display);font-weight:700;font-size:19px}
+.verdict .head b{color:var(--f)}
+.verdict .head.same b{color:var(--done)}
+.verdict .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13.5px;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2px 9px;font-size:12.5px;background:var(--sunk);color:var(--ink)}
+.pill .mono{color:var(--f)}
+.tl-tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--surface);margin:18px 0 10px}
+.tl-tabs button{border:0;background:none;border-radius:999px;padding:5px 14px;font-size:13px}
+.tl-tabs button.on{background:var(--ink);color:var(--surface)}
+.timeline{overflow-x:auto;padding-bottom:6px}
+.terms-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(190px,1fr);gap:10px;min-width:min-content}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+.term.summer{background:color-mix(in srgb,var(--g7) 10%,var(--surface));border-style:dashed}
+.term.grad{border-color:var(--done);box-shadow:0 0 0 2px var(--done-soft)}
+.term h4{margin:0;font-size:13px;color:var(--ink);font-weight:700;display:flex;justify-content:space-between;gap:6px}
+.term h4 .mono{color:var(--muted);font-weight:400}
+.term .greg{font-size:11.5px;color:var(--muted);margin-top:-4px}
+.term .warn{font-size:11.5px;color:var(--warn)}
+.chipc{display:flex;justify-content:space-between;gap:6px;font-size:12.5px;border-radius:8px;padding:4px 8px;background:var(--sunk)}
+.chipc .mono{color:var(--muted);white-space:nowrap}
+.chipc.slot{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.chipc.fail{background:var(--retry-soft);color:var(--retry);text-decoration:line-through;text-decoration-thickness:1px}
+.chipc.moved{box-shadow:inset 0 0 0 1.5px var(--f)}
+.chipc.ai{background:var(--f-soft)}
+.wi-note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+
+/* أدوات «لو» lab */
+.lab{margin-top:22px;border-radius:20px;border:1.5px solid color-mix(in srgb,var(--deep) 35%,var(--line));
+  background:linear-gradient(180deg,color-mix(in srgb,var(--deep) 9%,var(--surface)),var(--surface) 140px);box-shadow:var(--shadow);overflow:hidden}
+.lab-head{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px}
+.lab-head::-webkit-details-marker{display:none}
+.lab-head:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+.lab-logo{width:40px;height:46px;flex:none}
+.lab-title{display:grid;gap:2px;flex:1;min-width:0}
+.lab-title>span{font-family:var(--font-th-display);font-weight:900;font-size:26px;line-height:1.15;color:var(--deep)}
+.lab-title small{font-size:13px;color:var(--muted)}
+.lab[open] .lab-head .chev{transform:rotate(180deg)}
+.lab-body{padding:0 18px 20px;border-top:1px dashed color-mix(in srgb,var(--deep) 25%,var(--line))}
+.lab-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 6px}
+.lab-tabs button{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:500}
+.lab-tabs button:hover{border-color:var(--deep)}
+.lab-tabs button.on{background:var(--deep);border-color:var(--deep);color:var(--surface)}
+.lab-lead{margin:6px 0 14px;font-size:13.5px;color:var(--muted)}
+
+/* monte carlo */
+.forecast{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;border-radius:16px;padding:18px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--open) 14%,var(--surface)),color-mix(in srgb,var(--deep) 10%,var(--surface)))}
+@media (max-width:560px){.forecast{grid-template-columns:1fr}}
+.forecast .sky{font-size:64px;line-height:1}
+.forecast .kicker{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
+.forecast h3{margin:2px 0 8px;font-family:var(--font-th-display);font-weight:900;font-size:24px;line-height:1.3}
+.forecast ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:14.5px}
+.forecast li b{font-family:var(--font-mono);font-weight:500;color:var(--deep)}
+.mc-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:16px}
+@media (max-width:860px){.mc-grid{grid-template-columns:1fr}}
+.chart-card{min-width:0;display:grid;gap:8px;align-content:start}
+.chart-card h4{margin:0;font-size:15px;color:var(--ink);font-weight:700;font-family:var(--font-display)}
+.chart-card .hint{margin:0}
+.chart{position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.hbar{fill:var(--deep)} .hbar.hi{fill:var(--f)}
+.hbar:hover{opacity:.8}
+.thr{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+.thr-l{fill:var(--muted);font-family:var(--font-body);font-size:10.5px}
+.med{stroke:var(--f);stroke-width:2}
+.med-l{fill:var(--f);font-family:var(--font-mono);font-size:11px;font-weight:500}
+.ax{stroke:var(--line);stroke-width:1}
+.axl{fill:var(--muted);font-family:var(--font-mono);font-size:10.5px}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12px;border-radius:8px;padding:5px 8px;white-space:nowrap;transform:translate(-50%,-120%);font-family:var(--font-mono);direction:ltr;unicode-bidi:isolate}
+.gbars{display:grid;gap:8px}
+.gbar{display:grid;grid-template-columns:minmax(110px,auto) 1fr 44px;gap:10px;align-items:center;font-size:13px}
+.gbar .track2{height:14px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.gbar .track2 i{display:block;height:100%;background:var(--deep);border-radius:0 4px 4px 0}
+[dir="rtl"] .gbar .track2 i{border-radius:4px 0 0 4px;margin-inline-start:0}
+.gbar .pct{font-family:var(--font-mono);text-align:end}
+.gbar.base .track2 i{background:var(--done)}
+.method{margin-top:16px;font-size:13.5px}
+.method summary{cursor:pointer;color:var(--deep);font-weight:500}
+.method .eq{font-family:var(--font-mono);background:var(--sunk);border-radius:10px;padding:10px 12px;margin:8px 0;direction:ltr;text-align:left;overflow-x:auto;font-size:12.5px;line-height:1.8}
+.method table{border-collapse:collapse;font-size:13px}
+.method td{padding:4px 10px;border-bottom:1px solid var(--line)}
+.method td:last-child{font-family:var(--font-mono);direction:ltr}
+
+/* alerts + elective helper */
+.alerts{display:grid;gap:8px}
+.alert{display:flex;gap:10px;align-items:flex-start;background:var(--sunk);border:1px solid transparent;border-radius:12px;padding:10px 14px;font-size:14px}
+.alert .ic{font-size:16px;line-height:1.5}
+.alert .tx{flex:1;min-width:0}
+.alert.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 35%,var(--line))}
+.alert.bad{background:var(--fail-soft);border-color:color-mix(in srgb,var(--fail) 35%,var(--line))}
+.alert .x{border:0;background:none;color:var(--muted);font-size:16px;line-height:1;padding:2px 4px}
+.alert .link{border:0;background:none;padding:0;color:var(--open);text-decoration:underline;text-underline-offset:3px;font:inherit}
+.helper{margin-bottom:16px;border-color:color-mix(in srgb,var(--open) 40%,var(--line))}
+.helper h3{margin:0 0 2px;font-family:var(--font-display);font-size:17px;font-weight:700}
+.helper .note{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+.sugs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.sug{display:grid;gap:6px;align-content:start}
+.sug .tile{min-height:0}
+.why{display:flex;flex-wrap:wrap;gap:4px}
+.why span{font-size:11.5px;border-radius:999px;padding:1px 8px;background:var(--open-soft);color:var(--open)}
+.why span.g{background:var(--sunk);color:var(--muted)}
+
+/* ratings */
+.rate{border-top:1px dashed var(--line);padding-top:16px;display:grid;gap:12px}
+.rate h3{margin:0;font-family:var(--font-display);font-size:17px;font-weight:700}
+.rsum{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13.5px}
+.rsum b{font-family:var(--font-mono);font-weight:500}
+.rbar{height:8px;border-radius:4px;background:var(--fail-soft);overflow:hidden;flex:1;min-width:120px}
+.rbar i{display:block;height:100%;background:var(--done)}
+.rform{display:grid;gap:10px;background:var(--sunk);border-radius:12px;padding:12px}
+.rrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:13px}
+.rrow .lbl{color:var(--muted);min-width:64px}
+.rchip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13.5px}
+.rchip.on{border-color:var(--deep);background:var(--deep-soft);color:var(--deep);font-weight:700}
+.rform textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;resize:vertical;min-height:64px;width:100%}
+.rform .cnt{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-align:end}
+.rerr{font-size:12.5px;color:var(--fail)} .rok{font-size:12.5px;color:var(--done)}
+.rnote{font-size:12px;color:var(--muted)}
+.btn.primary{background:var(--deep);border-color:var(--deep);color:var(--surface)}
+.btn.primary:hover{color:var(--surface);filter:brightness(1.08)}
+.comments{display:grid;gap:8px}
+.cmt{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;display:grid;gap:4px}
+.cmt .meta{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
+.cmt .rep{margin-inline-start:auto;border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px;padding:0}
+.demo{font-size:12px;color:var(--warn);background:var(--warn-soft);border-radius:8px;padding:6px 10px}
+
+/* gpa tools */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.tools{grid-template-columns:1fr}}
+.tool{display:grid;gap:12px;align-content:start;min-width:0}
+.tool h3{margin:0;font-family:var(--font-display);font-size:18px;font-weight:700}
+.tool p.lead{margin:-6px 0 0;font-size:13px;color:var(--muted)}
+.field{display:grid;gap:4px;font-size:13px;color:var(--muted)}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.field input,.field select{font:inherit;font-family:var(--font-mono);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;width:100%}
+.presets{display:flex;gap:6px;flex-wrap:wrap}
+.presets button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:12.5px}
+.presets button.on{border-color:var(--deep);background:var(--deep-soft);color:var(--deep);font-weight:700}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;width:fit-content}
+.seg button{border:0;background:none;border-radius:999px;padding:4px 12px;font-size:12.5px}
+.seg button.on{background:var(--ink);color:var(--surface)}
+.answer{border-radius:12px;padding:14px;background:var(--sunk);display:grid;gap:6px}
+.answer .big{font-family:var(--font-th-display);font-weight:900;font-size:30px;line-height:1.15}
+.answer .big small{font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--muted)}
+.answer.ok{background:var(--done-soft)} .answer.ok .big{color:var(--done)}
+.answer.no{background:var(--fail-soft)} .answer.no .big{color:var(--fail)}
+.answer .mix{font-size:13.5px}
+.rangebar{position:relative;height:30px;margin:18px 0 8px;direction:ltr}
+.rangebar .rb-track{position:absolute;top:12px;left:0;right:0;height:6px;border-radius:3px;background:var(--line)}
+.rangebar .rb-span{position:absolute;top:12px;height:6px;border-radius:3px;background:color-mix(in srgb,var(--accent) 45%,var(--surface))}
+.rangebar .m{position:absolute;top:4px;width:2px;height:22px;background:var(--ink)}
+.rangebar .m.t{background:var(--f);width:3px}
+.rangebar .lab{position:absolute;top:-12px;transform:translateX(-50%);font-family:var(--font-mono);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.rangebar .m.t .lab{color:var(--f);font-weight:500}
+.ftable{width:100%;border-collapse:collapse;font-size:13.5px}
+.ftable td{padding:7px 8px;border-bottom:1px solid var(--line)}
+.ftable tr:last-child td{border-bottom:0}
+.ftable td.g{font-family:var(--font-mono);font-weight:500;width:48px}
+.ftable td.n{font-family:var(--font-mono);text-align:end;white-space:nowrap}
+.ftable tr.ok td.n{color:var(--done)} .ftable tr.no td{color:var(--lock)} .ftable tr.no td.n{color:var(--fail)}
+.ftable tr.pick{background:var(--deep-soft)}
+.meter{height:6px;border-radius:3px;background:var(--sunk);overflow:hidden;min-width:60px}
+.meter i{display:block;height:100%;background:var(--accent)}
+
+/* record */
+.record{overflow-x:auto}
+.record table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+.record th{font-weight:500;color:var(--muted);font-size:12.5px;text-align:start;padding:8px 10px;border-bottom:1px solid var(--line)}
+.record td{padding:8px 10px;border-bottom:1px solid var(--line)}
+.record tr:last-child td{border-bottom:0}
+.record td.g{font-family:var(--font-mono);font-weight:500;direction:ltr;text-align:start}
+.record tr.f td.g{color:var(--fail)}
+.record tfoot td{font-weight:700;border-top:1.5px solid var(--line);border-bottom:0}
+.empty{color:var(--muted);font-size:14px;margin:0}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(10,15,25,.35);z-index:30}
+@media (min-width:641px){.scrim{display:none}}
+.drawer{position:fixed;z-index:31;top:0;bottom:0;inset-inline-end:0;width:min(410px,100%);background:var(--surface);border-inline-start:1px solid var(--line);
+  padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px));overflow-y:auto;box-shadow:var(--shadow);display:grid;gap:16px;align-content:start}
+@media (max-width:640px){.drawer{top:auto;inset-inline:0;width:100%;max-height:84vh;border-inline-start:0;border-top:1px solid var(--line);border-radius:20px 20px 0 0;
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}}
+.drawer .x{justify-self:end;border:0;background:var(--sunk);border-radius:50%;width:34px;height:34px;font-size:18px;line-height:1}
+.drawer h2{margin:0;font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.3;text-wrap:balance}
+.drawer .sub{color:var(--muted);font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
+.reqs{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.reqs li{display:flex;gap:8px;align-items:baseline;font-size:14px}
+.reqs .ok{color:var(--done)} .reqs .no{color:var(--fail)}
+.reqs button{border:0;background:none;padding:0;text-align:start;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.reqs button:hover{text-decoration-color:var(--accent)}
+.grades{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;direction:ltr}
+.grades button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 0;font-family:var(--font-mono);font-weight:500}
+.grades button:hover{border-color:var(--accent)}
+.grades button.on{background:var(--deep);border-color:var(--deep);color:var(--surface)}
+.grades button.fbtn.on{background:var(--fail);border-color:var(--fail)}
+.grades button small{display:block;font-size:10px;color:var(--muted)}
+.grades button.on small{color:inherit;opacity:.8}
+.attempts{display:flex;flex-wrap:wrap;gap:6px}
+.att{display:inline-flex;gap:6px;align-items:center;border-radius:999px;padding:3px 6px;padding-inline-start:10px;background:var(--sunk);font-size:13px}
+.att b{font-family:var(--font-mono);font-weight:500;direction:ltr}
+.att.f b{color:var(--fail)}
+.att button{border:0;background:var(--surface);border-radius:50%;width:20px;height:20px;font-size:12px;line-height:1;padding:0}
+.box{background:var(--sunk);border-radius:12px;padding:12px 14px;font-size:13.5px}
+.box.warn{background:var(--warn-soft);color:var(--warn)}
+h4{margin:0 0 6px;font-size:12.5px;color:var(--muted);font-weight:500}
+footer{margin-top:44px;color:var(--muted);font-size:12.5px;text-align:center}
+footer .li{display:inline-flex;align-items:center;gap:4px;color:var(--open);text-decoration:none;margin-inline-start:6px;font-weight:500}
+footer .li:hover{text-decoration:underline}
+footer .li svg{width:13px;height:13px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap" id="root" dir="rtl" lang="ar">
+  <header class="top">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 64 72" aria-hidden="true"><symbol id="logoMark" viewBox="0 0 64 72">
+        <path d="M18 15.5v6.5c0 4.4 28 4.4 28 0v-6.5" fill="var(--deep)" opacity=".82"/>
+        <polygon points="32,3 59,12.5 32,22 5,12.5" fill="var(--deep)"/>
+        <path d="M13 12.5 L32 6 L51 12.5" fill="none" stroke="var(--surface)" stroke-width="1" opacity=".35" stroke-linecap="round"/>
+        <path d="M32 12.5 L52.5 14.5 V25" fill="none" stroke="var(--f)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="12.5" r="1.9" fill="var(--f)"/>
+        <path d="M50.4 24.5h4.2l1.2 7h-6.6z" fill="var(--f)"/>
+        <rect x="13" y="27" width="38" height="4.2" rx="2.1" fill="var(--deep)"/>
+        <rect x="13" y="65.8" width="38" height="4.2" rx="2.1" fill="var(--deep)"/>
+        <rect x="15.2" y="30" width="2.6" height="37" rx="1.3" fill="var(--deep)" opacity=".7"/>
+        <rect x="46.2" y="30" width="2.6" height="37" rx="1.3" fill="var(--deep)" opacity=".7"/>
+        <path d="M20.5 31.2h23c0 11.5-9.2 13.6-9.2 17.3s9.2 5.8 9.2 17.3h-23c0-11.5 9.2-13.6 9.2-17.3s-9.2-5.8-9.2-17.3z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M23.6 35h16.8c-1.4 6-6.2 8.6-8.4 11-2.2-2.4-7-5-8.4-11z" fill="var(--f)"/>
+        <g class="grains" fill="var(--f)"><circle cx="32" cy="50" r="1"/><circle cx="32" cy="54.5" r=".9"/><circle cx="32" cy="58.6" r=".8"/></g>
+        <path d="M21.4 65.6C27 65.6 28.2 57.4 32 57.4S37 65.6 42.6 65.6Z" fill="var(--f)"/>
+        <path d="M23.2 37.5q1.8 5 5.6 8" fill="none" stroke="var(--surface)" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
+      </symbol><use href="#logoMark"/></svg>
+      <span class="ar">لو</span><span class="sep"></span>
+      <span class="en-stack"><span class="en" id="brandEn">What i<b>F</b></span><span class="tagline" id="tagline" data-t="tagline"></span></span>
+    </div>
+    <div class="top-left">
+      <div class="tools" id="appTools" hidden>
+        <button class="btn" id="switchTrack" type="button" data-t="switchTrack"></button>
+        <button class="btn danger" id="resetBtn" type="button" data-t="reset"></button>
+      </div>
+      <button class="btn icon-btn" id="genderBtn" type="button"></button>
+      <button class="btn icon-btn lang-btn" id="langBtn" type="button" aria-label="Language"></button>
+      <button class="btn icon-btn" id="themeBtn" type="button" aria-label="Theme"></button>
+    </div>
+  </header>
+
+  <!-- onboarding -->
+  <section id="onboard">
+    <div class="hero">
+      <div>
+        <h1 data-t="heroTitle"></h1>
+        <p data-t="heroLead"></p>
+      </div>
+      <figure class="figure" style="margin:0">
+        <svg id="heroCurve" viewBox="0 0 560 210" role="img" aria-label=""></svg>
+        <figcaption><span data-t="figCap"></span><span class="mono">N(μ, σ²)</span></figcaption>
+      </figure>
+    </div>
+    <div class="choose">
+      <div class="gender" role="radiogroup" aria-labelledby="genderQ"><span id="genderQ" data-t="genderQ"></span>
+        <button type="button" class="gpill" data-gender="f" role="radio"><span aria-hidden="true">👩‍🎓</span><span data-t="female"></span></button>
+        <button type="button" class="gpill" data-gender="m" role="radio"><span aria-hidden="true">👨‍🎓</span><span data-t="male"></span></button>
+      </div>
+      <h2 data-t="choose"></h2>
+      <p data-t="chooseSub"></p>
+      <div class="tracks">
+        <button class="track" type="button" data-track="stat" id="trackStat"></button>
+        <button class="track ai" type="button" data-track="ai" id="trackAi"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- app -->
+  <section id="app" hidden>
+    <div id="banners"></div>
+    <div class="summary">
+      <div class="card ruler">
+        <div class="gpa-row">
+          <div class="ring" id="ring"><div><small class="ring-label" data-t="gpaLabel"></small><b class="num" id="gpaVal">—</b><small data-t="of5"></small></div></div>
+          <div class="gpa-meta"><span class="rank" id="gpaRank" hidden></span><div class="hint" id="gpaHint"></div></div>
+        </div>
+        <svg id="gpaRuler" viewBox="0 0 320 64" aria-hidden="true"></svg>
+        <div class="honor-keys"><span style="--c:color-mix(in srgb,var(--done) 18%,var(--surface))" data-t="honor2"></span><span style="--c:color-mix(in srgb,var(--accent) 45%,var(--surface))" data-t="honor1"></span></div>
+      </div>
+      <div class="card grad">
+        <div class="head">
+          <div>
+            <span class="label" data-t="gradLabel"></span>
+            <div class="kpi"><span class="big num th" id="remainVal">—</span><span class="of" id="remainOf"></span></div>
+          </div>
+          <span class="chip" id="trackChip"></span>
+        </div>
+        <div class="bar" id="bar"></div>
+        <div class="bar-axis" id="barAxis"></div>
+        <div class="bar-legend" id="barLegend"></div>
+        <div class="terms">
+          <div class="line">
+            <label class="hint" for="load" data-t="loadLabel"></label>
+            <input type="range" id="load" min="12" max="20" step="1" value="16">
+            <span class="mono" id="loadVal">16</span>
+          </div>
+          <div class="est" id="estText"></div>
+          <div class="hint" id="estWhy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend" id="legend"></div>
+    <p class="pass-note" id="passNote"></p>
+    <div id="plan"></div>
+    <details class="lab" id="lab">
+      <summary class="lab-head">
+        <svg class="lab-logo" viewBox="0 0 64 72" aria-hidden="true"><use href="#logoMark"/></svg>
+        <span class="lab-title"><span data-t="labTitle"></span><small data-t="labSub"></small></span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="lab-body">
+        <div class="lab-tabs" role="tablist">
+          <button type="button" role="tab" data-lab="wi" id="tabWi"><span data-t="wiTitle"></span></button>
+          <button type="button" role="tab" data-lab="tools" id="tabTools"><span data-t="toolsTitle"></span></button>
+          <button type="button" role="tab" data-lab="mc" id="tabMc"><span data-t="mcTab"></span></button>
+        </div>
+        <div id="whatif" role="tabpanel"></div>
+        <div id="tools" role="tabpanel"></div>
+        <div id="mc" role="tabpanel"></div>
+      </div>
+    </details>
+
+    <div id="alerts"></div>
+
+    <details class="sec" data-sec="rec" id="recSec">
+      <summary><h2 class="section-title"><span data-t="recordTitle"></span><small data-t="recordSub"></small></h2>
+        <span class="sec-prog"><span class="mono" id="recSum"></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </summary>
+      <div class="card record" id="record"></div>
+    </details>
+  </section>
+
+  <footer data-t="footer"></footer>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-live="polite"></aside>
+
+<script>
+/* ---------- i18n ---------- */
+const T = {
+  ar: {
+    brandSub:"آلة الزمن الجامعية", tagline:"<span>لطلاب</span><span>الإحصاء</span>",
+    heroTitle:"لو كملتي على نفس الطريق… <em>متى تتخرجين؟</em>",
+    heroLead:"حددي المواد اللي خلصتيها ودرجاتها، و«لو» يحسب معدلك ويوريك كم باقي لك، وأي مواد تقدرين تسجلينها الحين. خطة بكالوريوس الإحصاء، كلية العلوم، جامعة الملك سعود.",
+    figCap:"كل «لو» يرسم لك منحنى جديد لسنة تخرجك",
+    figYou:"أنتِ هنا", figAxis:"سنة التخرج",
+    choose:"اختاري خطتك", chooseSub:"تقدرين تغيرينها بعدين من فوق.",
+    stat:"إحصاء", ai:"إحصاء + فرعي ذكاء اصطناعي", hours:"ساعة", start:"ابدئي ←",
+    kY1:"السنة الأولى", kCore:"إجباري القسم", kElec:"اختياري", kAi:"الفرعي",
+    switchTrack:"تغيير الخطة", reset:"مسح بياناتي",
+    gpaLabel:"المعدل التراكمي", of5:"من 5", noGrades:"اختاري درجة أي مادة خلصتيها من الخريطة تحت",
+    basedOn:n=>`محسوب على ${n} ساعة مسجلة`, honor1:"مرتبة الشرف الأولى <span class=\"mono\">4.75</span> فأعلى", honor2:"مرتبة الشرف الثانية <span class=\"mono\">4.25 – 4.74</span>",
+    onHonor1:"على طريق مرتبة الشرف الأولى", onHonor2:"على طريق مرتبة الشرف الثانية",
+    ranks:["ممتاز 🏆","جيد جداً 🌟","جيد 👍","مقبول 🙂","تحت الإنذار ⚠️"],
+    gradLabel:"عداد التخرج", left:"ساعة باقية", of:T=>`من ${T}`, graduated:"خلصتي!",
+    loadLabel:"كم ساعة تسجلين بالترم عادة؟",
+    est:n=>`تقريباً <b class="num">${n}</b> ${n===1?"ترم":n===2?"ترمين":n<=10?"أترام":"ترم"} وتتخرجين`,
+    estDone:"ما باقي شي، مبروك!",
+    whyChain:(d,c)=>`أطول سلسلة متطلبات باقية تحتاج ${d} أترام على الأقل (تنتهي عند ${c})، فزيادة الساعات ما راح تختصرها.`,
+    whyHours:(r,l,d)=>`${r} ساعة ÷ ${l} ساعة بالترم. وأطول سلسلة متطلبات باقية تحتاج ${d} أترام، فالساعات هي اللي تحدد.`,
+    lgDone:"خلصتيها", lgOpen:"تقدرين تسجلينها الحين", lgRetry:"تحتاج إعادة", lgLock:"مقفلة (ناقصها متطلب)",
+    secY1:"السنة الأولى", secY1Sub:"كلها تنفتح بدون متطلب، ولازم تخلص كاملة قبل المستوى الثالث",
+    secCore:"مواد القسم الإجبارية", secCoreSub:"اضغطي أي مادة، متطلبها بيتلون لك بالأحمر، واللي بتفتحه لك بالأزرق",
+    secElec:"المواد الاختيارية", secElecAi:"المواد الاختيارية والفرعي",
+    level:n=>`المستوى ${["","الأول","الثاني","الثالث","الرابع","الخامس","السادس","السابع","الثامن"][n]}`,
+    hrsShort:"س", st:{done:"خلصتيها",open:"متاحة الحين",retry:"تحتاج إعادة",locked:"مقفلة"}, full:"المجموعة مكتملة",
+    groups:{
+      isl:["مواد إسلامية","8 ساعات · كل مادة ساعتين · مادة وحدة بس في كل ترم"],
+      out:["اختياري خارج القسم","9 ساعات · تنفتح بعد ما تخلصين كل مواد المستوى الثالث"],
+      in:["اختياري داخل القسم","14 ساعة من مواد الإحصاء وبحوث العمليات"],
+      ai:["فرعي الذكاء الاصطناعي · إجباري","14 ساعة · الندوة بعد إتمام 15 ساعة من الفرعي"],
+      aiel:["فرعي الذكاء الاصطناعي · اختياري","مادتين (6 ساعات)"],
+    },
+    recordTitle:"سجل الدرجات", recordSub:"كل المحاولات تنحسب في المعدل، حتى المعادة",
+    recEmpty:"لما تختارين درجة لأي مادة تطلع هنا.",
+    th:["المادة","الساعات","المحاولة","الدرجة","النقاط"], first:"الأولى", retake:n=>`إعادة ${n}`, totalRow:"المجموع",
+    confirmQ:"متأكدة تبين تمسحين كل الدرجات؟", yes:"إيه، امسحي", no:"لا",
+    close:"إغلاق", creditHrs:n=>`${n} ساعات معتمدة`, reqs:"المتطلبات", noReqs:"ما لها متطلبات، تنفتح على طول.", opens:"تفتح لك",
+    rY1:"إنهاء السنة الأولى كاملة", rL3:"إنهاء كل مواد المستوى الثالث",
+    r43:r=>`الساعات الباقية لا تتعدى 43 (باقي لك ${r})`, r15:h=>`إتمام 15 ساعة من الفرعي (خلصتي ${h})`,
+    fullWarn:"خلصتي ساعات هالمجموعة. لو أخذتي المادة تنحسب في المعدل، بس ما تنحسب في ساعات التخرج.",
+    pickGrade:"خلصتيها؟ اختاري درجتك", yourGrade:"درجتك", retakeGrade:"درجة الإعادة",
+    attempts:"المحاولات", attHint:"(كلها تنحسب في المعدل)", single:"المحاولة",
+    addF:"رسبت قبل كذا؟ أضيفي محاولة F قبلها", addRetake:"أضيفي محاولة إعادة",
+    wiTitle:"سيناريوهات «لو»", wiSub:"قارني خطتك الحالية بـ «لو» ثانية، وشوفي متى تتخرجين في كل وحدة",
+    wiA:"خطتك الحالية", wiB:"لو…", wiLoad:"ساعات الترم", wiSummer:"لو انطرح الفرعي في الصيفي (6 ساعات)",
+    wiDelay:"لو أجلت", wiFail:"لو رسبت في", wiPick:"اختاري مادة", wiByN:n=>n === 1 ? "ترم واحد" : n === 2 ? "ترمين" : "3 أترام", wiRetake:"وعدتيها بـ",
+    wiTerms:(r,s)=>`${r} ${r === 1 ? "ترم" : r === 2 ? "ترمين" : r <= 10 ? "أترام" : "ترم"}${s ? ` + ${s} صيفي` : ""}`, wiGpa:g=>`المعدل المتوقع ${g}`,
+    wiSame:"«لو» هذي <b>ما تغيّر</b> موعد تخرجك 👌", wiLater:(n,w)=>`«لو» هذي تأخر تخرجك <b>${n > 0 ? n + " " + (n === 1 ? "ترم" : n === 2 ? "ترمين" : "أترام") : "شوي"}</b>، وتتخرجين ${w}`,
+    wiEarlier:(n,w)=>`«لو» هذي تبكّر تخرجك <b>${n > 0 ? n + " " + (n === 1 ? "ترم" : n === 2 ? "ترمين" : "أترام") : "شوي"}</b> 🎉 وتتخرجين ${w}`,
+    wiMoved:"مواد بتتأخر معها:", wiGpaRow:(a,b)=>`معدلك الحين <b class="mono">${a}</b> ← بعد الرسوب والإعادة يصير تقريباً <b class="mono">${b}</b>`,
+    wiStart:"أول ترم جاي:", wiLight:"ترم خفيف (أقل من 12 ساعة) لأن المتطلبات ما تسمح بأكثر",
+    wiStuck:"فيه مواد ما قدرت أرتبها، تأكدي من المتطلبات", 
+    wiNote:"الترتيب تقديري: يقدّم المواد اللي وراها سلسلة متطلبات أطول، ويحترم حد الساعات وقوانين الخطة. المربعات المنقطة مكان للمواد الاختيارية تختارينها أنتِ. السنة الدراسية ترمين، والصيفي ما ينحسب إلا إذا فعّلتيه للفرعي.",
+    slot:{ isl:"مادة إسلامية (اختياري)", out:"اختياري خارج القسم", in:"اختياري داخل القسم", aiel:"اختياري الفرعي" },
+    passTitle:"بدون تقديرات، وما تنحسب في المعدل التراكمي", passLevel:"عديته ✓", undoLevel:"تراجعي",
+    passInfo:"<b>عديته ✓</b><span>يعلّم مواد المستوى كلها إنك خلصتيها بدون تسجيل تقديراتها، وهذي المواد <strong>ما تنحسب في المعدل التراكمي</strong>. لو تبين تنحسب، اضغطي على المادة واختاري تقديرها.</span>", noGradeShort:"بدون درجة",
+    pNote:h=>`${h} ساعة عديتيها بدون درجة ما تنحسب في المعدل`, pPick:"عديتيها بدون درجة. لو تبين تنحسب في المعدل اختاري درجتك",
+    lockedBox:"المادة مقفلة الحين. خلصي المتطلبات اللي عليها ✗ وتنفتح لك.",
+    footer:"فرح العصيمي <a class=\"li\" href=\"https://www.linkedin.com/in/farah-alosaimi-813946324\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z\"/></svg>LinkedIn</a> · موقع غير رسمي وغير تابع لجامعة الملك سعود · الحسابات تقديرية، وارجعي لمرشدتك الأكاديمية في القرارات الرسمية",
+    themeDark:"المظهر الداكن", themeLight:"المظهر الفاتح",
+  },
+  en: {
+    brandSub:"The University Time Machine", tagline:"<span>for</span><span>statistics</span><span>students</span>",
+    heroTitle:"If you keep going this way… <em>when will you graduate?</em>",
+    heroLead:"Mark the courses you’ve finished and their grades. What iF calculates your GPA, shows how much is left, and which courses you can register now. Statistics B.Sc. plan, College of Science, King Saud University.",
+    figCap:"Every “what if” draws a new curve for your graduation year",
+    figYou:"You are here", figAxis:"Graduation year",
+    choose:"Choose your plan", chooseSub:"You can change it later from the top bar.",
+    stat:"Statistics", ai:"Statistics + AI minor", hours:"credit hours", start:"Start →",
+    kY1:"First year", kCore:"Core", kElec:"Electives", kAi:"Minor",
+    switchTrack:"Change plan", reset:"Clear my data",
+    gpaLabel:"Cumulative GPA", of5:"out of 5", noGrades:"Pick a grade for any finished course in the map below",
+    basedOn:n=>`Based on ${n} attempted credit hours`, honor1:"First-class honors <span class=\"mono\">4.75+</span>", honor2:"Second-class honors <span class=\"mono\">4.25 – 4.74</span>",
+    onHonor1:"On track for first-class honors", onHonor2:"On track for second-class honors",
+    ranks:["Excellent 🏆","Very good 🌟","Good 👍","Pass 🙂","Below probation line ⚠️"],
+    gradLabel:"Graduation counter", left:"hours left", of:T=>`of ${T}`, graduated:"Done!",
+    loadLabel:"How many hours do you usually register per term?",
+    est:n=>`About <b class="num">${n}</b> ${n===1?"term":"terms"} to graduation`,
+    estDone:"Nothing left. Congratulations!",
+    whyChain:(d,c)=>`Your longest remaining prerequisite chain needs at least ${d} terms (it ends at ${c}), so adding hours won’t shorten it.`,
+    whyHours:(r,l,d)=>`${r} hours ÷ ${l} per term. Your longest prerequisite chain needs ${d} terms, so hours are the limit.`,
+    lgDone:"Completed", lgOpen:"Available now", lgRetry:"Needs a retake", lgLock:"Locked (missing a prerequisite)",
+    secY1:"First year", secY1Sub:"No prerequisites, and all of it must be completed before level 3",
+    secCore:"Core statistics courses", secCoreSub:"Tap any course: its prerequisites turn red, and what it unlocks turns blue",
+    secElec:"Electives", secElecAi:"Electives and minor",
+    level:n=>`Level ${n}`,
+    hrsShort:"h", st:{done:"Completed",open:"Available",retry:"Retake needed",locked:"Locked"}, full:"Group complete",
+    groups:{
+      isl:["Islamic studies","8 hours · 2 hours each · one per term at most"],
+      out:["Electives outside the department","9 hours · open after completing all of level 3"],
+      in:["Electives inside the department","14 hours of statistics and operations research"],
+      ai:["AI minor · required","14 hours · seminar after 15 minor hours"],
+      aiel:["AI minor · electives","Two courses (6 hours)"],
+    },
+    recordTitle:"Grade record", recordSub:"Every attempt counts toward the GPA, retakes included",
+    recEmpty:"Grades you pick will appear here.",
+    th:["Course","Hours","Attempt","Grade","Points"], first:"First", retake:n=>`Retake ${n}`, totalRow:"Total",
+    confirmQ:"Clear all your grades?", yes:"Yes, clear", no:"No",
+    close:"Close", creditHrs:n=>`${n} credit hours`, reqs:"Prerequisites", noReqs:"No prerequisites. It’s open right away.", opens:"Unlocks",
+    rY1:"Complete the whole first year", rL3:"Complete all level 3 courses",
+    r43:r=>`No more than 43 hours left (you have ${r})`, r15:h=>`Complete 15 minor hours (you have ${h})`,
+    fullWarn:"You’ve finished this group’s hours. Taking it counts toward your GPA but not toward graduation hours.",
+    pickGrade:"Finished it? Pick your grade", yourGrade:"Your grade", retakeGrade:"Retake grade",
+    attempts:"Attempts", attHint:"(all count toward GPA)", single:"Attempt",
+    addF:"Failed it before? Add an earlier F", addRetake:"Add a retake",
+    wiTitle:"What-if scenarios", wiSub:"Compare your current plan with another “what if” and see when you graduate in each",
+    wiA:"Your current plan", wiB:"What if…", wiLoad:"Hours per term", wiSummer:"If the AI minor is offered in summer (6 hours)",
+    wiDelay:"If I postpone", wiFail:"If I fail", wiPick:"Pick a course", wiByN:n=>n === 1 ? "by one term" : `by ${n} terms`, wiRetake:"and retake with",
+    wiTerms:(r,s)=>`${r} ${r === 1 ? "term" : "terms"}${s ? ` + ${s} summer` : ""}`, wiGpa:g=>`projected GPA ${g}`,
+    wiSame:"This “what if” <b>doesn’t change</b> your graduation 👌", wiLater:(n,w)=>`This “what if” delays graduation by <b>${n > 0 ? n + (n === 1 ? " term" : " terms") : "a little"}</b>. You’d graduate ${w}`,
+    wiEarlier:(n,w)=>`This “what if” gets you out <b>${n > 0 ? n + (n === 1 ? " term" : " terms") : "a little"}</b> earlier 🎉 You’d graduate ${w}`,
+    wiMoved:"Courses pushed back:", wiGpaRow:(a,b)=>`Your GPA now <b class="mono">${a}</b> → after the fail and retake about <b class="mono">${b}</b>`,
+    wiStart:"Next term:", wiLight:"Light term (under 12 hours) because prerequisites don’t allow more",
+    wiStuck:"Some courses couldn’t be scheduled; check their prerequisites",
+    wiNote:"The schedule is an estimate: it puts first the courses with the longest prerequisite chain behind them and respects hour limits and plan rules. Dashed boxes are elective slots you choose. The academic year has two terms; summer counts only if you turn it on for the minor.",
+    slot:{ isl:"Islamic elective", out:"Outside elective", in:"Department elective", aiel:"Minor elective" },
+    passTitle:"No grades, so not counted in your GPA", passLevel:"Passed ✓", undoLevel:"Undo",
+    passInfo:"<b>Passed ✓</b><span>marks a whole level as completed without recording grades. These courses <strong>are not counted in your cumulative GPA</strong>. To include one, tap it and pick its grade.</span>", noGradeShort:"no grade",
+    pNote:h=>`${h} hours marked passed without a grade aren’t in the GPA`, pPick:"Marked passed without a grade. Pick one to include it in your GPA",
+    lockedBox:"This course is locked. Finish the prerequisites marked ✗ to open it.",
+    footer:"Farah Alosaimi <a class=\"li\" href=\"https://www.linkedin.com/in/farah-alosaimi-813946324\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z\"/></svg>LinkedIn</a> · Unofficial site, not affiliated with King Saud University · estimates only; check with your academic advisor for official decisions",
+    themeDark:"Dark mode", themeLight:"Light mode",
+  }
+};
+
+/* Arabic, addressed to a male student (only the lines that change) */
+T.arm = {
+  heroTitle:"لو كملت على نفس الطريق… <em>متى تتخرج؟</em>",
+  heroLead:"حدد المواد اللي خلصتها ودرجاتها، و«لو» يحسب معدلك ويوريك كم باقي لك، وأي مواد تقدر تسجلها الحين. خطة بكالوريوس الإحصاء، كلية العلوم، جامعة الملك سعود.",
+  figYou:"أنت هنا", choose:"اختر خطتك", chooseSub:"تقدر تغيرها بعدين من فوق.", start:"ابدأ ←",
+  noGrades:"اختر درجة أي مادة خلصتها من الخريطة تحت", graduated:"خلصت!", loadLabel:"كم ساعة تسجل بالترم عادة؟",
+  est:n=>`تقريباً <b class="num">${n}</b> ${n===1?"ترم":n===2?"ترمين":n<=10?"أترام":"ترم"} وتتخرج`,
+  lgDone:"خلصتها", lgOpen:"تقدر تسجلها الحين",
+  secCoreSub:"اضغط أي مادة، متطلبها بيتلون لك بالأحمر، واللي بتفتحه لك بالأزرق",
+  st:{done:"خلصتها",open:"متاحة الحين",retry:"تحتاج إعادة",locked:"مقفلة"},
+  recEmpty:"لما تختار درجة لأي مادة تطلع هنا.",
+  confirmQ:"متأكد تبي تمسح كل الدرجات؟", yes:"إيه، امسح",
+  r15:h=>`إتمام 15 ساعة من الفرعي (خلصت ${h})`,
+  fullWarn:"خلصت ساعات هالمجموعة. لو أخذت المادة تنحسب في المعدل، بس ما تنحسب في ساعات التخرج.",
+  pickGrade:"خلصتها؟ اختر درجتك",
+  addF:"رسبت قبل كذا؟ أضف محاولة F قبلها", addRetake:"أضف محاولة إعادة",
+  wiSub:"قارن خطتك الحالية بـ «لو» ثانية، وشوف متى تتخرج في كل وحدة",
+  wiPick:"اختر مادة", wiRetake:"وعدتها بـ",
+  wiLater:(n,w)=>`«لو» هذي تأخر تخرجك <b>${n > 0 ? n + " " + (n === 1 ? "ترم" : n === 2 ? "ترمين" : "أترام") : "شوي"}</b>، وتتخرج ${w}`,
+  wiEarlier:(n,w)=>`«لو» هذي تبكّر تخرجك <b>${n > 0 ? n + " " + (n === 1 ? "ترم" : n === 2 ? "ترمين" : "أترام") : "شوي"}</b> 🎉 وتتخرج ${w}`,
+  wiStuck:"فيه مواد ما قدرت أرتبها، تأكد من المتطلبات",
+  wiNote:"الترتيب تقديري: يقدّم المواد اللي وراها سلسلة متطلبات أطول، ويحترم حد الساعات وقوانين الخطة. المربعات المنقطة مكان للمواد الاختيارية تختارها أنت. السنة الدراسية ترمين، والصيفي ما ينحسب إلا إذا فعّلته للفرعي.",
+  undoLevel:"تراجع",
+  passInfo:"<b>عديته ✓</b><span>يعلّم مواد المستوى كلها إنك خلصتها بدون تسجيل تقديراتها، وهذي المواد <strong>ما تنحسب في المعدل التراكمي</strong>. لو تبي تنحسب، اضغط على المادة واختر تقديرها.</span>",
+  pNote:h=>`${h} ساعة عديتها بدون درجة ما تنحسب في المعدل`, pPick:"عديتها بدون درجة. لو تبي تنحسب في المعدل اختر درجتك",
+  lockedBox:"المادة مقفلة الحين. خلص المتطلبات اللي عليها ✗ وتنفتح لك.",
+  groups:{ ...T.ar.groups, out:["اختياري خارج القسم","9 ساعات · تنفتح بعد ما تخلص كل مواد المستوى الثالث"] },
+  footer:T.ar.footer.replace("وارجعي لمرشدتك الأكاديمية","وارجع لمرشدك الأكاديمي"),
+};
+
+Object.assign(T.ar, {
+  toolsTitle:"أدوات المعدل", toolsSub:"كم تحتاجين عشان توصلين هدفك؟ وكم تحتاجين في النهائي؟",
+  tgTitle:"🎯 المعدل المستهدف", tgLead:"حطي المعدل اللي تبين تتخرجين فيه، وأقولك كم لازم تجيبين في الباقي.",
+  tgH2:"شرف ثانية", tgEx:"ممتاز", tgH1:"شرف أولى", tgTarget:"المعدل المستهدف", tgWhen:"متى؟", tgGrad:"عند التخرج", tgNext:"بنهاية الترم الجاي",
+  tgAvg:R=>`معدل لازم تجيبينه في الـ ${R} ساعة الباقية`, tgImpossible:"صعب توصلين له 😔",
+  tgBest:b=>`حتى لو جبتي A+ في كل اللي باقي، أعلى معدل توصلين له ${b}. جربي هدف أقرب.`,
+  tgEasy:"مضمون تقريباً 🎉", tgWorst:w=>`حتى لو جبتي D في كل اللي باقي، معدلك ما ينزل تحت ${w}.`,
+  tgMix:(p,hi,q,lo)=>`يعني تقريباً <b>${p}٪</b> من ساعاتك <b class="mono">${hi}</b> والباقي <b>${q}٪</b> <b class="mono">${lo}</b>`,
+  tgAll:hi=>`يعني تقريباً <b class="mono">${hi}</b> في كل مادة`,
+  tgNow:"الحين", tgGoal:"هدفك", tgRange:(w,b)=>`المنطقة الملونة هي المعدلات اللي تقدرين توصلين لها: من ${w} (لو كل الباقي D) إلى ${b} (لو كل الباقي A+).`,
+  tgNoGpa:"ما فيه درجات مسجلة لين الحين، فالحسبة على اعتبار إنك تبدين من الصفر.",
+  fnTitle:"📝 وش أحتاج في النهائي؟", fnLead:"حطي مجموع درجاتك في المادة لين الحين، ودرجة النهائي من كم.",
+  fnCur:"درجاتك لين الحين (من 100)", fnMax:"النهائي من", fnSure:"مضمونة لو حضرتي النهائي", fnNo:"ما توصلين لها",
+  fnNeed:(n,m,p)=>`${n} من ${m} <span style="color:var(--muted)">(${p}٪)</span>`,
+  fnOver:w=>`درجاتك أكثر من ${w}، وهذا مجموع أعمال الترم. تأكدي من الأرقام.`,
+  fnNote:"حدود التقديرات حسب سلم الجامعة: A+ من 95، A من 90، B+ من 85، وهكذا كل 5 درجات لين D من 60.",
+});
+Object.assign(T.arm, {
+  toolsSub:"كم تحتاج عشان توصل هدفك؟ وكم تحتاج في النهائي؟",
+  tgLead:"حط المعدل اللي تبي تتخرج فيه، وأقولك كم لازم تجيب في الباقي.",
+  tgAvg:R=>`معدل لازم تجيبه في الـ ${R} ساعة الباقية`, tgImpossible:"صعب توصل له 😔",
+  tgBest:b=>`حتى لو جبت A+ في كل اللي باقي، أعلى معدل توصل له ${b}. جرب هدف أقرب.`,
+  tgWorst:w=>`حتى لو جبت D في كل اللي باقي، معدلك ما ينزل تحت ${w}.`,
+  tgRange:(w,b)=>`المنطقة الملونة هي المعدلات اللي تقدر توصل لها: من ${w} (لو كل الباقي D) إلى ${b} (لو كل الباقي A+).`,
+  tgNoGpa:"ما فيه درجات مسجلة لين الحين، فالحسبة على اعتبار إنك تبدأ من الصفر.",
+  fnLead:"حط مجموع درجاتك في المادة لين الحين، ودرجة النهائي من كم.",
+  fnSure:"مضمونة لو حضرت النهائي", fnNo:"ما توصل لها", fnOver:w=>`درجاتك أكثر من ${w}، وهذا مجموع أعمال الترم. تأكد من الأرقام.`,
+});
+Object.assign(T.en, {
+  toolsTitle:"GPA tools", toolsSub:"What do you need to hit your goal, and what do you need on the final?",
+  tgTitle:"🎯 Target GPA", tgLead:"Set the GPA you want to graduate with, and see what you need in the remaining hours.",
+  tgH2:"2nd honors", tgEx:"Excellent", tgH1:"1st honors", tgTarget:"Target GPA", tgWhen:"By when?", tgGrad:"At graduation", tgNext:"End of next term",
+  tgAvg:R=>`average needed over the remaining ${R} hours`, tgImpossible:"Out of reach 😔",
+  tgBest:b=>`Even with A+ in everything left, the highest you can reach is ${b}. Try a closer goal.`,
+  tgEasy:"Practically guaranteed 🎉", tgWorst:w=>`Even with D in everything left, you won’t drop below ${w}.`,
+  tgMix:(p,hi,q,lo)=>`That’s roughly <b>${p}%</b> of your hours at <b class="mono">${hi}</b> and <b>${q}%</b> at <b class="mono">${lo}</b>`,
+  tgAll:hi=>`That’s about <b class="mono">${hi}</b> in every course`,
+  tgNow:"now", tgGoal:"goal", tgRange:(w,b)=>`The shaded band is every GPA you can still reach: ${w} (all D) to ${b} (all A+).`,
+  tgNoGpa:"No grades recorded yet, so this assumes you start from zero.",
+  fnTitle:"📝 What do I need on the final?", fnLead:"Enter your marks in the course so far and what the final is out of.",
+  fnCur:"Marks so far (out of 100)", fnMax:"Final is out of", fnSure:"Secured if you sit the final", fnNo:"Out of reach",
+  fnNeed:(n,m,p)=>`${n} of ${m} <span style="color:var(--muted)">(${p}%)</span>`,
+  fnOver:w=>`Your marks exceed ${w}, the coursework total. Check the numbers.`,
+  fnNote:"Grade cutoffs follow the university scale: A+ from 95, A from 90, B+ from 85, and so on every 5 marks down to D at 60.",
+});
+
+Object.assign(T.ar, {
+  mcTab:"توقعات «لو» 🎲",
+  mcLead:"«لو» يعيش مستقبلك 1000 مرة: كل مرة يعطيك تقديرات عشوائية قريبة من مستواك، ويشوف وين توصلين. النتيجة احتمالات، مو رقم واحد.",
+  mcKicker:N=>`نشرة التوقعات · ${N} محاكاة`, mcHead:(p,w)=>`احتمال تتخرجين في موعدك (${w}) هو ${p}`,
+  mcLineH:(a,b)=>`احتمال مرتبة الشرف الأولى <b>${a}</b>، والثانية فأعلى <b>${b}</b>`,
+  mcLineG:(m,a,b)=>`معدلك المتوقع عند التخرج <b>${m}</b>، وفي 80٪ من الحالات بين <b>${a}</b> و <b>${b}</b>`,
+  mcLineT:(t,p)=>`احتمال توصلين لهدفك ${t}: <b>${p}</b>`, mcLineF:p=>`احتمال ترسبين في مادة وحدة على الأقل: <b>${p}</b>`,
+  mcHist:"توزيع معدلك عند التخرج", mcHistSub:"كل عمود = كم مرة من الـ 1000 طلع معدلك في هالمدى. مرري على العمود تشوفين النسبة.",
+  mcH2:"شرف ثانية", mcH1:"شرف أولى",
+  mcGrad:"متى بتتخرجين؟", mcGradSub:"احتمال كل ترم يكون ترم تخرجك. 🎯 = موعدك في خطتك الحالية.",
+  mcHow:"كيف حسبناها؟ (للمهتمين بالإحصاء 🤓)",
+  mcHowText:"نقدّر مستواك من تقديراتك السابقة (متوسط موزون بالساعات)، ونقرّبه شوي من متوسط عام إذا كانت بياناتك قليلة (Bayesian shrinkage). بعدين في كل محاكاة نسحب «مستوى عام» عشوائي δ يرفع أو ينزّل كل موادك الباقية مع بعض (لأن تقديرات الطالب مرتبطة ببعض، مو مستقلة)، وتذبذب ε لكل مادة، ونقرّب الناتج لأقرب تقدير في سلم الجامعة. أي تقدير أقل من 1.5 يعتبر F وتنعاد المادة، والجدول يتعاد ترتيبه.",
+  mcN:"عدد التقديرات المسجلة n", mcMean:"متوسطها x̄", mcSd:"انحرافها المعياري s", mcBand:"فترة 80٪ للمعدل",
+  mcCaveat:"النموذج تقديري ويفترض إن كل المواد بنفس الصعوبة. لما تنضاف تقييمات المواد بنستخدمها عشان نخلي التوقع أدق.",
+  mcAgain:"شغّلي المحاكاة مرة ثانية 🎲",
+});
+Object.assign(T.arm, {
+  mcLead:"«لو» يعيش مستقبلك 1000 مرة: كل مرة يعطيك تقديرات عشوائية قريبة من مستواك، ويشوف وين توصل. النتيجة احتمالات، مو رقم واحد.",
+  mcHead:(p,w)=>`احتمال تتخرج في موعدك (${w}) هو ${p}`,
+  mcLineT:(t,p)=>`احتمال توصل لهدفك ${t}: <b>${p}</b>`, mcLineF:p=>`احتمال ترسب في مادة وحدة على الأقل: <b>${p}</b>`,
+  mcHistSub:"كل عمود = كم مرة من الـ 1000 طلع معدلك في هالمدى. مرر على العمود تشوف النسبة.",
+  mcGrad:"متى بتتخرج؟", mcAgain:"شغّل المحاكاة مرة ثانية 🎲",
+});
+Object.assign(T.en, {
+  mcTab:"What iF forecast 🎲",
+  mcLead:"What iF lives your future 1,000 times, each time drawing random grades close to your level, and sees where you land. The result is probabilities, not a single number.",
+  mcKicker:N=>`Forecast · ${N} simulations`, mcHead:(p,w)=>`Chance you graduate on time (${w}): ${p}`,
+  mcLineH:(a,b)=>`First-class honors <b>${a}</b>, second-class or better <b>${b}</b>`,
+  mcLineG:(m,a,b)=>`Expected graduation GPA <b>${m}</b>, between <b>${a}</b> and <b>${b}</b> in 80% of runs`,
+  mcLineT:(t,p)=>`Chance of reaching your ${t} goal: <b>${p}</b>`, mcLineF:p=>`Chance of failing at least one course: <b>${p}</b>`,
+  mcHist:"Distribution of your graduation GPA", mcHistSub:"Each bar = how many of the 1,000 runs landed in that range. Hover a bar for its share.",
+  mcH2:"2nd honors", mcH1:"1st honors",
+  mcGrad:"When will you graduate?", mcGradSub:"Probability that each term is your graduation term. 🎯 = your current plan.",
+  mcHow:"How is this calculated? (for the stats-curious 🤓)",
+  mcHowText:"Your level is estimated from past grades (hour-weighted mean), pulled slightly toward a general prior when you have little data (Bayesian shrinkage). Each run draws a random “overall level” δ that lifts or lowers all your remaining courses together (a student’s grades are correlated, not independent) plus per-course noise ε, then snaps the result to the nearest grade on the university scale. Anything under 1.5 is an F: the course is retaken and the schedule is rebuilt.",
+  mcN:"Grades recorded n", mcMean:"Their mean x̄", mcSd:"Their SD s", mcBand:"80% GPA interval",
+  mcCaveat:"This is an estimate that treats all courses as equally hard. Once course ratings arrive, they’ll sharpen the forecast.",
+  mcAgain:"Run the simulation again 🎲",
+});
+
+Object.assign(T.ar, {
+  alHide:"إخفاء التنبيه", alTitle:"تنبيهات «لو» ⚠️", alSub:"أشياء تستاهل تنتبهين لها في خطتك",
+  alMinor:h=>`بهالخطة بتتخرجين قبل ما تخلصين الفرعي، والفرعي بينلغي. باقي عليك ${h} ساعات منه.`,
+  alImp:(c,n)=>`${c} لو تأخرت، تتأخر معها ${n} ${n >= 3 && n <= 10 ? "مواد" : "مادة"}`,
+  al497:r=>`تقدرين تسجلين مشروع التخرج (احص 497) لما يكون باقي عليك 43 ساعة أو أقل. باقي لك الحين ${r} ساعة.`,
+  alIsl:n=>`باقي لك ${n} مواد إسلامية، وما تقدرين تاخذين إلا وحدة بالترم، فلا تأجلينها لآخر خطتك.`,
+  alRetry:c=>`عندك مادة تحتاج إعادة: ${c}. سجليها بأقرب ترم عشان ما تتأخر المواد اللي بعدها.`,
+  alOut:"صار تقدرين تسجلين مواد خارج القسم، لأنك خلصتي المستوى الثالث.",
+  alProb:"معدلك تحت 2، وهذا يعني إنذار أكاديمي. ارجعي لمرشدتك عشان تخططون للترم الجاي.",
+  helpTitle:"🧭 مقترحة لك", helpNote:"مواد اختيارية تقدرين تسجلينها الحين، مرتبة حسب اللي يفيدك أكثر.",
+  whyOpen:"متاحة لك الحين", whyUnlock:"تفتح لك مواد اختيارية ثانية", whyNoPre:"بدون متطلبات",
+});
+Object.assign(T.arm, {
+  alSub:"أشياء تستاهل تنتبه لها في خطتك",
+  alMinor:h=>`بهالخطة بتتخرج قبل ما تخلص الفرعي، والفرعي بينلغي. باقي عليك ${h} ساعات منه.`,
+  al497:r=>`تقدر تسجل مشروع التخرج (احص 497) لما يكون باقي عليك 43 ساعة أو أقل. باقي لك الحين ${r} ساعة.`,
+  alIsl:n=>`باقي لك ${n} مواد إسلامية، وما تقدر تاخذ إلا وحدة بالترم، فلا تأجلها لآخر خطتك.`,
+  alRetry:c=>`عندك مادة تحتاج إعادة: ${c}. سجلها بأقرب ترم عشان ما تتأخر المواد اللي بعدها.`,
+  alOut:"صار تقدر تسجل مواد خارج القسم، لأنك خلصت المستوى الثالث.",
+  alProb:"معدلك تحت 2، وهذا يعني إنذار أكاديمي. ارجع لمرشدك عشان تخططون للترم الجاي.",
+  helpNote:"مواد اختيارية تقدر تسجلها الحين، مرتبة حسب اللي يفيدك أكثر.",
+});
+Object.assign(T.en, {
+  alHide:"Hide this alert", alTitle:"What iF alerts ⚠️", alSub:"Things worth watching in your plan",
+  alMinor:h=>`With this plan you’d graduate before finishing the minor, and the minor would be dropped. ${h} minor hours left.`,
+  alImp:(c,n)=>`If ${c} is delayed, ${n} courses are delayed with it`,
+  al497:r=>`You can register the graduation project (STAT 497) once 43 hours or fewer are left. You have ${r} left.`,
+  alIsl:n=>`${n} Islamic studies courses left, and only one is allowed per term, so don’t leave them to the end.`,
+  alRetry:c=>`A course needs a retake: ${c}. Register it as soon as possible so the courses after it aren’t delayed.`,
+  alOut:"You can now register electives outside the department, since you’ve finished level 3.",
+  alProb:"Your GPA is under 2, which means academic probation. Talk to your advisor to plan next term.",
+  helpTitle:"🧭 Suggested for you", helpNote:"Electives you can register now, ranked by how much they help.",
+  whyOpen:"Available now", whyUnlock:"Unlocks other electives", whyNoPre:"No prerequisites",
+});
+
+Object.assign(T.ar, {
+  rTitle:"تقييمات المادة 💬", rLiked:"عجبتهم", rDiff:"الصعوبة", rDiffName:{1:"سهلة",2:"متوسطة",3:"صعبة"},
+  rCount:n=>`${n} ${n === 1 ? "تقييم" : n === 2 ? "تقييمين" : n <= 10 ? "تقييمات" : "تقييم"}`, rNone:"ما أحد قيّم هالمادة لين الحين. كوني أول وحدة 🙌",
+  rQ1:"عجبتك؟", rYes:"إيه", rNo:"لا", rComment:"تعليقك (اختياري)", rPh:"مثلاً: تحتاج مذاكرة أسبوعية، والمشروع ممتع",
+  rRule:"قيّمي المادة مو الدكتور، وممنوع ذكر أسماء الدكاترة. تقييم واحد لكل مادة من كل جهاز، وتقدرين تعدلينه بعدين.",
+  rSend:"أرسلي تقييمك", rUpdate:"حدّثي تقييمك", rThanks:"وصل تقييمك، شكراً 💜", rNeed:"اختاري «عجبتك؟» ومستوى الصعوبة أول.",
+  rTooLong:"التعليق أطول من 200 حرف.", rNoTeacher:"ممنوع ذكر الدكاترة في التعليق، قيّمي المادة نفسها.", rNoBad:"التعليق فيه كلمات غير لائقة، عدليه لو سمحتي.",
+  rFail:"ما قدرت أرسل التقييم، جربي مرة ثانية.", rReport:"إبلاغ", rReported:"تم الإبلاغ",
+  rDemo:"وضع تجريبي: التقييمات تنحفظ في جهازك بس لين نربط قاعدة البيانات.",
+});
+Object.assign(T.arm, {
+  rNone:"ما أحد قيّم هالمادة لين الحين. كن أول واحد 🙌",
+  rRule:"قيّم المادة مو الدكتور، وممنوع ذكر أسماء الدكاترة. تقييم واحد لكل مادة من كل جهاز، وتقدر تعدله بعدين.",
+  rSend:"أرسل تقييمك", rUpdate:"حدّث تقييمك", rNeed:"اختر «عجبتك؟» ومستوى الصعوبة أول.",
+  rNoTeacher:"ممنوع ذكر الدكاترة في التعليق، قيّم المادة نفسها.", rNoBad:"التعليق فيه كلمات غير لائقة، عدله لو سمحت.", rFail:"ما قدرت أرسل التقييم، جرب مرة ثانية.",
+});
+Object.assign(T.en, {
+  rTitle:"Course ratings 💬", rLiked:"liked it", rDiff:"Difficulty", rDiffName:{1:"Easy",2:"Medium",3:"Hard"},
+  rCount:n=>`${n} ${n === 1 ? "rating" : "ratings"}`, rNone:"No one has rated this course yet. Be the first 🙌",
+  rQ1:"Liked it?", rYes:"Yes", rNo:"No", rComment:"Your comment (optional)", rPh:"e.g. needs weekly study, the project is fun",
+  rRule:"Rate the course, not the instructor, and don’t mention instructors’ names. One rating per course per device; you can edit it later.",
+  rSend:"Send rating", rUpdate:"Update rating", rThanks:"Rating received, thanks 💜", rNeed:"Pick “Liked it?” and a difficulty first.",
+  rTooLong:"The comment is over 200 characters.", rNoTeacher:"Please don’t mention instructors; rate the course itself.", rNoBad:"The comment has inappropriate words; please edit it.",
+  rFail:"Couldn’t send the rating. Try again.", rReport:"Report", rReported:"Reported",
+  rDemo:"Demo mode: ratings are saved on this device only until the database is connected.",
+});
+T.ar.labTitle = "أدوات «لو»"; T.ar.labSub = "جربي مستقبلك قبل ما تعيشينه: سيناريوهات التخرج وأدوات المعدل"; T.arm.labSub = "جرب مستقبلك قبل ما تعيشه: سيناريوهات التخرج وأدوات المعدل";
+T.en.labTitle = "What iF tools"; T.en.labSub = "Try your future before you live it: graduation scenarios and GPA tools";
+T.ar.genderQ = "مين معنا؟"; T.ar.female = "طالبة"; T.ar.male = "طالب";
+T.en.genderQ = "Who’s here?"; T.en.female = "Female student"; T.en.male = "Male student";
+const PREFIX_EN = { "احص":"STAT","ريض":"MATH","عال":"CSC","بحث":"OPER","كيم":"CHEM","انجل":"ENGL","عرب":"ARAB","سلم":"IC","قرأ":"QURN",
+  "قصد":"ECON","ادا":"MGT","نما":"MIS","حسب":"ACCT","مال":"FIN","ريك":"ACTU","ذكا":"AI","ريد":"ENT","تقن":"CT","نهج":"UNI","فجب":"PHE" };
+
+/* ---------- data: KSU Statistics plan ---------- */
+const C = (code, ar, en, hrs, level, group, pre = []) => ({ code, ar, en, hrs, level, group, pre });
+const COURSES = [
+  C("انجل 104-106","اللغة الإنجليزية (1)","English Language (1)",6,1,"y1"),
+  C("ريض 101","حساب التفاضل","Differential Calculus",3,1,"y1"),
+  C("ريد 101","ريادة الأعمال","Entrepreneurship",1,1,"y1"),
+  C("كيم 101","كيمياء عامة (1)","General Chemistry (1)",4,1,"y1"),
+  C("عرب 100","المهارات الكتابية","Writing Skills",2,1,"y1"),
+  C("انجل 111-113","اللغة الإنجليزية (2)","English Language (2)",6,2,"y1"),
+  C("نهج 101","مهارات جامعية","University Skills",3,2,"y1"),
+  C("تقن 101","مهارات الحاسب","Computer Skills",3,2,"y1"),
+  C("احص 101","مقدمة في الإحصاء","Introduction to Statistics",3,2,"y1"),
+  C("فجب 101","اللياقة والثقافة الصحية","Fitness and Health Culture",1,2,"y1"),
+  C("احص 105","طرق إحصائية","Statistical Methods",4,3,"core"),
+  C("ريض 111","حساب التكامل","Integral Calculus",4,3,"core"),
+  C("عال 111","برمجة حاسبات (1)","Computer Programming (1)",4,3,"core"),
+  C("بحث 100","مقدمة في بحوث العمليات","Intro to Operations Research",4,3,"core"),
+  C("احص 215","احتمال (1)","Probability (1)",4,4,"core",["ريض 111"]),
+  C("احص 328","حزم إحصائية","Statistical Packages",3,4,"core",["عال 111","احص 105"]),
+  C("احص 333","طرق إحصائية لا معلمية","Nonparametric Methods",3,4,"core",["احص 105"]),
+  C("ريض 244","الجبر الخطي","Linear Algebra",3,4,"core"),
+  C("احص 332","تحليل الانحدار","Regression Analysis",3,5,"core",["احص 328","ريض 244"]),
+  C("احص 322","نظرية القرارات","Decision Theory",2,5,"core",["احص 215"]),
+  C("احص 331","تقنيات المعاينة","Sampling Techniques",3,5,"core",["احص 215"]),
+  C("ريض 201","حساب التفاضل والتكامل","Differential & Integral Calculus",4,5,"core",["ريض 111"]),
+  C("احص 337","تصميم وتحليل التجارب","Design & Analysis of Experiments",3,6,"core",["احص 328"]),
+  C("احص 336","سلاسل زمنية وتنبؤ","Time Series & Forecasting",3,6,"core",["احص 332"]),
+  C("احص 335","نماذج خطية معممة","Generalized Linear Models",3,6,"core",["احص 332"]),
+  C("احص 340","نظرية الإحصاء (1)","Statistical Theory (1)",3,6,"core",["احص 332"]),
+  C("احص 438","طرق إحصائية متعددة المتغيرات","Multivariate Methods",3,7,"core",["احص 332"]),
+  C("احص 497","مشروع تخرج (1)","Graduation Project (1)",1,7,"core",["احص 336","احص 335"]),
+  C("احص 419","نظرية الإحصاء (2)","Statistical Theory (2)",3,7,"core",["احص 340"]),
+  C("احص 429","طرق المسح الإحصائي","Survey Methods",3,7,"core",["احص 331"]),
+  C("احص 423","مراقبة الجودة","Quality Control",2,8,"core",["احص 332"]),
+  C("احص 498","مشروع تخرج (2)","Graduation Project (2)",2,8,"core",["احص 497"]),
+  C("احص 439","تحليل البيانات","Data Analysis",3,8,"core",["احص 438"]),
+  C("احص 415","احتمال (2)","Probability (2)",3,8,"core",["ريض 201","احص 419"]),
+  C("سلم 100","دراسات في السيرة النبوية","Studies in the Prophet’s Biography",2,0,"isl"),
+  C("سلم 101","مدخل إلى الثقافة الإسلامية","Intro to Islamic Culture",2,0,"isl"),
+  C("سلم 102","الأسرة في الإسلام","Family in Islam",2,0,"isl"),
+  C("سلم 103","النظام الاقتصادي في الإسلام","Islamic Economic System",2,0,"isl"),
+  C("سلم 104","النظام السياسي في الإسلام","Islamic Political System",2,0,"isl"),
+  C("سلم 105","حقوق الإنسان","Human Rights",2,0,"isl"),
+  C("سلم 106","الفقه الطبي","Medical Jurisprudence",2,0,"isl"),
+  C("سلم 107","أخلاقيات المهنة","Professional Ethics",2,0,"isl"),
+  C("سلم 108","قضايا معاصرة","Contemporary Issues",2,0,"isl"),
+  C("سلم 109","المرأة ودورها التنموي","Women and Development",2,0,"isl"),
+  C("قرأ 100","القرآن الكريم","The Holy Quran",2,0,"isl"),
+  C("قصد 101","مبادئ الاقتصاد الجزئي","Principles of Microeconomics",3,0,"out"),
+  C("قصد 102","مبادئ الاقتصاد الكلي","Principles of Macroeconomics",3,0,"out",["قصد 101"]),
+  C("قصد 211","اقتصاديات النقود والبنوك","Money and Banking",3,0,"out",["قصد 102"]),
+  C("ادا 101","مبادئ الإدارة والأعمال","Principles of Management",3,0,"out"),
+  C("ادا 102","مبادئ الإدارة والاتصال","Management & Communication",3,0,"out",["ادا 101"]),
+  C("ادا 371","إدارة العمليات","Operations Management",3,0,"out",["ادا 101"]),
+  C("نما 201","نظم المعلومات الإدارية","Management Information Systems",3,0,"out",["ادا 101"]),
+  C("حسب 201","مبادئ المحاسبة والتقرير المالي","Accounting & Financial Reporting",3,0,"out"),
+  C("مال 200","مبادئ المالية","Principles of Finance",3,0,"out",["حسب 201"]),
+  C("مال 220","أساسيات الاستثمار","Investment Fundamentals",3,0,"out",["مال 200"]),
+  C("مال 240","أساسيات الخطر والتأمين","Risk & Insurance Fundamentals",3,0,"out",["مال 200"]),
+  C("ريك 262","مالية الشركات الاكتوارية","Actuarial Corporate Finance",3,0,"out",["ريض 111"]),
+  C("ريك 371","الرياضيات المالية","Financial Mathematics",4,0,"out",["ريض 111"]),
+  C("ريك 471","المشتقات المالية","Financial Derivatives",3,0,"out",["ريك 371"]),
+  C("عال 113","برمجة حاسبات (2)","Computer Programming (2)",4,0,"out",["عال 111"]),
+  C("عال 212","تراكيب البيانات","Data Structures",3,0,"out",["عال 113"]),
+  C("عال 380","أسس نظم قواعد البيانات","Database Systems",3,0,"out",["عال 212"]),
+  C("احص 231","إحصاء سكاني","Demography",2,0,"in",["احص 101"]),
+  C("احص 362","نظرية الموثوقية","Reliability Theory",3,0,"in",["احص 215"]),
+  C("احص 402","اقتصاد قياسي","Econometrics",2,0,"in",["احص 332"]),
+  C("احص 434","نماذج خطية","Linear Models",3,0,"in",["ريض 244"]),
+  C("احص 440","تحليل بيانات طولية","Longitudinal Data Analysis",3,0,"in",["احص 438"]),
+  C("بحث 213","البرمجة الخطية","Linear Programming",4,0,"in",["ريض 244","بحث 100"]),
+  C("بحث 322","ضبط ومراقبة المخزون","Inventory Control",3,0,"in",["بحث 213"]),
+  C("بحث 351","تحليل الشبكات","Network Analysis",3,0,"in",["بحث 213"]),
+  C("بحث 371","العمليات العشوائية ونماذج الصفوف","Stochastic Processes & Queues",4,0,"in",["ريض 201","احص 215"]),
+  C("بحث 441","النمذجة والمحاكاة","Modeling & Simulation",4,0,"in",["بحث 371"]),
+  C("ذكا 300","البرمجة بلغة بايثون وتراكيب البيانات","Python Programming & Data Structures",4,0,"ai"),
+  C("ذكا 310","أسس الذكاء الاصطناعي","Foundations of AI",3,0,"ai",["ذكا 300"]),
+  C("ذكا 311","أخلاقيات الذكاء الاصطناعي والمجتمع","AI Ethics and Society",2,0,"ai"),
+  C("ذكا 410","تعلم الآلة","Machine Learning",3,0,"ai",["ذكا 310"]),
+  C("ذكا 411","ندوة في تطبيقات الذكاء الاصطناعي","AI Applications Seminar",2,0,"ai"),
+  C("ذكا 412","علم البيانات","Data Science",3,0,"aiel",["ذكا 300"]),
+  C("ذكا 413","الروبوتات التطبيقية","Applied Robotics",3,0,"aiel",["ذكا 300"]),
+  C("ذكا 414","الرؤية الحاسوبية التطبيقية","Applied Computer Vision",3,0,"aiel",["ذكا 300"]),
+  C("ذكا 415","معالجة اللغة الطبيعية","Natural Language Processing",3,0,"aiel",["ذكا 410"]),
+  C("ذكا 416","التعلم المعزز","Reinforcement Learning",3,0,"aiel",["ذكا 410"]),
+];
+const BY = Object.fromEntries(COURSES.map(c => [c.code, c]));
+const CAPS = { isl:8, out:9, in:14, ai:14, aiel:6 };
+const GCOLOR = { y1:"var(--g7)", core:"var(--g1)", isl:"var(--g6)", out:"var(--g5)", in:"var(--g3)", ai:"var(--f)", aiel:"var(--g4)" };
+const GRADES = [["A+",5],["A",4.75],["B+",4.5],["B",4],["C+",3.5],["C",3],["D+",2.5],["D",2],["F",1]];
+const PTS = Object.fromEntries(GRADES);
+
+/* ---------- state ---------- */
+const KEY = "whatif.v1";
+let S = { gender:"f", track:null, att:{}, load:16, lang:"ar", theme:null, open:{} };
+try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && typeof s === "object") { if (s.sample) { s.att = {}; delete s.sample; } S = { ...S, ...s }; } } catch(e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} };
+let selected = null, confirming = false;
+const L = () => S.lang === "ar" && S.gender === "m" ? { ...T.ar, ...T.arm } : T[S.lang];
+const nm = c => S.lang === "en" ? c.en : c.ar;
+const cd = c => { if (S.lang !== "en") return c.code; const [p, n] = c.code.split(" "); return `${PREFIX_EN[p] || p} ${n}`; };
+
+/* ---------- logic ---------- */
+const ai = () => S.track === "ai";
+const inTrack = c => c.code === "سلم 109" && S.gender === "m" ? false : (c.group === "ai" || c.group === "aiel") ? ai() : true;
+const attempts = code => S.att[code] || [];
+const passed = code => { const a = attempts(code); return a.length > 0 && a[a.length-1] !== "F"; };
+const failedLast = code => { const a = attempts(code); return a.length > 0 && a[a.length-1] === "F"; };
+const visible = () => COURSES.filter(inTrack);
+const total = () => ai() ? 156 : 136;
+const sumHrs = list => list.reduce((s,c) => s + c.hrs, 0);
+const passedIn = g => visible().filter(c => c.group === g && passed(c.code));
+function counted() {
+  const p = { y1: sumHrs(passedIn("y1")), core: sumHrs(passedIn("core")) };
+  for (const g of Object.keys(CAPS)) { if ((g === "ai" || g === "aiel") && !ai()) continue; p[g] = Math.min(CAPS[g], sumHrs(passedIn(g))); }
+  p.total = Object.values(p).reduce((a,b) => a+b, 0);
+  return p;
+}
+const y1Done = () => COURSES.filter(c => c.group === "y1").every(c => passed(c.code));
+const l3Done = () => COURSES.filter(c => c.level === 3).every(c => passed(c.code));
+const minorHrs = () => ai() ? sumHrs(passedIn("ai")) + sumHrs(passedIn("aiel")) : 0;
+function reqs(c) {
+  const r = [], t = L();
+  if (!["y1","isl","ai","aiel"].includes(c.group)) r.push({ label:t.rY1, ok:y1Done() });
+  if (c.group === "out") r.push({ label:t.rL3, ok:l3Done() });
+  for (const p of c.pre) r.push({ code:p, ok:passed(p) });
+  if (c.code === "احص 497") { const rem = total() - counted().total; r.push({ label:t.r43(rem), ok: rem <= 43 }); }
+  if (c.code === "ذكا 411") r.push({ label:t.r15(minorHrs()), ok: minorHrs() >= 15 });
+  return r;
+}
+function status(c) {
+  if (passed(c.code)) return "done";
+  if (!reqs(c).every(x => x.ok)) return "locked";
+  return failedLast(c.code) ? "retry" : "open";
+}
+const groupFull = g => g in CAPS && sumHrs(passedIn(g)) >= CAPS[g];
+const unlocks = code => visible().filter(c => c.pre.includes(code));
+function gpa() {
+  let pts = 0, hrs = 0;
+  let p = 0;
+  for (const c of visible()) for (const g of attempts(c.code)) { if (g === "P") { p += c.hrs; continue; } pts += PTS[g] * c.hrs; hrs += c.hrs; }
+  return hrs ? { v: pts / hrs, hrs, pts, p } : (p ? { v: null, hrs: 0, pts: 0, p } : null);
+}
+const rankIdx = v => v >= 4.5 ? 0 : v >= 3.75 ? 1 : v >= 2.75 ? 2 : v >= 2 ? 3 : 4;
+function chainDepth() {
+  const memo = {}, req = visible().filter(c => ["y1","core","ai"].includes(c.group)), y1 = req.filter(c => c.group === "y1");
+  const d = c => {
+    if (passed(c.code)) return 0;
+    if (memo[c.code] != null) return memo[c.code];
+    memo[c.code] = 1; let m = 0;
+    if (c.group === "core") for (const y of y1) m = Math.max(m, d(y));
+    for (const p of c.pre) if (BY[p]) m = Math.max(m, d(BY[p]));
+    if (c.code === "ذكا 411") for (const x of req) if (x.group === "ai" && x.code !== "ذكا 411") m = Math.max(m, d(x));
+    return memo[c.code] = m + 1;
+  };
+  let best = 0, end = null;
+  for (const c of req) { const v = d(c); if (v > best) { best = v; end = c; } }
+  return { depth: best, end };
+}
+
+/* ---------- term calendar ---------- */
+// index 0 = الفصل الثاني 1448 (Spring 2027). Regular terms alternate 2,1,2,1…; summers come after a second term.
+function termSeq(start, summer, n = 40) {
+  const out = []; let y = 1448 + Math.floor((start + 1) / 2), sem = start % 2 === 0 ? 2 : 1;
+  while (out.length < n) {
+    out.push({ y, sem, summer:false });
+    if (sem === 2) { if (summer) out.push({ y, sem:3, summer:true }); y++; sem = 1; } else sem = 2;
+  }
+  return out;
+}
+function termLabel(tm) {
+  const ar = S.lang === "ar";
+  const name = tm.sem === 3 ? (ar ? "الصيفي" : "Summer") : tm.sem === 1 ? (ar ? "الفصل الأول" : "Term 1") : (ar ? "الفصل الثاني" : "Term 2");
+  // a Hijri academic year Y runs from about Aug (2026 + Y - 1448) to Jun the following year: two terms, plus an optional summer
+  const g = tm.y - 1448 + 2027, greg = tm.sem === 1 ? (ar ? `خريف ${g - 1}` : `Fall ${g - 1}`) : tm.sem === 2 ? (ar ? `ربيع ${g}` : `Spring ${g}`) : (ar ? `صيف ${g}` : `Summer ${g}`);
+  return { name: `${name} ${tm.y}${ar ? "هـ" : " AH"}`, greg };
+}
+const START_OPTS = [0,1,2,3]; // next term choices
+
+/* ---------- scheduler: greedy list scheduling by longest remaining chain ---------- */
+function buildItems() {
+  const items = [];
+  for (const c of visible()) if (["y1","core","ai"].includes(c.group) && !passed(c.code)) items.push({ id:c.code, hrs:c.hrs, group:c.group, pre:c.pre, course:c });
+  const slotGroups = ["isl","out","in", ...(ai() ? ["aiel"] : [])];
+  for (const g of slotGroups) {
+    let r = CAPS[g] - Math.min(CAPS[g], sumHrs(passedIn(g))), k = 0;
+    const unit = g === "isl" ? 2 : 3;
+    while (r > 0) { const h = Math.min(unit, r); items.push({ id:`slot:${g}:${++k}`, hrs:h, group:g, pre:[], slot:true }); r -= h; }
+  }
+  // priority = length of the chain of required courses that still hang on this item
+  const req = items.filter(i => !i.slot), memo = {};
+  const height = i => {
+    if (memo[i.id] != null) return memo[i.id];
+    memo[i.id] = 1; let m = 0;
+    for (const j of req) if (j.pre.includes(i.id) || (i.group === "y1" && j.group === "core")) m = Math.max(m, height(j));
+    return memo[i.id] = m + 1;
+  };
+  for (const i of items) i.prio = i.slot ? (i.group === "aiel" ? 2.5 : i.group === "isl" ? 1.5 : 1) : height(i); // minor electives feed the 15-hour seminar rule
+  return items;
+}
+function simulate(o) {
+  const TT = total(), items = buildItems().map(i => ({ ...i, left: 1 + ((o.fails || {})[i.id] ? 1 : 0), from: (o.from || {})[i.id] || 0, last: -1 }));
+  const done = new Set(visible().filter(c => passed(c.code)).map(c => c.code));
+  let counted0 = counted().total, minor = minorHrs();
+  const y1 = COURSES.filter(c => c.group === "y1").map(c => c.code), l3 = COURSES.filter(c => c.level === 3).map(c => c.code);
+  const seq = termSeq(o.start || 0, !!o.summer && ai(), 60), terms = [], termOf = {}, seqOf = {};
+  let ti = 0, idle = 0;
+  while (items.some(i => i.left > 0) && ti < seq.length) {
+    const tm = seq[ti], cap = tm.summer ? (o.summerLoad || 6) : o.load, remGrad = TT - counted0;
+    const all = list => list.every(x => done.has(x));
+    const ok = i => {
+      if (i.left <= 0 || ti < i.from || i.last === ti) return false;
+      if (tm.summer && !["ai","aiel"].includes(i.group)) return false;
+      if (!i.pre.every(x => done.has(x))) return false;
+      if (["core","out","in"].includes(i.group) && !all(y1)) return false;
+      if (i.group === "out" && !all(l3)) return false;
+      if (i.group === "aiel" && !done.has("ذكا 300")) return false;
+      if (i.id === "احص 497" && remGrad > 43) return false;
+      if (i.id === "ذكا 411" && minor < 15) return false;
+      return true;
+    };
+    const avail = items.filter(ok).sort((a, b) => b.prio - a.prio || (a.slot ? 1 : 0) - (b.slot ? 1 : 0) || (a.course?.level || 9) - (b.course?.level || 9));
+    let hrs = 0; const picked = [];
+    let isl = 0; // KSU rule: at most one Islamic studies course per term
+    for (const i of avail) { if (i.group === "isl" && isl >= 1) continue; if (hrs + i.hrs <= cap) { picked.push(i); hrs += i.hrs; if (i.group === "isl") isl++; } }
+    const rec = { tm, items: [], hrs };
+    for (const i of picked) {
+      i.left--; i.last = ti;
+      const fail = i.left > 0;
+      rec.items.push({ id:i.id, hrs:i.hrs, group:i.group, slot:i.slot, fail });
+      if (!fail) { done.add(i.id); counted0 += i.hrs; if (["ai","aiel"].includes(i.group)) minor += i.hrs; termOf[i.id] = terms.length; seqOf[i.id] = ti; }
+    }
+    if (picked.length || !tm.summer) terms.push(rec);
+    if (!picked.length) { if (++idle > 6) break; } else idle = 0;
+    ti++;
+  }
+  while (terms.length && !terms[terms.length - 1].items.length) terms.pop();
+  const regular = terms.filter(r => !r.tm.summer).length, summers = terms.length - regular;
+  return { terms, termOf, seqOf, regular, summers, last: terms[terms.length - 1], stuck: items.some(i => i.left > 0) };
+}
+function runPlan(p) {
+  const base = { load:p.load, summer:p.summer, summerLoad:p.summerLoad, start:S.start || 0 };
+  const fails = {}, delays = {};
+  for (const m of p.mods || []) { if (!m.code) continue; if (m.type === "fail") fails[m.code] = true; if (m.type === "delay") delays[m.code] = (delays[m.code] || 0) + (m.n || 1); }
+  let from = {};
+  if (Object.keys(delays).length) { const b = simulate({ ...base, fails }); for (const c in delays) from[c] = (b.seqOf[c] ?? 0) + delays[c] + (base.summer && ai() ? Math.floor(delays[c] / 2) : 0); }
+  const r = simulate({ ...base, fails, from });
+  // projected GPA if the failed courses end with the chosen retake grade
+  const g = gpa(); if (!g || g.v === null) { r.gpa = null; return r; }
+  let pts = g.pts, h = g.hrs, any = false;
+  for (const m of p.mods || []) if (m.type === "fail" && m.code) { const c = BY[m.code]; pts += PTS.F * c.hrs + PTS[m.grade || "C"] * c.hrs; h += 2 * c.hrs; any = true; }
+  r.gpa = any && h ? pts / h : null;
+  return r;
+}
+const planA = () => ({ load:S.load, summer:!!(S.wiA || {}).summer, summerLoad:(S.wiA || {}).summerLoad || 6, mods:[] });
+const planB = () => ({ load:(S.wiB || {}).load || S.load, summer:!!(S.wiB || {}).summer, summerLoad:(S.wiB || {}).summerLoad || 6, mods:(S.wiB || {}).mods || [] });
+
+
+/* ---------- phase 3: GPA tools ---------- */
+const CUTS = [["A+",95],["A",90],["B+",85],["B",80],["C+",75],["C",70],["D+",65],["D",60]];
+function gradeForPts(p) { for (const [g, v] of GRADES) if (p >= v - 1e-9) return g; return "F"; }
+function targetCalc() {
+  const g = gpa(), T0 = total(), rem = Math.max(0, T0 - counted().total);
+  const nowPts = g && g.v !== null ? g.pts : 0, nowH = g && g.v !== null ? g.hrs : 0;
+  const scope = S.tScope === "next" ? "next" : "grad";
+  const R = scope === "next" ? Math.min(S.load, rem) : rem;
+  const target = +S.target || 4.5;
+  if (!R) return { target, R:0, scope };
+  const need = (target * (nowH + R) - nowPts) / R;
+  const best = (nowPts + 5 * R) / (nowH + R), worst = (nowPts + 2 * R) / (nowH + R);
+  // split the needed average into two neighbouring grades: p of the hours at hi, the rest at lo
+  let mix = null;
+  if (need > 2 && need <= 5) {
+    const pts = GRADES.map(x => x[1]).sort((a, b) => a - b), hi = pts.find(v => v >= need - 1e-9), lo = [...pts].reverse().find(v => v < hi);
+    if (Math.abs(hi - need) < 1e-9 || lo == null) mix = { hi:gradeForPts(hi), p:1 };
+    else { const p = (need - lo) / (hi - lo); mix = { hi:gradeForPts(hi), lo:gradeForPts(lo), p }; }
+  }
+  return { target, R, need, best, worst, now: g && g.v !== null ? g.v : null, mix, scope, nowH };
+}
+function renderTools() {
+  const t = L(), host = $("tools"), open = (S.open || {}).tools !== false;
+  const fin = S.fin || { cur: 45, finMax: 40 };
+  host.innerHTML = `<p class="lab-lead">${t.toolsSub}</p>
+    <div class="tools">
+      <div class="card tool">
+        <h3>${t.tgTitle}</h3><p class="lead">${t.tgLead}</p>
+        <div class="presets">${[["4.25",t.tgH2],["4.5",t.tgEx],["4.75",t.tgH1]].map(([v,n]) => `<button type="button" data-tpreset="${v}" class="${(+S.target || 4.5) === +v ? "on" : ""}">${n} <span class="mono">${v}</span></button>`).join("")}</div>
+        <div class="fields">
+          <label class="field">${t.tgTarget}<input type="number" id="tgIn" min="1" max="5" step="0.01" value="${(+S.target || 4.5).toFixed(2)}"></label>
+          <div class="field">${t.tgWhen}<div class="seg"><button type="button" data-tscope="grad" class="${S.tScope !== "next" ? "on" : ""}">${t.tgGrad}</button><button type="button" data-tscope="next" class="${S.tScope === "next" ? "on" : ""}">${t.tgNext}</button></div></div>
+        </div>
+        <div id="tgOut"></div>
+      </div>
+      <div class="card tool">
+        <h3>${t.fnTitle}</h3><p class="lead">${t.fnLead}</p>
+        <div class="fields">
+          <label class="field">${t.fnCur}<input type="number" id="fnCur" min="0" max="100" step="0.5" value="${fin.cur}"></label>
+          <label class="field">${t.fnMax}<input type="number" id="fnMax" min="1" max="100" step="1" value="${fin.finMax}"></label>
+        </div>
+        <div id="fnOut"></div>
+      </div>
+    </div>`;
+  updateTools();
+}
+function updateTools() {
+  const t = L(), r = targetCalc(), out = $("tgOut"); if (!out) return;
+  if (!r.R) out.innerHTML = `<div class="answer ok"><span class="big">${t.estDone}</span></div>`;
+  else {
+    const f = v => v.toFixed(2);
+    let cls = "", big, mix = "";
+    if (r.need > 5) { cls = "no"; big = `${t.tgImpossible}`; mix = t.tgBest(f(r.best)); }
+    else if (r.need <= 2) { cls = "ok"; big = t.tgEasy; mix = t.tgWorst(f(r.worst)); }
+    else {
+      big = `${f(r.need)} <small>${t.tgAvg(r.R)}</small>`;
+      mix = r.mix.lo && r.mix.p > 0.9 ? t.tgAll(r.mix.hi) : r.mix.lo && r.mix.p < 0.1 ? t.tgAll(r.mix.lo) : r.mix.lo ? t.tgMix(Math.round(r.mix.p * 100), r.mix.hi, 100 - Math.round(r.mix.p * 100), r.mix.lo) : t.tgAll(r.mix.hi);
+    }
+    // range of reachable GPAs (all D … all A+), with the target marked
+    const x = v => ((Math.max(1, Math.min(5, v)) - 1) / 4 * 100).toFixed(1) + "%";
+    const bar = `<div class="rangebar"><div class="rb-track"></div><div class="rb-span" style="left:${x(r.worst)};width:calc(${x(r.best)} - ${x(r.worst)})"></div>
+      ${r.now != null ? `<div class="m" style="left:${x(r.now)}"><span class="lab">${t.tgNow} ${f(r.now)}</span></div>` : ""}
+      <div class="m t" style="left:${x(r.target)}"><span class="lab" style="top:26px">${t.tgGoal} ${f(r.target)}</span></div></div>
+      <div class="hint" style="margin-top:34px">${t.tgRange(f(r.worst), f(r.best))}</div>`;
+    out.innerHTML = `<div class="answer ${cls}"><span class="big">${big}</span><span class="mix">${mix}</span></div>${bar}${r.now == null ? `<p class="hint" style="margin:0">${t.tgNoGpa}</p>` : ""}`;
+  }
+  // final exam
+  const cur = Math.max(0, +($("fnCur")?.value) || 0), mx = Math.max(1, Math.min(100, +($("fnMax")?.value) || 40));
+  const work = 100 - mx;
+  const rows = CUTS.map(([g, cut]) => {
+    const need = cut - cur, pct = need / mx;
+    if (need <= 0) return `<tr class="ok"><td class="g">${g}</td><td>${t.fnSure}</td><td class="n">✓</td></tr>`;
+    if (need > mx) return `<tr class="no"><td class="g">${g}</td><td>${t.fnNo}</td><td class="n">✗</td></tr>`;
+    return `<tr><td class="g">${g}</td><td><div class="meter"><i style="width:${(pct * 100).toFixed(0)}%"></i></div></td><td class="n">${t.fnNeed(Math.ceil(need * 2) / 2, mx, Math.round(pct * 100))}</td></tr>`;
+  }).join("");
+  $("fnOut").innerHTML = (cur > work ? `<p class="hint" style="margin:0;color:var(--warn)">${t.fnOver(work)}</p>` : "") + `<table class="ftable">${rows}</table><p class="hint" style="margin:6px 0 0">${t.fnNote}</p>`;
+}
+
+/* ---------- phase 4: Monte Carlo ---------- */
+function rng(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function normal(r) { let u = 0, v = 0; while (!u) u = r(); while (!v) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+const LADDER = [1, 2, 2.5, 3, 3.5, 4, 4.5, 4.75, 5];
+const snap = z => z < 1.5 ? 1 : LADDER.reduce((b, v) => Math.abs(v - z) < Math.abs(b - z) ? v : b, 2);
+function studentModel() {
+  // hour-weighted mean and SD of past grade points, shrunk toward a prior when there is little data
+  const xs = [];
+  for (const c of visible()) for (const g of attempts(c.code)) if (g !== "P") xs.push([PTS[g], c.hrs]);
+  const n = xs.length, W = xs.reduce((s, [, w]) => s + w, 0);
+  const mean = n ? xs.reduce((s, [x, w]) => s + x * w, 0) / W : null;
+  const sd = n > 1 ? Math.sqrt(xs.reduce((s, [x, w]) => s + w * (x - mean) ** 2, 0) / W) : null;
+  const mu0 = 3.8, s0 = 0.7, k = 4;
+  const mu = n ? (n * mean + k * mu0) / (n + k) : mu0;
+  const sigma = Math.min(1.2, Math.max(0.3, n > 1 ? Math.sqrt(((n - 1) * sd ** 2 + k * s0 ** 2) / (n + k - 1)) : s0));
+  return { n, mean, sd, mu, sigma, mu0, s0, k, tau: 0.2 };
+}
+function monteCarlo(N = 1000) {
+  const M = studentModel(), r = rng(S.seed || 20261019), g = gpa();
+  const pts0 = g && g.v !== null ? g.pts : 0, h0 = g && g.v !== null ? g.hrs : 0;
+  const items = buildItems(), plan = { load:S.load, summer:!!(S.wiA || {}).summer, summerLoad:(S.wiA || {}).summerLoad || 6, start:S.start || 0 };
+  const base = simulate(plan), cache = new Map();
+  const termKey = tm => tm.y * 3 + tm.sem;
+  const out = { gpas: [], grad: new Map(), anyFail: 0, M, N, base };
+  for (let k = 0; k < N; k++) {
+    const delta = normal(r) * M.tau; /* overall level: one shared random effect per simulated future */ let pts = pts0, h = h0; const fails = {};
+    for (const it of items) {
+      let tries = 0, gp;
+      do { gp = snap(M.mu + delta + normal(r) * M.sigma); pts += gp * it.hrs; h += it.hrs; tries++; if (gp === 1) fails[it.id] = true; } while (gp === 1 && tries < 3);
+      if (gp === 1) { pts += 2 * it.hrs; h += it.hrs; } // third failure: assume a D to finish
+    }
+    const key = Object.keys(fails).sort().join("|");
+    if (key) out.anyFail++;
+    let res = cache.get(key);
+    if (!res) { res = key ? simulate({ ...plan, fails }) : base; cache.set(key, res); }
+    out.gpas.push(h ? pts / h : 0);
+    const tm = res.last ? res.last.tm : null, kk = tm ? termKey(tm) : 0;
+    const e = out.grad.get(kk) || { tm, n: 0 }; e.n++; out.grad.set(kk, e);
+  }
+  out.gpas.sort((a, b) => a - b);
+  const q = p => out.gpas[Math.min(N - 1, Math.floor(p * N))];
+  out.p10 = q(0.1); out.p50 = q(0.5); out.p90 = q(0.9);
+  out.mean = out.gpas.reduce((a, b) => a + b, 0) / N;
+  const share = th => out.gpas.filter(v => Math.round(v * 100) / 100 >= th).length / N;
+  out.pH1 = share(4.75); out.pH2 = share(4.25); out.pT = share(+S.target || 4.5);
+  out.onTime = base.last ? [...out.grad.values()].filter(e => e.tm && termKey(e.tm) <= termKey(base.last.tm)).reduce((s, e) => s + e.n, 0) / N : 1;
+  return out;
+}
+function renderMC() {
+  const t = L(), host = $("mc");
+  if (counted().total >= total()) { host.innerHTML = `<p class="lab-lead">${t.estDone}</p>`; return; }
+  const R = monteCarlo(), pc = v => (v > 0 && v < 0.01 ? "<1" : Math.round(v * 100)) + (S.lang === "ar" ? "٪" : "%"), f = v => v.toFixed(2);
+  const sky = R.onTime >= 0.8 ? "☀️" : R.onTime >= 0.6 ? "🌤️" : R.onTime >= 0.4 ? "⛅" : "🌧️";
+  const when = R.base.last ? termLabel(R.base.last.tm).name : "";
+  // histogram of simulated GPAs
+  const lo = Math.max(1, Math.floor((R.gpas[Math.floor(R.N * 0.005)] - 0.05) * 20) / 20), hi = Math.min(5, Math.ceil((R.gpas[Math.floor(R.N * 0.995)] + 0.05) * 20) / 20);
+  const bw = 0.05, nb = Math.max(1, Math.round((hi - lo) / bw)), bins = Array(nb).fill(0);
+  for (const v of R.gpas) bins[Math.min(nb - 1, Math.max(0, Math.floor((v - lo) / bw)))]++;
+  const W = 520, H = 210, padL = 8, padR = 8, top = 22, base = 170, X = v => padL + (v - lo) / (hi - lo) * (W - padL - padR), maxB = Math.max(...bins);
+  let svg = `<line class="ax" x1="${padL}" y1="${base}" x2="${W - padR}" y2="${base}"/>`;
+  bins.forEach((n, i) => { if (!n) return; const x0 = X(lo + i * bw) + 1, x1 = X(lo + (i + 1) * bw) - 1, hh = n / maxB * (base - top);
+    svg += `<rect class="hbar${lo + i * bw >= 4.75 - 1e-9 ? " hi" : ""}" x="${x0.toFixed(1)}" y="${(base - hh).toFixed(1)}" width="${Math.max(1, x1 - x0).toFixed(1)}" height="${hh.toFixed(1)}" rx="2" data-tip="${f(lo + i * bw)}–${f(lo + (i + 1) * bw)} · ${(n / R.N * 100).toFixed(1)}%"/>`; });
+  for (const [th, lab] of [[4.25, t.mcH2], [4.75, t.mcH1]]) if (th > lo && th < hi) svg += `<line class="thr" x1="${X(th)}" y1="${top - 8}" x2="${X(th)}" y2="${base}"/><text class="thr-l" x="${X(th) + 4}" y="${top - 10}">${lab}</text>`;
+  svg += `<line class="med" x1="${X(R.p50)}" y1="${top}" x2="${X(R.p50)}" y2="${base}"/><text class="med-l" x="${X(R.p50)}" y="${base + 30}" text-anchor="middle">x̃ = ${f(R.p50)}</text>`;
+  const step = (hi - lo) > 1 ? 0.5 : 0.1;
+  for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) svg += `<line class="ax" x1="${X(v)}" y1="${base}" x2="${X(v)}" y2="${base + 4}"/><text class="axl" x="${X(v)}" y="${base + 16}" text-anchor="middle">${v.toFixed(step < 0.5 ? 1 : 1)}</text>`;
+  // graduation term distribution
+  const gs = [...R.grad.values()].filter(e => e.tm).sort((a, b) => (a.tm.y * 3 + a.tm.sem) - (b.tm.y * 3 + b.tm.sem));
+  const gbars = gs.map(e => { const isBase = R.base.last && e.tm.y === R.base.last.tm.y && e.tm.sem === R.base.last.tm.sem;
+    return `<div class="gbar${isBase ? " base" : ""}"><span>${termLabel(e.tm).name}${isBase ? " 🎯" : ""}</span><span class="track2"><i style="width:${(e.n / R.N * 100).toFixed(1)}%"></i></span><span class="pct">${pc(e.n / R.N)}</span></div>`; }).join("");
+  const M = R.M;
+  host.innerHTML = `<p class="lab-lead">${t.mcLead}</p>
+    <div class="forecast">
+      <div class="sky" aria-hidden="true">${sky}</div>
+      <div><div class="kicker">${t.mcKicker(R.N)}</div><h3>${t.mcHead(pc(R.onTime), when)}</h3>
+        <ul>
+          <li>🎓 ${t.mcLineH(pc(R.pH1), pc(R.pH2))}</li>
+          <li>📈 ${t.mcLineG(f(R.p50), f(R.p10), f(R.p90))}</li>
+          <li>🎯 ${t.mcLineT(f(+S.target || 4.5), pc(R.pT))}</li>
+          <li>🌧️ ${t.mcLineF(pc(R.anyFail / R.N))}</li>
+        </ul></div>
+    </div>
+    <div class="mc-grid">
+      <div class="card chart-card"><h4>${t.mcHist}</h4><p class="hint">${t.mcHistSub}</p>
+        <div class="chart" id="histWrap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${t.mcHist}">${svg}</svg><div class="tip" id="tip" hidden></div></div></div>
+      <div class="card chart-card"><h4>${t.mcGrad}</h4><p class="hint">${t.mcGradSub}</p><div class="gbars">${gbars}</div></div>
+    </div>
+    <details class="method"><summary>${t.mcHow}</summary>
+      <p>${t.mcHowText}</p>
+      <div class="eq">grade<sub>i</sub> = snap( μ̂ + δ + ε<sub>i</sub> ),&nbsp; δ ~ N(0, ${M.tau}²),&nbsp; ε<sub>i</sub> ~ N(0, σ̂²)<br>μ̂ = (n·x̄ + k·μ₀) / (n + k),&nbsp; k = ${M.k},&nbsp; μ₀ = ${M.mu0}<br>N = ${R.N} simulations · F (&lt;1.5) ⇒ retake</div>
+      <table><tr><td>${t.mcN}</td><td>${M.n}</td></tr><tr><td>${t.mcMean}</td><td>${M.mean != null ? f(M.mean) : "—"}</td></tr><tr><td>${t.mcSd}</td><td>${M.sd != null ? f(M.sd) : "—"}</td></tr><tr><td>μ̂</td><td>${f(M.mu)}</td></tr><tr><td>σ̂</td><td>${f(M.sigma)}</td></tr><tr><td>${t.mcBand}</td><td>${f(R.p10)} – ${f(R.p90)}</td></tr></table>
+      <p class="hint">${t.mcCaveat}</p>
+    </details>
+    <div style="margin-top:12px"><button type="button" class="btn" id="mcAgain">${t.mcAgain}</button></div>`;
+  const wrap = $("histWrap"), tip = $("tip");
+  wrap.addEventListener("pointermove", e => { const r = e.target.closest("rect[data-tip]"); if (!r) { tip.hidden = true; return; }
+    const b = wrap.getBoundingClientRect(), rb = r.getBoundingClientRect(); tip.textContent = r.dataset.tip; tip.style.left = (rb.left + rb.width / 2 - b.left) + "px"; tip.style.top = (rb.top - b.top) + "px"; tip.hidden = false; });
+  wrap.addEventListener("pointerleave", () => { tip.hidden = true; });
+}
+
+/* ---------- phase 5: smart alerts + elective helper ---------- */
+function dependents(code) {
+  // every required course that sits after this one in a prerequisite chain
+  const req = visible().filter(c => ["core","ai"].includes(c.group) && !passed(c.code)), seen = new Set(), stack = [code];
+  while (stack.length) { const x = stack.pop(); for (const c of req) if (c.pre.includes(x) && !seen.has(c.code)) { seen.add(c.code); stack.push(c.code); } }
+  return seen.size;
+}
+function alertsList() {
+  const t = L(), out = [], TT = total(), rem = TT - counted().total;
+  if (rem <= 0) return out;
+  // 1. minor finishes after the major
+  if (ai() && minorHrs() < 20) {
+    const r = simulate({ load:S.load, start:S.start || 0 }); let majorEnd = -1, aiEnd = -1;
+    r.terms.forEach((tm, i) => tm.items.forEach(it => { if (["ai","aiel"].includes(it.group)) aiEnd = i; else majorEnd = i; }));
+    if (aiEnd > majorEnd) out.push({ id:"minor", cls:"warn", ic:"⚠️", tx:t.alMinor(20 - minorHrs()) });
+  }
+  // 2. available courses that hold up the most others
+  const imp = visible().filter(c => ["core","ai"].includes(c.group) && status(c) === "open").map(c => [c, dependents(c.code)]).filter(([, n]) => n >= 3).sort((a, b) => b[1] - a[1]).slice(0, 3);
+  for (const [c, n] of imp) out.push({ id:"imp:" + c.code, ic:"🔗", tx:t.alImp(`<button type="button" class="link" data-go="${esc(c.code)}">${esc(cd(c))} ${esc(nm(c))}</button>`, n) });
+  // 3. graduation project rule
+  if (!passed("احص 497") && rem > 43 && rem <= 75) out.push({ id:"p497", ic:"🎓", tx:t.al497(rem) });
+  // 4. Islamic studies: one per term
+  const islLeft = Math.ceil((CAPS.isl - Math.min(CAPS.isl, sumHrs(passedIn("isl")))) / 2);
+  if (islLeft >= 2) out.push({ id:"isl", ic:"🕌", tx:t.alIsl(islLeft) });
+  // 5. retakes
+  for (const c of visible().filter(c => status(c) === "retry")) out.push({ id:"retry:" + c.code, cls:"bad", ic:"🔁", tx:t.alRetry(`<button type="button" class="link" data-go="${esc(c.code)}">${esc(cd(c))} ${esc(nm(c))}</button>`) });
+  // 6. outside electives just opened
+  if (l3Done() && y1Done() && !sumHrs(passedIn("out"))) out.push({ id:"out", ic:"🔓", tx:t.alOut });
+  // 7. probation
+  const g = gpa(); if (g && g.v !== null && g.v < 2) out.push({ id:"prob", cls:"bad", ic:"🚨", tx:t.alProb });
+  return out.filter(a => !(S.hideAlerts || {})[a.id]);
+}
+function renderAlerts() {
+  const list = alertsList(), t = L();
+  const open = (S.open || {}).alerts !== false, bad = list.filter(a => a.cls === "bad").length;
+  $("alerts").innerHTML = list.length ? `<details class="sec" data-sec="alerts"${open ? " open" : ""}>
+    <summary><h2 class="section-title"><span>${t.alTitle}</span><small>${t.alSub}</small></h2>
+      <span class="sec-prog"><span class="mono"${bad ? ' style="color:var(--fail)"' : ""}>${list.length}</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+    <div class="card"><div class="alerts" role="list">${list.map(a => `<div class="alert ${a.cls || ""}" role="listitem"><span class="ic" aria-hidden="true">${a.ic}</span><span class="tx">${a.tx}</span><button type="button" class="x" data-alert="${esc(a.id)}" aria-label="${t.alHide}" title="${t.alHide}">×</button></div>`).join("")}</div></div></details>` : "";
+}
+function electiveHelper() {
+  const t = L(), groups = ["isl","out","in", ...(ai() ? ["aiel"] : [])];
+  const cands = visible().filter(c => groups.includes(c.group) && !passed(c.code) && !groupFull(c.group) && status(c) === "open");
+  if (!cands.length) return "";
+  const scored = cands.map(c => {
+    const opens = visible().filter(x => groups.includes(x.group) && x.pre.includes(c.code)).length;
+    const why = [t.whyOpen]; if (opens) why.push(t.whyUnlock); if (!c.pre.length) why.push(t.whyNoPre);
+    return { c, score: 3 + opens * 2 + (c.pre.length ? 0 : 1) + (c.group === "isl" ? 0.5 : 0), why };
+  }).sort((a, b) => b.score - a.score || a.c.hrs - b.c.hrs);
+  // best one from each group first, then fill up to four
+  const pick = [];
+  for (const g of groups) { const x = scored.find(x => x.c.group === g); if (x) pick.push(x); }
+  for (const x of scored) if (pick.length < 4 && !pick.includes(x)) pick.push(x);
+  pick.splice(4);
+  return `<div class="card helper"><h3>${t.helpTitle}</h3><p class="note">${t.helpNote}</p><div class="sugs">${pick.map(x => `<div class="sug">${tile(x.c)}<div class="why">${x.why.map((w, i) => `<span class="${i ? "g" : ""}">${w}</span>`).join("")}<span class="g">${t.groups[x.c.group][0]}</span></div></div>`).join("")}</div></div>`;
+}
+
+/* ---------- phase 6: course ratings (Supabase, with an on-device demo fallback) ---------- */
+const SUPA = { url: "https://sywkyfskujchylqniapf.supabase.co", key: "sb_publishable_BixLFF2b2pT5RZXPoWkfhg_nSNXle8n" };   // public (publishable) key: safe in the browser; the database only allows the four functions in supabase/setup.sql
+const DIFF = { 1:["🟢","easy"], 2:["🟡","mid"], 3:["🔴","hard"] };
+function deviceId() {
+  try { let id = localStorage.getItem("whatif.device"); if (!id) { id = crypto.randomUUID(); localStorage.setItem("whatif.device", id); } return id; }
+  catch(e) { return window.__dev || (window.__dev = crypto.randomUUID()); }
+}
+const Ratings = {
+  remote: !!(SUPA.url && SUPA.key), stats: null,
+  async call(fn, body) {
+    const r = await fetch(`${SUPA.url}/rest/v1/rpc/${fn}`, { method:"POST", headers:{ apikey:SUPA.key, ...(SUPA.key.startsWith("eyJ") ? { Authorization:`Bearer ${SUPA.key}` } : {}), "Content-Type":"application/json" }, body: JSON.stringify(body || {}) });
+    if (!r.ok) throw new Error(await r.text());
+    const tx = await r.text(); return tx ? JSON.parse(tx) : null;
+  },
+  local() { try { return JSON.parse(localStorage.getItem("whatif.ratings") || "{}"); } catch(e) { return window.__lr || (window.__lr = {}); } },
+  saveLocal(o) { try { localStorage.setItem("whatif.ratings", JSON.stringify(o)); } catch(e) { window.__lr = o; } },
+  async getStats() {
+    if (this.remote) { try { const rows = await this.call("get_stats"); this.stats = Object.fromEntries(rows.map(r => [r.course_code, { n:+r.n, likes:+r.likes, diff:+r.diff }])); return this.stats; } catch(e) { this.remote = false; } }
+    const o = this.local(), out = {};
+    for (const c in o) { const a = o[c]; if (a.length) out[c] = { n:a.length, likes:a.filter(x => x.liked).length, diff: a.reduce((s, x) => s + x.difficulty, 0) / a.length }; }
+    return this.stats = out;
+  },
+  async getComments(code) {
+    if (this.remote) { try { return await this.call("get_comments", { c: code }); } catch(e) { this.remote = false; } }
+    return (this.local()[code] || []).filter(x => x.comment && !x.hidden).sort((a, b) => b.created_at.localeCompare(a.created_at));
+  },
+  async mine(code) { return (this.local()["__mine"] || {})[code] || null; },
+  async rate(code, liked, difficulty, comment) {
+    const mine = this.local(); mine.__mine = { ...(mine.__mine || {}), [code]: { liked, difficulty, comment } };
+    if (this.remote) { await this.call("rate", { c: code, d: deviceId(), l: liked, df: difficulty, cm: comment }); this.saveLocal(mine); return; }
+    const list = (mine[code] || []).filter(x => x.device !== deviceId());
+    list.push({ id: Date.now(), device: deviceId(), liked, difficulty, comment, created_at: new Date().toISOString() });
+    mine[code] = list; this.saveLocal(mine);
+  },
+  async report(code, id) {
+    if (this.remote) return this.call("report", { rid: id });
+    const o = this.local(); const x = (o[code] || []).find(x => x.id === id); if (x) { x.reports = (x.reports || 0) + 1; if (x.reports >= 3) x.hidden = true; } this.saveLocal(o);
+  },
+};
+// light moderation before anything is sent
+const BAD = ["غبي","غبية","حمار","كلب","حيوان","تافه","حقير","وصخ","زفت","لعن","يلعن","خرا","fuck","shit","stupid","idiot","bitch"];
+const TEACHER = /(^|[\s،,.(])(د\s*\.|د\s|دكتور|دكتوره|دكتورة|الدكتور|الدكتوره|الدكتورة|الدكتورا|دكتورتنا|استاذ|أستاذ|استاذة|أستاذة|استاذه|أستاذه|الاستاذ|الأستاذ|الاستاذة|الأستاذة|بروف|البروف|dr\.?|prof\.?|professor|doctor)(?=[\s،,.)]|$)/i;
+function checkComment(tx) {
+  const t = L(), low = tx.toLowerCase();
+  if (tx.length > 200) return t.rTooLong;
+  if (TEACHER.test(" " + tx + " ")) return t.rNoTeacher;
+  if (BAD.some(w => low.includes(w))) return t.rNoBad;
+  return "";
+}
+let rateDraft = {};
+async function renderRating(code) {
+  const box = $("rateBox"); if (!box || box.dataset.for !== code) return;
+  const t = L(), stats = (await Ratings.getStats())[code], comments = await Ratings.getComments(code), mine = await Ratings.mine(code);
+  if (!$("rateBox") || $("rateBox").dataset.for !== code) return;
+  const dr = rateDraft[code] || (rateDraft[code] = mine ? { ...mine } : { liked:null, difficulty:null, comment:"" });
+  const pct = stats ? Math.round(stats.likes / stats.n * 100) : 0, dl = stats ? (stats.diff < 1.67 ? 1 : stats.diff < 2.34 ? 2 : 3) : 0;
+  let h = `<h3>${t.rTitle}</h3>`;
+  if (!Ratings.remote) h += `<div class="demo">${t.rDemo}</div>`;
+  h += stats ? `<div class="rsum"><span>👍 <b>${pct}${S.lang === "ar" ? "٪" : "%"}</b> ${t.rLiked}</span><span>${t.rDiff}: ${DIFF[dl][0]} ${t.rDiffName[dl]}</span><span class="hint">${t.rCount(stats.n)}</span><span class="rbar"><i style="width:${pct}%"></i></span></div>` : `<p class="hint" style="margin:0">${t.rNone}</p>`;
+  h += `<div class="rform">
+    <div class="rrow"><span class="lbl">${t.rQ1}</span><button type="button" class="rchip${dr.liked === true ? " on" : ""}" data-rlike="1">👍 ${t.rYes}</button><button type="button" class="rchip${dr.liked === false ? " on" : ""}" data-rlike="0">👎 ${t.rNo}</button></div>
+    <div class="rrow"><span class="lbl">${t.rDiff}</span>${[1,2,3].map(n => `<button type="button" class="rchip${dr.difficulty === n ? " on" : ""}" data-rdiff="${n}">${DIFF[n][0]} ${t.rDiffName[n]}</button>`).join("")}</div>
+    <label class="field">${t.rComment}<textarea id="rText" maxlength="200" placeholder="${t.rPh}">${esc(dr.comment || "")}</textarea></label>
+    <div class="cnt" id="rCnt">${(dr.comment || "").length}/200</div>
+    <div class="rnote">${t.rRule}</div>
+    <div class="rrow"><button type="button" class="btn primary" id="rSend">${mine ? t.rUpdate : t.rSend}</button><span id="rMsg"></span></div>
+  </div>`;
+  if (comments.length) h += `<div class="comments">${comments.map(c => `<div class="cmt"><div class="meta"><span>${c.liked ? "👍" : "👎"} ${DIFF[c.difficulty][0]}</span><span>${new Date(c.created_at).toLocaleDateString(S.lang === "ar" ? "ar-SA-u-ca-gregory" : "en-GB")}</span><button type="button" class="rep" data-rep="${c.id}">${t.rReport}</button></div><div>${esc(c.comment)}</div></div>`).join("")}</div>`;
+  box.innerHTML = h;
+}
+/* ---------- render helpers ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[ch]));
+const ICON = {
+  moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>',
+  sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  lock:'<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
+};
+const isDark = () => S.theme ? S.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+
+function applyChrome() {
+  const t = L(), root = $("root"), rtl = S.lang === "ar";
+  document.documentElement.lang = S.lang; document.documentElement.dir = rtl ? "rtl" : "ltr";
+  root.dir = rtl ? "rtl" : "ltr"; root.lang = S.lang; $("drawer").dir = root.dir;
+  if (S.theme) document.documentElement.dataset.theme = S.theme; else delete document.documentElement.dataset.theme;
+  document.querySelectorAll("[data-t]").forEach(el => { const v = t[el.dataset.t]; if (typeof v === "string") el.innerHTML = v; });
+  $("langBtn").textContent = rtl ? "EN" : "ع";
+  $("genderBtn").textContent = S.gender === "m" ? "👨‍🎓" : "👩‍🎓";
+  $("genderBtn").title = $("genderBtn").ariaLabel = `${t.genderQ} ${S.gender === "m" ? t.male : t.female}`;
+  document.querySelectorAll("[data-gender]").forEach(b => { const on = b.dataset.gender === S.gender; b.classList.toggle("on", on); b.setAttribute("aria-checked", on); });
+  $("langBtn").setAttribute("aria-label", rtl ? "English" : "العربية");
+  $("themeBtn").innerHTML = isDark() ? ICON.sun : ICON.moon;
+  $("themeBtn").setAttribute("aria-label", isDark() ? t.themeLight : t.themeDark);
+  $("themeBtn").title = $("themeBtn").getAttribute("aria-label");
+}
+
+/* hero figure: three normal curves = three "what if" futures */
+function drawHero() {
+  const t = L(), W = 560, H = 210, base = 170, x0 = 20, x1 = 540;
+  const X = z => x0 + (z + 3.6) / 7.2 * (x1 - x0);
+  const pdf = (z, mu, s) => Math.exp(-((z - mu) ** 2) / (2 * s * s)) / s;
+  const path = (mu, s, k) => { let d = ""; for (let i = 0; i <= 120; i++) { const z = -3.6 + i * 7.2 / 120; d += (i ? "L" : "M") + X(z).toFixed(1) + " " + (base - pdf(z, mu, s) * k).toFixed(1); } return d; };
+  const mark = 0.55, k = 128;
+  let area = `M${X(mark).toFixed(1)} ${base}`;
+  for (let i = 0; i <= 60; i++) { const z = mark + i * (3.6 - mark) / 60; area += `L${X(z).toFixed(1)} ${(base - pdf(z, 0, 1) * k).toFixed(1)}`; }
+  area += `L${X(3.6)} ${base}Z`;
+  const years = ["2027","2028","2029","2030"], ticks = [-2.1,-0.7,0.7,2.1];
+  const flip = S.lang === "ar";
+  $("heroCurve").innerHTML = `
+    <g ${flip ? `transform="translate(${W} 0) scale(-1 1)"` : ""}>
+      <path class="area" d="${area}"/>
+      <path class="curve alt" d="${path(-1.1, 0.8, k * 0.8)}"/>
+      <path class="curve alt2" d="${path(1.25, 0.75, k * 0.78)}"/>
+      <path class="curve main" d="${path(0, 1, k)}"/>
+      <line class="axis" x1="${x0}" y1="${base}" x2="${x1}" y2="${base}"/>
+      ${ticks.map(z => `<line class="tick" x1="${X(z)}" y1="${base}" x2="${X(z)}" y2="${base + 6}"/>`).join("")}
+      <line class="marker" x1="${X(mark)}" y1="${base}" x2="${X(mark)}" y2="${base - pdf(mark,0,1) * k - 14}"/>
+      <circle class="marker-dot" cx="${X(mark)}" cy="${base - pdf(mark,0,1) * k}" r="5"/>
+    </g>
+    ${ticks.map((z, i) => `<text class="tick-label" x="${flip ? W - X(z) : X(z)}" y="${base + 20}" text-anchor="middle">${years[i]}</text>`).join("")}
+    <text class="marker-label" x="${flip ? W - X(mark) - 10 : X(mark) + 10}" y="${base - pdf(mark,0,1) * k - 18}" text-anchor="${flip ? "end" : "start"}">${t.figYou}</text>`;
+  $("heroCurve").setAttribute("aria-label", t.figCap);
+}
+
+function trackCard(id) {
+  const t = L(), isAi = id === "ai", T0 = isAi ? 156 : 136;
+  const parts = [["kY1",32,"var(--g7)"],["kCore",73,"var(--g1)"],["kElec",31,"var(--g3)"], ...(isAi ? [["kAi",20,"var(--f)"]] : [])];
+  return `<div class="top-row"><span class="t">${t[id === "ai" ? "ai" : "stat"]}</span><span class="h num">${T0}<small>${t.hours}</small></span></div>
+    <div class="stack">${parts.map(([,h,c]) => `<i style="width:${h / T0 * 100}%;background:${c}"></i>`).join("")}</div>
+    <div class="keys">${parts.map(([k,h,c]) => `<span style="--c:${c}">${t[k]} <b class="mono">${h}</b></span>`).join("")}</div>
+    <span class="go">${t.start}</span>`;
+}
+
+function drawRuler(g) {
+  const t = L(), x = v => 14 + (v - 1) / 4 * 292;
+  let s = `<rect class="zone2" x="${x(4.25)}" y="14" width="${x(4.75) - x(4.25)}" height="18" rx="2"/>
+           <rect class="zone1" x="${x(4.75)}" y="14" width="${x(5) - x(4.75)}" height="18" rx="2"/>
+           <line class="axis" x1="${x(1)}" y1="32" x2="${x(5)}" y2="32"/>`;
+  for (let v = 1; v <= 5; v += 0.25) { const major = Number.isInteger(v); s += `<line class="tick" x1="${x(v)}" y1="32" x2="${x(v)}" y2="${major ? 39 : 35}"/>`; if (major) s += `<text class="tick-label" x="${x(v)}" y="52" text-anchor="middle">${v}</text>`; }
+  if (g) { const gx = x(Math.max(1, Math.min(5, g.v))); s += `<path class="gpa-mark" d="M${gx} 31 l-6 -10 h12z"/>`; }
+  $("gpaRuler").innerHTML = s;
+}
+
+const STATE_COLOR = { done:"var(--done)", open:"var(--open)", retry:"var(--retry)", locked:"var(--lock)" };
+function tile(c) {
+  const t = L(), st = status(c), a = attempts(c.code), extra = st !== "done" && groupFull(c.group);
+  const rel = selected ? (BY[selected].pre.includes(c.code) ? " is-pre" : (c.pre.includes(selected) ? " is-unl" : "")) : "";
+  return `<button type="button" class="tile ${st}${extra ? " extra" : ""}${selected === c.code ? " sel" : ""}${rel}" data-code="${esc(c.code)}">
+    <span class="code"><span class="c">${esc(cd(c))}</span><span>${a.length ? `<span class="grade">${a[a.length-1] === "P" ? "✓" : esc(a[a.length-1])}</span> · ` : ""}${c.hrs}${t.hrsShort}</span></span>
+    <span class="name">${esc(nm(c))}</span>
+    <span class="st">${st === "locked" ? ICON.lock : `<i class="pt${st === "open" ? " hollow" : ""}" style="--c:${STATE_COLOR[st]}"></i>`}${extra ? t.full : t.st[st]}</span>
+  </button>`;
+}
+function levelRow(lv, v) {
+  const list = v.filter(c => c.level === lv);
+  const all = list.every(c => passed(c.code)), anyP = list.some(c => attempts(c.code).includes("P"));
+  const btn = !all ? `<button type="button" class="pass-btn" data-pass="${lv}" title="${L().passTitle}">${L().passLevel}</button>` : (anyP ? `<button type="button" class="pass-btn undo" data-unpass="${lv}">${L().undoLevel}</button>` : "");
+  return `<div class="level"><div class="lv"><b>${L().level(lv)}</b><span>${S.lang === "ar" ? `${sumHrs(list)} ساعة` : `Σ ${sumHrs(list)} h`}</span>${btn}</div><div class="tiles">${list.map(tile).join("")}</div></div>`;
+}
+function section(key, title, n, sub, body, prog) {
+  const open = !!(S.open || {})[key];
+  return `<details class="sec" data-sec="${key}"${open ? " open" : ""}>
+    <summary><h2 class="section-title"><span>${title}</span><span class="mono">n = ${n}</span>${sub ? `<small>${sub}</small>` : ""}</h2>
+      <span class="sec-prog"><span class="mono">${prog.done}/${n}</span><span class="minibar"><i style="width:${Math.min(100, prog.done / n * 100)}%"></i></span>${prog.open ? `<span class="sec-open"><i class="pt hollow" style="--c:var(--open)"></i>${prog.open}</span>` : ""}<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </summary>${body}</details>`;
+}
+function renderPlan() {
+  const t = L(), v = visible();
+  const prog = list => ({ done: Math.round(sumHrs(list.filter(c => passed(c.code)))), open: list.filter(c => ["open","retry"].includes(status(c))).length });
+  const y1 = v.filter(c => c.group === "y1"), core = v.filter(c => c.group === "core");
+  const egs = ["isl","out","in", ...(ai() ? ["ai","aiel"] : [])], el = v.filter(c => egs.includes(c.group));
+  const elDone = egs.reduce((s, g) => s + Math.min(CAPS[g], sumHrs(passedIn(g))), 0);
+  let h = section("y1", t.secY1, 32, t.secY1Sub, `<div class="card">${[1,2].map(lv => levelRow(lv, v)).join("")}</div>`, prog(y1));
+  h += section("core", t.secCore, 73, t.secCoreSub, `<div class="card">${[3,4,5,6,7,8].map(lv => levelRow(lv, v)).join("")}</div>`, prog(core));
+  let g2 = electiveHelper() + `<div class="groups">`;
+  for (const g of egs) {
+    const done = Math.min(CAPS[g], sumHrs(passedIn(g)));
+    g2 += `<div class="card group">
+      <h3><span>${t.groups[g][0]}</span><span class="num">${done}/${CAPS[g]}</span></h3>
+      <p class="note">${t.groups[g][1]}</p>
+      <div class="minibar" style="--c:${GCOLOR[g]}"><i style="width:${done / CAPS[g] * 100}%"></i></div>
+      <div class="tiles">${v.filter(c => c.group === g).map(tile).join("")}</div></div>`;
+  }
+  g2 += `</div>`;
+  h += section("el", ai() ? t.secElecAi : t.secElec, ai() ? 51 : 31, "", g2, { done: elDone, open: el.filter(c => !groupFull(c.group) && ["open","retry"].includes(status(c))).length });
+  $("plan").innerHTML = h;
+  $("plan").classList.toggle("dim", !!selected);
+}
+
+function renderSummary() {
+  let t = L(), g = gpa();
+  const pHrs = g ? g.p : 0; if (g && g.v === null) g = null;
+  $("gpaVal").textContent = g ? g.v.toFixed(2) : "—";
+  $("ring").style.setProperty("--p", g ? (g.v / 5 * 100).toFixed(1) : 0);
+  $("gpaRank").hidden = !g; if (g) $("gpaRank").textContent = t.ranks[rankIdx(g.v)];
+  const gr2 = g ? Math.round(g.v * 100) / 100 : 0;
+  $("gpaHint").textContent = (g ? [gr2 >= 4.75 ? t.onHonor1 : gr2 >= 4.25 ? t.onHonor2 : "", t.basedOn(g.hrs)].filter(Boolean).join(" · ") : t.noGrades) + (pHrs ? " · " + t.pNote(pHrs) : "");
+  drawRuler(g);
+
+  const p = counted(), TT = total(), rem = Math.max(0, TT - p.total);
+  $("remainVal").textContent = rem === 0 ? t.graduated : rem;
+  $("remainOf").textContent = rem === 0 ? "" : `${t.left} ${t.of(TT)}`;
+  $("trackChip").textContent = ai() ? t.ai : t.stat;
+  const segs = [["y1","kY1"],["core","kCore"],["isl",null],["out",null],["in",null], ...(ai() ? [["ai",null],["aiel",null]] : [])];
+  const nameOf = (k, key) => key ? t[key] : t.groups[k][0];
+  $("bar").innerHTML = segs.map(([k]) => p[k] ? `<i style="width:${p[k] / TT * 100}%;background:${GCOLOR[k]}"></i>` : "").join("");
+  const step = TT / 4; $("barAxis").innerHTML = [0,1,2,3,4].map(i => `<span>${Math.round(i * step)}</span>`).join("");
+  $("barLegend").innerHTML = segs.map(([k,key]) => `<span style="--c:${GCOLOR[k]}">${nameOf(k,key)} <b class="mono">${p[k] || 0}</b></span>`).join("");
+
+  $("load").value = S.load; $("loadVal").textContent = S.load;
+  if (rem === 0) { $("estText").textContent = t.estDone; $("estWhy").textContent = ""; return; }
+  const byHours = Math.ceil(rem / S.load), ch = chainDepth(), simA = runPlan(planA()), terms = simA.regular;
+  $("estText").innerHTML = t.est(terms) + (simA.last ? ` <span class="hint">· ${termLabel(simA.last.tm).name}</span>` : "");
+  $("estWhy").textContent = ch.depth >= byHours ? t.whyChain(ch.depth, `${cd(ch.end)} ${nm(ch.end)}`) : t.whyHours(rem, S.load, ch.depth);
+}
+
+function renderRecord() {
+  const t = L(), rows = [];
+  for (const c of visible()) attempts(c.code).forEach((g, i, arr) => { if (g !== "P") rows.push({ c, g, n: i, multi: arr.filter(x => x !== "P").length > 1 }); });
+  $("recSec").open = !!(S.open || {}).rec;
+  const G0 = gpa(), G = G0 && G0.v !== null ? G0 : null;
+  $("recSum").textContent = G ? `x̄ = ${G.v.toFixed(2)} · ${rows.length}` : "";
+  if (!rows.length) { $("record").innerHTML = `<p class="empty">${t.recEmpty}</p>`; return; }
+  $("record").innerHTML = `<table><thead><tr>${t.th.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>${
+    rows.map(r => `<tr class="${r.g === "F" ? "f" : ""}"><td><span class="mono">${esc(cd(r.c))}</span> · ${esc(nm(r.c))}</td><td class="mono">${r.c.hrs}</td><td>${r.multi ? (r.n === 0 ? t.first : t.retake(r.n)) : "—"}</td><td class="g">${r.g}</td><td class="mono">${(PTS[r.g] * r.c.hrs).toFixed(2)}</td></tr>`).join("")
+  }</tbody><tfoot><tr><td>${t.totalRow}</td><td class="mono">${G.hrs}</td><td></td><td class="g">x̄ = ${G.v.toFixed(2)}</td><td class="mono">${G.pts.toFixed(2)}</td></tr></tfoot></table>`;
+}
+
+function renderDrawer() {
+  const d = $("drawer"), t = L();
+  if (!selected) { d.hidden = true; $("scrim").hidden = true; return; }
+  const c = BY[selected], st = status(c), a = attempts(c.code), rq = reqs(c), un = unlocks(c.code), last = a[a.length - 1];
+  const where = c.group in CAPS ? t.groups[c.group][0] : (c.group === "y1" ? t.secY1 : t.level(c.level));
+  const soft = { done:"var(--done-soft)", open:"var(--open-soft)", retry:"var(--retry-soft)", locked:"var(--sunk)" }[st];
+  let h = `<button class="x" type="button" id="closeD" aria-label="${t.close}">×</button>
+    <div><h2>${esc(nm(c))}</h2><div class="sub"><span class="mono">${esc(cd(c))}</span><span>${t.creditHrs(c.hrs)}</span><span>${where}</span></div></div>
+    <span class="chip" style="background:${soft};color:${STATE_COLOR[st]}">${t.st[st]}</span>`;
+  if (st !== "done" && groupFull(c.group)) h += `<div class="box warn">${t.fullWarn}</div>`;
+  h += `<div><h4>${t.reqs}</h4>${rq.length ? `<ul class="reqs">${rq.map(r => `<li><span class="${r.ok ? "ok" : "no"}">${r.ok ? "✓" : "✗"}</span>${r.code ? `<button type="button" data-go="${esc(r.code)}"><span class="mono">${esc(cd(BY[r.code]))}</span> · ${esc(nm(BY[r.code]))}</button>` : `<span>${esc(r.label)}</span>`}</li>`).join("")}</ul>` : `<p class="hint" style="margin:0">${t.noReqs}</p>`}</div>`;
+  if (un.length) h += `<div><h4>${t.opens}</h4><ul class="reqs">${un.map(u => `<li><span style="color:var(--open)">${S.lang === "ar" ? "←" : "→"}</span><button type="button" data-go="${esc(u.code)}"><span class="mono">${esc(cd(u))}</span> · ${esc(nm(u))}</button></li>`).join("")}</ul></div>`;
+  if (st !== "locked" || a.length) {
+    h += `<div><h4>${last === "P" ? t.pPick : a.length ? (last === "F" ? t.retakeGrade : t.yourGrade) : t.pickGrade}</h4>
+      <div class="grades">${GRADES.map(([gr, pt]) => `<button type="button" class="${gr === "F" ? "fbtn " : ""}${a.length && last === gr ? "on" : ""}" data-grade="${gr}">${gr}<small>${pt}</small></button>`).join("")}</div></div>`;
+    if (a.length) {
+      h += `<div><h4>${t.attempts} <span class="hint">${t.attHint}</span></h4><div class="attempts">${a.map((gr, i) => `<span class="att${gr === "F" ? " f" : ""}">${a.length > 1 ? (i === 0 ? t.first : t.retake(i)) : t.single} <b>${gr === "P" ? "✓ " + t.noGradeShort : gr}</b><button type="button" data-del="${i}" aria-label="×">×</button></span>`).join("")}</div></div>
+      ${last === "P" ? "" : `<div><button class="btn" type="button" id="addRetake">${last !== "F" ? t.addF : t.addRetake}</button></div>`}`;
+    }
+  } else h += `<div class="box">${t.lockedBox}</div>`;
+  h += `<div class="rate" id="rateBox" data-for="${esc(c.code)}"></div>`;
+  d.innerHTML = h; d.hidden = false; $("scrim").hidden = false;
+  renderRating(c.code);
+}
+
+function slotName(g) { return L().slot[g]; }
+function itemLabel(it) { return it.slot ? slotName(it.group) : `${cd(BY[it.id])} ${nm(BY[it.id])}`; }
+function planCard(key, p, r) {
+  const t = L(), isB = key === "B";
+  const remaining = visible().filter(c => !passed(c.code));
+  const opt = sel => remaining.map(c => `<option value="${esc(c.code)}"${c.code === sel ? " selected" : ""}>${esc(cd(c))} · ${esc(nm(c))}</option>`).join("");
+  let h = `<div class="card plan-card${isB ? " b" : ""}">
+    <h3><span class="tag">${key}</span>${isB ? t.wiB : t.wiA}</h3>
+    <div class="res">${r.last ? `<span class="when">${termLabel(r.last.tm).name}</span><span class="sub">${termLabel(r.last.tm).greg} · ${t.wiTerms(r.regular, r.summers)}${r.gpa != null ? ` · ${t.wiGpa(r.gpa.toFixed(2))}` : ""}</span>` : `<span class="when">${t.estDone}</span>`}${r.stuck ? `<span class="sub" style="color:var(--warn)">${t.wiStuck}</span>` : ""}</div>
+    <div class="ctl"><label for="load${key}">${t.wiLoad}</label><input type="range" id="load${key}" min="12" max="20" value="${p.load}"><span class="mono">${p.load}</span></div>`;
+  if (ai()) h += `<label class="switch"><input type="checkbox" id="summer${key}"${p.summer ? " checked" : ""}>${t.wiSummer}</label>`;
+  if (isB) {
+    h += `<div class="mods">${p.mods.map((m, i) => `<div class="mod">${m.type === "delay"
+        ? `<b>${t.wiDelay}</b><select data-mod="${i}" data-f="code"><option value="">${t.wiPick}</option>${opt(m.code)}</select><select data-mod="${i}" data-f="n">${[1,2,3].map(n => `<option value="${n}"${(m.n || 1) === n ? " selected" : ""}>${t.wiByN(n)}</option>`).join("")}</select>`
+        : `<b>${t.wiFail}</b><select data-mod="${i}" data-f="code"><option value="">${t.wiPick}</option>${opt(m.code)}</select><span>${t.wiRetake}</span><select data-mod="${i}" data-f="grade">${GRADES.filter(([g]) => g !== "F").map(([g]) => `<option${(m.grade || "C") === g ? " selected" : ""}>${g}</option>`).join("")}</select>`}
+        <button type="button" class="rm" data-rmmod="${i}" aria-label="×">×</button></div>`).join("")}</div>
+      <div class="add-row"><button type="button" class="btn add" data-addmod="delay">+ ${t.wiDelay}</button><button type="button" class="btn add" data-addmod="fail">+ ${t.wiFail}</button></div>`;
+  }
+  return h + `</div>`;
+}
+function renderWhatIf() {
+  const t = L(), host = $("whatif");
+  if (counted().total >= total()) { host.innerHTML = `<p class="lab-lead">${t.estDone}</p>`; return; }
+  const A = planA(), B = planB(), rA = runPlan(A), rB = runPlan(B);
+  const open = (S.open || {}).wi !== false;
+  // verdict
+  const idx = r => r.last ? r.last.tm.y * 3 + r.last.tm.sem : 0;
+  const dTerms = rB.regular - rA.regular, later = idx(rB) - idx(rA);
+  let head = later === 0 ? `<div class="head same">${t.wiSame}</div>` : `<div class="head">${later > 0 ? t.wiLater(dTerms, termLabel(rB.last.tm).name) : t.wiEarlier(-dTerms, termLabel(rB.last.tm).name)}</div>`;
+  const moved = [];
+  for (const id in rB.termOf) { const a = rA.termOf[id], b = rB.termOf[id]; if (a != null && b != null && !id.startsWith("slot:")) { const ta = rA.terms[a].tm, tb = rB.terms[b].tm; const d = (tb.y * 3 + tb.sem) - (ta.y * 3 + ta.sem); if (d > 0) moved.push(id); } }
+  let v = `<div class="verdict">${head}`;
+  if (moved.length) v += `<div class="row">${t.wiMoved}${moved.map(id => `<span class="pill">${esc(cd(BY[id]))} · ${esc(nm(BY[id]))}</span>`).join("")}</div>`;
+  if (rB.gpa != null) { const g = gpa(); const now = g && g.v !== null ? g.v : null; v += `<div class="row">${t.wiGpaRow(now != null ? now.toFixed(2) : "—", rB.gpa.toFixed(2))}</div>`; }
+  v += `</div>`;
+  // timeline
+  const view = S.wiView === "A" ? "A" : "B", R = view === "A" ? rA : rB, other = view === "A" ? rB : rA;
+  const movedSet = new Set(view === "B" ? moved : []);
+  const tl = `<div class="tl-tabs" role="tablist"><button type="button" data-view="A" class="${view === "A" ? "on" : ""}">A · ${t.wiA}</button><button type="button" data-view="B" class="${view === "B" ? "on" : ""}">B · ${t.wiB}</button></div>
+    <div class="timeline"><div class="terms-row">${R.terms.map((r, i) => {
+      const L1 = termLabel(r.tm), last = i === R.terms.length - 1;
+      return `<div class="term${r.tm.summer ? " summer" : ""}${last ? " grad" : ""}"><h4><span>${L1.name}</span><span class="mono">${r.hrs}${t.hrsShort}</span></h4><div class="greg">${L1.greg}${last ? " · 🎓" : ""}</div>
+        ${!r.tm.summer && !last && r.hrs < 12 ? `<div class="warn">${t.wiLight}</div>` : ""}
+        ${r.items.map(it => `<div class="chipc${it.slot ? " slot" : ""}${it.fail ? " fail" : ""}${movedSet.has(it.id) && !it.fail ? " moved" : ""}${["ai","aiel"].includes(it.group) && !it.slot ? " ai" : ""}"><span>${esc(itemLabel(it))}</span><span class="mono">${it.hrs}${t.hrsShort}</span></div>`).join("")}</div>`;
+    }).join("")}</div></div>`;
+  const startSel = `<div class="wi-top"><label for="startTerm">${t.wiStart}</label><select id="startTerm">${START_OPTS.map(i => `<option value="${i}"${(S.start || 0) === i ? " selected" : ""}>${termLabel(termSeq(i, false, 1)[0]).name}</option>`).join("")}</select></div>`;
+  host.innerHTML = `<p class="lab-lead">${t.wiSub}</p>
+    ${startSel}<div class="plans">${planCard("A", A, rA)}${planCard("B", B, rB)}</div>${v}${tl}<p class="wi-note">${t.wiNote}</p>`;
+}
+
+function renderLab() {
+  const tab = ["tools","mc"].includes(S.labTab) ? S.labTab : "wi";
+  $("lab").open = (S.open || {}).lab !== false;
+  $("tabWi").classList.toggle("on", tab === "wi"); $("tabTools").classList.toggle("on", tab === "tools");
+  $("tabWi").setAttribute("aria-selected", tab === "wi"); $("tabTools").setAttribute("aria-selected", tab === "tools");
+  $("tabMc").classList.toggle("on", tab === "mc"); $("tabMc").setAttribute("aria-selected", tab === "mc");
+  $("whatif").hidden = tab !== "wi"; $("tools").hidden = tab !== "tools"; $("mc").hidden = tab !== "mc";
+  if (tab === "mc") renderMC();
+}
+function renderBanners() {
+  const t = L(); let h = "";
+  if (confirming) h += `<div class="banner confirm"><span>${t.confirmQ}</span><button class="btn danger" type="button" id="yesReset">${t.yes}</button><button class="btn" type="button" id="noReset">${t.no}</button></div>`;
+  $("banners").innerHTML = h;
+}
+function renderLegend() {
+  const t = L();
+  $("passNote").innerHTML = t.passInfo;
+  $("legend").innerHTML = `<span><i class="pt" style="--c:var(--done)"></i>${t.lgDone}</span><span><i class="pt hollow" style="--c:var(--open)"></i>${t.lgOpen}</span><span><i class="pt" style="--c:var(--retry)"></i>${t.lgRetry}</span><span style="color:var(--lock)">${ICON.lock}</span><span style="margin-inline-start:-12px">${t.lgLock}</span>`;
+}
+
+function render() {
+  applyChrome();
+  const has = !!S.track;
+  $("onboard").hidden = has; $("app").hidden = !has; $("appTools").hidden = !has;
+  if (!has) {
+    drawHero(); $("trackStat").innerHTML = trackCard("stat"); $("trackAi").innerHTML = trackCard("ai");
+    $("drawer").hidden = true; $("scrim").hidden = true; return;
+  }
+  renderBanners(); renderSummary(); renderAlerts(); renderLegend(); renderPlan(); renderLab(); renderWhatIf(); renderTools(); renderRecord(); renderDrawer();
+}
+
+/* ---------- actions ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.dataset.track) { S.track = t.dataset.track; save(); render(); scrollTo(0, 0); return; }
+  if (t.dataset.code) { selected = selected === t.dataset.code ? null : t.dataset.code; render(); return; }
+  if (t.dataset.go) { selected = t.dataset.go; render(); return; }
+  if (t.dataset.grade) { const a = [...attempts(selected)]; if (!a.length) a.push(t.dataset.grade); else a[a.length - 1] = t.dataset.grade; S.att[selected] = a; save(); render(); return; }
+  if (t.dataset.pass) { for (const c of visible().filter(c => c.level === +t.dataset.pass)) if (!passed(c.code)) S.att[c.code] = [...attempts(c.code), "P"]; save(); render(); return; }
+  if (t.dataset.unpass) { for (const c of visible().filter(c => c.level === +t.dataset.unpass)) { const a = attempts(c.code).filter(x => x !== "P"); if (a.length) S.att[c.code] = a; else delete S.att[c.code]; } save(); render(); return; }
+  if (t.dataset.gender) { S.gender = t.dataset.gender; save(); render(); return; }
+  if (t.dataset.rlike != null) { rateDraft[selected] = { ...rateDraft[selected], liked: t.dataset.rlike === "1" }; renderRating(selected); return; }
+  if (t.dataset.rdiff) { rateDraft[selected] = { ...rateDraft[selected], difficulty: +t.dataset.rdiff }; renderRating(selected); return; }
+  if (t.dataset.rep) { Ratings.report(selected, +t.dataset.rep).then(() => { t.textContent = L().rReported; t.disabled = true; }); return; }
+  if (t.id === "rSend") {
+    const tt = L(), dr = rateDraft[selected] || {}, msg = $("rMsg"), tx = ($("rText").value || "").trim();
+    if (dr.liked == null || !dr.difficulty) { msg.className = "rerr"; msg.textContent = tt.rNeed; return; }
+    const err = checkComment(tx); if (err) { msg.className = "rerr"; msg.textContent = err; return; }
+    t.disabled = true;
+    Ratings.rate(selected, dr.liked, dr.difficulty, tx).then(() => { rateDraft[selected] = { ...dr, comment: tx }; return renderRating(selected); })
+      .then(() => { const m = $("rMsg"); if (m) { m.className = "rok"; m.textContent = L().rThanks; } })
+      .catch(() => { t.disabled = false; msg.className = "rerr"; msg.textContent = tt.rFail; });
+    return;
+  }
+  if (t.dataset.alert) { S.hideAlerts = { ...(S.hideAlerts || {}), [t.dataset.alert]: true }; save(); renderAlerts(); return; }
+  if (t.dataset.lab) { S.labTab = t.dataset.lab; save(); renderLab(); return; }
+  if (t.id === "mcAgain") { S.seed = (Math.random() * 2 ** 31) | 0; save(); renderMC(); return; }
+  if (t.dataset.tpreset) { S.target = +t.dataset.tpreset; save(); renderTools(); return; }
+  if (t.dataset.tscope) { S.tScope = t.dataset.tscope; save(); renderTools(); return; }
+  if (t.dataset.view) { S.wiView = t.dataset.view; save(); renderWhatIf(); return; }
+  if (t.dataset.addmod) { const B = { ...planB() }; B.mods = [...B.mods, t.dataset.addmod === "delay" ? { type:"delay", code:"", n:1 } : { type:"fail", code:"", grade:"C" }]; S.wiB = B; save(); renderWhatIf(); return; }
+  if (t.dataset.rmmod != null) { const B = { ...planB() }; B.mods = B.mods.filter((_, i) => i !== +t.dataset.rmmod); S.wiB = B; save(); render(); return; }
+  if (t.dataset.del != null) { const a = [...attempts(selected)]; a.splice(+t.dataset.del, 1); if (a.length) S.att[selected] = a; else delete S.att[selected]; save(); render(); return; }
+  switch (t.id) {
+    case "addRetake": { const a = [...attempts(selected)]; if (a[a.length - 1] === "F") a.push("C"); else a.unshift("F"); S.att[selected] = a; save(); render(); break; }
+    case "closeD": selected = null; render(); break;
+    case "switchTrack": S.track = null; selected = null; save(); render(); break;
+    case "resetBtn": confirming = true; render(); break;
+    case "noReset": confirming = false; render(); break;
+    case "yesReset": S.att = {}; confirming = false; selected = null; save(); render(); break;
+    case "langBtn": S.lang = S.lang === "ar" ? "en" : "ar"; save(); render(); break;
+    case "_": break;
+    case "genderBtn": S.gender = S.gender === "m" ? "f" : "m"; save(); render(); break;
+    case "themeBtn": S.theme = isDark() ? "light" : "dark"; save(); render(); break;
+  }
+});
+$("scrim").addEventListener("click", () => { selected = null; render(); });
+$("load").addEventListener("input", e => { S.load = +e.target.value; save(); renderSummary(); renderWhatIf(); updateTools(); });
+document.addEventListener("input", e => {
+  const el = e.target;
+  if (el.id === "loadA" || el.id === "loadB") el.nextElementSibling.textContent = el.value;
+  if (el.id === "rText") { rateDraft[selected] = { ...rateDraft[selected], comment: el.value }; $("rCnt").textContent = `${el.value.length}/200`; }
+  if (el.id === "tgIn") { const v = +el.value; if (v >= 1 && v <= 5) { S.target = v; save(); updateTools(); document.querySelectorAll("[data-tpreset]").forEach(b => b.classList.toggle("on", +b.dataset.tpreset === v)); } }
+  if (el.id === "fnCur" || el.id === "fnMax") { S.fin = { cur: +$("fnCur").value || 0, finMax: +$("fnMax").value || 40 }; save(); updateTools(); }
+});
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.id === "loadA") { S.load = +el.value; save(); render(); refocus("loadA"); }
+  if (el.id === "loadB") { S.wiB = { ...planB(), load:+el.value }; save(); render(); refocus("loadB"); }
+  if (el.id === "summerA") { S.wiA = { ...(S.wiA || {}), summer: el.checked }; save(); render(); }
+  if (el.id === "summerB") { S.wiB = { ...planB(), summer: el.checked }; save(); render(); }
+  if (el.id === "startTerm") { S.start = +el.value; save(); render(); }
+  if (el.dataset.mod != null) { const B = { ...planB() }; B.mods = B.mods.map((m, i) => i === +el.dataset.mod ? { ...m, [el.dataset.f]: el.dataset.f === "n" ? +el.value : el.value } : m); S.wiB = B; save(); render(); }
+});
+function refocus(id) { const el = $(id); if (el) el.focus(); }
+document.addEventListener("toggle", e => { const d = e.target; if (d.id === "lab") { S.open = { ...(S.open || {}), lab: d.open }; save(); return; }
+  if (d.matches && d.matches("details.sec")) { S.open = { ...(S.open || {}), [d.dataset.sec]: d.open }; save(); } }, true);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && selected) { selected = null; render(); } });
+try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { if (!S.theme) applyChrome(); }); } catch(e) {}
+render();
+</script>
+
+</body>
+</html>
