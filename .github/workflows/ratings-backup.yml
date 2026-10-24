@@ -1,0 +1,37 @@
+# Every 3 days: keeps the free Supabase project awake (it pauses after a week with no visits)
+# and saves a copy of all course ratings to backups/ratings.json in this repo.
+name: Ratings backup
+
+on:
+  schedule:
+    - cron: "17 6 */3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ask the database for all ratings
+        env:
+          SUPA_URL: https://sywkyfskujchylqniapf.supabase.co
+          SUPA_KEY: sb_publishable_BixLFF2b2pT5RZXPoWkfhg_nSNXle8n
+        run: |
+          mkdir -p backups
+          curl -sSf -X POST "$SUPA_URL/rest/v1/rpc/backup_ratings" \
+            -H "apikey: $SUPA_KEY" -H "Content-Type: application/json" -d '{}' -o /tmp/ratings.json
+          # keep the old backup if the answer isn't a valid list
+          python3 -c "import json,sys; d=json.load(open('/tmp/ratings.json')); sys.exit(0 if isinstance(d,list) else 1)"
+          python3 -c "import json; d=json.load(open('/tmp/ratings.json')); json.dump(d, open('backups/ratings.json','w'), ensure_ascii=False, indent=1)"
+          date -u +"%Y-%m-%d %H:%M UTC" > backups/last-check.txt
+
+      - name: Save the backup in the repo
+        run: |
+          git config user.name "whatif-backup"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backups
+          git diff --cached --quiet || (git commit -m "Ratings backup" && git push)
