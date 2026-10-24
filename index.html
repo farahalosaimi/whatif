@@ -2075,7 +2075,7 @@ const FAQ = [
   { k:/داخل القسم|inside the department|department elective/, a:() => AR() ? G("كل مادة تنفتح لما تجتازين متطلباتها.","كل مادة تنفتح لما تجتاز متطلباتها.") : "Each one opens once you pass its prerequisites." },
   { k:/صيفي|الصيف|summer/, a:() => AR() ? "الصيفي في «لو» محسوب لمواد الفرعي بس." : "In What iF, summer counts for minor courses only." },
   { k:/فرعي|الذكاء الاصطناعي|minor|ذكا 411/, a:() => AR() ? "الفرعي 20 ساعة: 14 إجباري و6 اختياري. وذكا 411 تحتاج 15 ساعة من الفرعي قبلها." : "The minor is 20 hours: 14 required and 6 elective. AI 411 needs 15 minor hours first." },
-  { k:/اقصى|اطول|مده|12 ترم|ايقاف|طي قيد|maximum|suspension|how long/, a:() => AR() ? G("12 ترم. بعدها ممكن يجيك إيقاف أكاديمي، فراجعي مرشدتك الأكاديمية.","12 ترم. بعدها ممكن يجيك إيقاف أكاديمي، فراجع مرشدك الأكاديمي.") : "12 terms. After that an academic suspension may follow, so talk to your advisor." },
+  { k:/اقص[يى]|اطول|مده|12 ترم|ايقاف|طي قيد|maximum|suspension|how long/, a:() => AR() ? G("12 ترم. بعدها ممكن يجيك إيقاف أكاديمي، فراجعي مرشدتك الأكاديمية.","12 ترم. بعدها ممكن يجيك إيقاف أكاديمي، فراجع مرشدك الأكاديمي.") : "12 terms. After that an academic suspension may follow, so talk to your advisor." },
   { k:/رسبت|ارسب|اعيد|اعاده|retake|failed/, a:() => AR() ? "كل المحاولات تنحسب في المعدل، حتى الرسوب." : "Every attempt counts toward your GPA, failed ones included." },
   { k:/عديته|passed ✓/, a:() => AR() ? G("يعلّم المستوى كامل إنك خلصتيه بدون درجات، وهالمواد ما تدخل المعدل.","يعلّم المستوى كامل إنك خلصته بدون درجات، وهالمواد ما تدخل المعدل.") : "Marks a whole level as done without grades; those courses stay out of your GPA." },
   { k:/سجلتها|مسجله|registered this term/, a:() => AR() ? G("تعلّمين المواد اللي تدرسينها الحين، عشان يصير توقع التخرج أدق.","تعلّم المواد اللي تدرسها الحين، عشان يصير توقع التخرج أدق.") : "Mark the courses you’re taking now, so the graduation estimate is sharper." },
@@ -2086,6 +2086,16 @@ const FAQ = [
   { k:/رسمي|official/, a:() => AR() ? "لا، موقع غير رسمي وغير تابع للجامعة، والحسابات تقديرية." : "No, it’s an unofficial site not affiliated with the university; the numbers are estimates." },
   { k:/كيف اقيم|اقيم|اضيف تقييم|rate a course|how to rate/, a:() => AR() ? G("من «تقييمات المقررات» في الصفحة الرئيسية: ابحثي عن المادة وقيّميها.","من «تقييمات المقررات» في الصفحة الرئيسية: ابحث عن المادة وقيّمها.") + ` <button type="button" class="link" id="botToReviews">${L().rvTitle} ←</button>` : `From “Course ratings” on the home page: search the course and rate it. <button type="button" class="link" id="botToReviews">${L().rvTitle} →</button>` },
   { k:/بحوث العمليات.*(طالبات|بنات|للطالبه)|(طالبات|بنات).*بحوث العمليات|operations research.*(female|women)/, a:() => AR() ? "لا، تخصص بحوث العمليات متاح للطلاب بس." : "No, the Operations Research major is offered to male students only." },
+];
+const FAQ_EXC = [
+  { k:/استثناء|استثناءات|استثنائي|exception/, a:() => AR() ? `فيه استثناءات ممكنة، وكلها تحتاج موافقة مسجل القسم أو الكلية حسب حالت${G("ك","ك")}:<ul>
+      <li><b>تجاوز المتطلب:</b> تسجيل مادة قبل اجتياز متطلبها.</li>
+      <li><b>التزامن:</b> دراسة المادة ومتطلبها في نفس الترم، مثل الجبر الخطي مع بحث 213.</li>
+      <li><b>فك الساعات:</b> تسجيل أكثر من 20 ساعة في الترم في بعض الحالات.</li>
+      <li><b>مادتين إسلامية:</b> للمتوقع تخرجهم في نفس الترم.</li>
+      <li><b>الاختبار البديل:</b> لمن غاب عن الاختبار النهائي بعذر مقبول.</li></ul>${G("ارجعي لمرشدتك الأكاديمية أو مسجل القسم قبل أي قرار.","ارجع لمرشدك الأكاديمي أو مسجل القسم قبل أي قرار.")}`
+    : `Possible exceptions, each needing approval from the department or college registrar:<ul><li><b>Prerequisite bypass:</b> registering a course before passing its prerequisite.</li><li><b>Concurrent enrollment:</b> a course and its prerequisite in the same term, like Linear Algebra with OPER 213.</li><li><b>Hour-limit lift:</b> more than 20 hours in a term in some cases.</li><li><b>Two Islamic studies courses:</b> for students expected to graduate that term.</li><li><b>Alternative exam:</b> for a missed final with an accepted excuse.</li></ul>Check with your academic advisor or the registrar before deciding.` },
+  { k:/فك الساعات|فك ساعات|اكثر من 20|فوق 20|(21|22|23|24) ساعه|اقص[يى] (عدد )?ساعات|حد الساعات|كم ساعه اقدر|اكثر عدد ساعات|overload|more than 20|max(imum)? hours/, a:() => AR() ? G("الحد الطبيعي من 12 إلى 20 ساعة بالترم. وفيه استثناء «فك الساعات»: في بعض الحالات ممكن يُسمح للطالب يسجل أكثر من 20 ساعة. اسألي مرشدتك الأكاديمية أو مسجل القسم إذا حالتك تسمح.","الحد الطبيعي من 12 إلى 20 ساعة بالترم. وفيه استثناء «فك الساعات»: في بعض الحالات ممكن يُسمح للطالب يسجل أكثر من 20 ساعة. اسأل مرشدك الأكاديمي أو مسجل القسم إذا حالتك تسمح.") : "The normal range is 12–20 hours per term. As an exception, the hour limit can be lifted in some cases to allow more than 20 hours. Ask your advisor or the registrar whether your case qualifies." },
 ];
 const needPlan = () => AR() ? G("اختاري خطتك أول من الصفحة الرئيسية، عشان أقدر أحسب لك.","اختر خطتك أول من الصفحة الرئيسية، عشان أقدر أحسب لك.") : "Pick your plan on the home page first so I can calculate this for you.";
 function botAnswer(q) {
@@ -2112,6 +2122,8 @@ function botAnswer(q) {
     const stx = inPlan ? (ar ? `<br>حالتها عندك: <b>${t.st[status(C0)]}</b>` : `<br>Your status: <b>${t.st[status(C0)]}</b>`) : "";
     return `${cLink(C0)}: ${t.creditHrs(C0.hrs)}${lv}${grp}.${stx}<br>${rateLine}${revBtn}`;
   }
+  // --- exceptions first (their wording overlaps "register", "maximum"…) ---
+  for (const f of FAQ_EXC) if (f.k.test(raw)) return f.a();
   // --- personal numbers ---
   if (has2(/مشروع|497|project/)) {
     if (!has) return ar ? G("تقدرين تسجلين مشروع التخرج لما يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتازين 93 ساعة.","تقدر تسجل مشروع التخرج لما يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتاز 93 ساعة.") : "You can register the graduation project once 43 hours or fewer are left, i.e. about 93 hours passed.";
@@ -2145,7 +2157,7 @@ function botAnswer(q) {
     const v = g.v, r2 = Math.round(v * 100) / 100;
     return (ar ? `معدلك <b>${v.toFixed(2)}</b> (${t.ranks[rankIdx(v)]})` : `Your GPA is <b>${v.toFixed(2)}</b> (${t.ranks[rankIdx(v)]})`) + (r2 >= 4.75 ? ` · ${t.onHonor1}` : r2 >= 4.25 ? ` · ${t.onHonor2}` : "");
   }
-  if (has2(/باقي|متى اتخرج|متى بتخرج|تخرجي|اتخرج|left|graduat/)) {
+  if (has2(/باقي|مت[يى] اتخرج|مت[يى] بتخرج|تخرجي|اتخرج|left|graduat/)) {
     if (!has) return needPlan();
     const rem = Math.max(0, total() - counted().total); if (!rem) return t.estDone;
     const r = runPlan(planA());
