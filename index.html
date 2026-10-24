@@ -1549,8 +1549,8 @@ function simulate(o) {
     };
     const avail = items.filter(ok).sort((a, b) => b.prio - a.prio || (a.slot ? 1 : 0) - (b.slot ? 1 : 0) || (a.course?.level || 9) - (b.course?.level || 9));
     let hrs = 0; const picked = [];
-    let isl = 0; // KSU rule: at most one Islamic studies course per term; a student expected to graduate this term may take two
-    const islMax = remGrad <= cap ? 2 : 1;
+    let isl = 0; // KSU rule: at most one Islamic studies course per term (two for an expected graduate is an exception, not planned by default)
+    const islMax = 1;
     for (const i of avail) {
       if (picked.includes(i) || (i.group === "isl" && isl >= islMax)) continue;
       // a co-requisite must sit in the same term: take it along if it's available and both fit
