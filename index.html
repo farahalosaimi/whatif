@@ -503,10 +503,141 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline
 .box{background:var(--sunk);border-radius:12px;padding:12px 14px;font-size:13.5px}
 .box.warn{background:var(--warn-soft);color:var(--warn)}
 h4{margin:0 0 6px;font-size:12.5px;color:var(--muted);font-weight:500}
+.contact{margin:44px 0 0;text-align:center;font-size:13.5px;color:var(--muted)}
+.contact a{color:var(--open);font-weight:500;text-decoration:none;direction:ltr;unicode-bidi:isolate}
+.contact a:hover{text-decoration:underline}
+.contact+footer{margin-top:8px}
+.contact.connect{margin-top:6px}
+.contact .li{display:inline-flex;align-items:center;gap:4px;color:var(--open);text-decoration:none;font-weight:500}
+.contact .li svg{width:13px;height:13px}
 footer{margin-top:44px;color:var(--muted);font-size:12.5px;text-align:center}
 footer .li{display:inline-flex;align-items:center;gap:4px;color:var(--open);text-decoration:none;margin-inline-start:6px;font-weight:500}
 footer .li:hover{text-decoration:underline}
 footer .li svg{width:13px;height:13px}
+
+/* plan choice: minor question + major cards */
+.minor-box{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;text-align:start;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:16px 20px;margin-bottom:16px;box-shadow:var(--shadow);transition:border-color .15s,background .15s}
+.minor-box:hover{border-color:var(--accent)}
+.minor-box .mq{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:18px}
+.minor-box .mq svg{width:26px;height:26px;color:var(--f);flex:none}
+.minor-box .yes{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:6px 16px 6px 12px;font-size:15px}
+.minor-box .box{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--muted);display:inline-grid;place-items:center;background:var(--surface);padding:0}
+.minor-box.on{border-color:var(--f);background:color-mix(in srgb,var(--f-soft) 55%,var(--surface))}
+.minor-box.on .yes{border-color:var(--f);color:var(--f);font-weight:700}
+.minor-box.on .box{background:var(--f);border-color:var(--f)}
+.minor-box.on .box::after{content:"";width:5px;height:9px;border:solid var(--surface);border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.track.or .h{color:var(--accent)}
+.tracks.one{grid-template-columns:minmax(280px,560px)}
+.track .plus{display:block;font-family:var(--font-body);font-size:13.5px;font-weight:500;color:var(--f);margin-top:2px}
+
+/* summary: entry term */
+.entry{margin-top:6px}
+.entry select{font:inherit;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:5px 8px}
+
+/* first-visit tips */
+.tipcard{display:flex;gap:14px;align-items:flex-start;background:var(--deep-soft);border:1px solid color-mix(in srgb,var(--deep) 30%,var(--line));border-radius:var(--r);padding:14px 16px;margin-bottom:16px}
+.tipcard .n{font-family:var(--font-mono);font-size:12px;color:var(--deep);background:var(--surface);border-radius:999px;padding:2px 9px;flex:none}
+.tipcard .tx{flex:1;font-size:14px}
+.tipcard .tx b{color:var(--deep)}
+.tipcard .act{display:flex;gap:6px;flex:none}
+
+/* delay / time-limit card */
+.late{border-radius:var(--r);padding:16px 18px;margin-bottom:16px;display:grid;gap:10px;border:1px solid color-mix(in srgb,var(--warn) 40%,var(--line));background:var(--warn-soft)}
+.late.red{border-color:color-mix(in srgb,var(--fail) 55%,var(--line));background:var(--fail-soft)}
+.late h3{margin:0;font-family:var(--font-display);font-size:18px;font-weight:700}
+.late.red h3{color:var(--fail)}
+.late .lead{margin:0;font-size:14px}
+.late ul{margin:0;padding-inline-start:20px;display:grid;gap:6px;font-size:14px}
+.late .reg{display:flex;flex-wrap:wrap;gap:6px}
+.late .reg span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:13px}
+.late .adv{font-size:12.5px;color:var(--muted);margin:0}
+.late .link{border:0;background:none;padding:0;color:var(--open);text-decoration:underline;text-underline-offset:3px;font:inherit}
+
+/* bypass + alternative exam */
+.tile.byp{border-style:dashed;border-color:var(--open)}
+.qbox{background:var(--open-soft);border-radius:12px;padding:12px 14px;font-size:13.5px;display:grid;gap:8px}
+.qbox b{color:var(--open)}
+.qbox .acts{display:flex;flex-wrap:wrap;gap:6px}
+.qbox .hint{font-size:12.5px;color:var(--muted)}
+.box.alt{background:var(--deep-soft);color:var(--deep)}
+.linkbtn{border:0;background:none;padding:0;color:var(--open);font-size:13px;text-decoration:underline;text-underline-offset:3px;justify-self:start}
+.reqs .bp{color:var(--open)}
+
+/* course ratings section */
+#reviews{margin-top:28px}
+.rv{display:grid;gap:14px}
+.rv-head h2{margin:0;font-family:var(--font-display);font-weight:700;font-size:24px}
+.rv-head p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.rv-search{position:relative}
+.rv-search svg{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
+.rv-search input{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;padding-inline-start:42px;box-shadow:var(--shadow)}
+.rv-search input:focus{outline:none;border-color:var(--accent)}
+.rv-res{display:grid;gap:6px}
+.rv-item{display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:center;text-align:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.rv-item:hover,.rv-item.on{border-color:var(--accent)}
+.rv-item.on{background:var(--accent-soft)}
+.rv-item .c{font-family:var(--font-mono);font-size:13px;color:var(--deep);white-space:nowrap}
+.rv-item .n{font-weight:500;min-width:0}
+.rv-item .n small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.rv-item .s{font-size:12.5px;color:var(--muted);white-space:nowrap;text-align:end}
+.rv-empty{color:var(--muted);font-size:14px;margin:0}
+.rv-card{display:grid;gap:12px}
+.rv-card h3{margin:0;font-family:var(--font-display);font-size:21px;font-weight:700}
+.rv-card .sub{color:var(--muted);font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
+.dbar{display:grid;gap:4px;font-size:13px}
+.dbar .tr{position:relative;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--done),var(--g7),var(--fail));direction:ltr}
+.dbar .tr i{position:absolute;top:-4px;width:4px;height:18px;border-radius:2px;background:var(--ink);transform:translateX(-50%)}
+.dbar .lb{display:flex;justify-content:space-between;color:var(--muted);font-size:11.5px;direction:ltr}
+.rv-entry{margin-top:16px;width:100%;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--deep-soft) 70%,var(--surface)))}
+.rv-entry .ic{font-size:34px;line-height:1}
+.rv-entry .t{font-family:var(--font-display);font-size:21px;font-weight:700;display:block}
+.rv-entry .d{color:var(--muted);font-size:13.5px}
+.rv-back{justify-self:start}
+.rv-cheer{background:var(--deep-soft);border:1px solid color-mix(in srgb,var(--deep) 25%,var(--line));border-radius:14px;padding:12px 16px;font-size:14px}
+.rv-cheer b{color:var(--deep)}
+#reviews{margin-top:4px}
+.sugbox{margin-top:18px;border:1.5px solid var(--accent);background:linear-gradient(135deg,var(--accent-soft),var(--surface) 70%);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);display:grid;gap:10px}
+.sugbox h2{margin:0;font-family:var(--font-display);font-size:21px;font-weight:700;color:var(--accent)}
+.sugbox .note{margin:0;font-size:13.5px;color:var(--muted)}
+.sugbox .sugs{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.sugbox .slotc{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted);display:grid;align-content:center}
+#suggest+#late .late,#late+#alerts>details{margin-top:16px}
+.late{margin-top:16px}
+.sec.small>summary .section-title{font-size:15px}
+.sec.small>summary .section-title small{font-size:11.5px}
+.sec.small>summary{padding-block:8px}
+.sec.small .record table{font-size:12.5px}
+.sec.small .record td,.sec.small .record th{padding:5px 8px}
+.tile.reg{border-color:var(--accent);background:color-mix(in srgb,var(--accent-soft) 70%,var(--surface))}
+.admit-note{font-size:13px;color:var(--muted);margin:0 0 10px;padding:8px 12px;background:var(--sunk);border-radius:10px}
+.sortrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted)}
+.sortrow button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 10px;font-size:12.5px}
+.sortrow button.on{border-color:var(--deep);background:var(--deep-soft);color:var(--deep);font-weight:700}
+
+/* «مساعد لو» */
+.bot-fab{position:fixed;z-index:40;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 18px 11px 16px;background:var(--deep);color:var(--surface);font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(27,37,54,.25)}
+.bot-fab span:first-child{font-size:18px}
+.bot-fab:hover{filter:brightness(1.08)}
+.bot{position:fixed;z-index:41;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 100px));background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 40px rgba(27,37,54,.25);display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden}
+@media (max-width:640px){.bot{inset-inline:8px;width:auto;bottom:8px;height:min(80vh,600px)}}
+.bot header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--deep-soft)}
+.bot-title{display:flex;align-items:center;gap:8px;color:var(--deep);font-family:var(--font-display);font-size:16px}
+.bot-title svg{width:24px;height:27px}
+.bot .x{border:0;background:var(--surface);border-radius:50%;width:30px;height:30px;font-size:16px;line-height:1}
+.bot-msgs{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.6}
+.msg.b{align-self:flex-start;background:var(--sunk);border-start-start-radius:4px}
+.msg.u{align-self:flex-end;background:var(--deep);color:var(--surface);border-start-end-radius:4px}
+.msg ul{margin:4px 0 0;padding-inline-start:18px}
+.msg .mono{font-size:.85em}
+.msg .link{border:0;background:none;padding:0;color:var(--open);text-decoration:underline;text-underline-offset:3px;font:inherit}
+.bot-quick{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 0;scrollbar-width:none}
+.bot-quick button{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:12.5px;white-space:nowrap}
+.bot-quick button:hover{border-color:var(--accent);color:var(--accent)}
+.bot-in{display:flex;gap:8px;padding:10px 12px 12px}
+.bot-in input{flex:1;min-width:0;font:inherit;font-size:15px;color:var(--ink);background:var(--sunk);border:1px solid var(--line);border-radius:999px;padding:9px 14px}
+.bot-in input:focus{outline:none;border-color:var(--accent)}
+.bot-in .btn{width:40px;height:40px;padding:0;border-radius:50%;font-size:18px;flex:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -565,16 +696,22 @@ footer .li svg{width:13px;height:13px}
       </div>
       <h2 data-t="choose"></h2>
       <p data-t="chooseSub"></p>
-      <div class="tracks">
+      <button type="button" class="minor-box" id="minorBox" aria-pressed="false">
+        <span class="mq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9.5 16h5"/></svg><span data-t="minorQ"></span></span>
+        <span class="yes"><i class="box" aria-hidden="true"></i><span data-t="yesWord"></span></span>
+      </button>
+      <div class="tracks" id="tracks">
         <button class="track" type="button" data-track="stat" id="trackStat"></button>
-        <button class="track ai" type="button" data-track="ai" id="trackAi"></button>
+        <button class="track or" type="button" data-track="or" id="trackOr"></button>
       </div>
+      <button type="button" class="track rv-entry" id="openReviews"></button>
     </div>
   </section>
 
   <!-- app -->
   <section id="app" hidden>
     <div id="banners"></div>
+    <div id="tips"></div>
     <div class="summary">
       <div class="card ruler">
         <div class="gpa-row">
@@ -603,6 +740,7 @@ footer .li svg{width:13px;height:13px}
           </div>
           <div class="est" id="estText"></div>
           <div class="hint" id="estWhy"></div>
+          <div class="line entry"><label class="hint" for="entryTerm" data-t="entryLabel"></label><select id="entryTerm"></select></div>
         </div>
       </div>
     </div>
@@ -610,6 +748,9 @@ footer .li svg{width:13px;height:13px}
     <div class="legend" id="legend"></div>
     <p class="pass-note" id="passNote"></p>
     <div id="plan"></div>
+    <div id="suggest"></div>
+    <div id="late"></div>
+    <div id="alerts"></div>
     <details class="lab" id="lab">
       <summary class="lab-head">
         <svg class="lab-logo" viewBox="0 0 64 72" aria-hidden="true"><use href="#logoMark"/></svg>
@@ -628,9 +769,7 @@ footer .li svg{width:13px;height:13px}
       </div>
     </details>
 
-    <div id="alerts"></div>
-
-    <details class="sec" data-sec="rec" id="recSec">
+    <details class="sec small" data-sec="rec" id="recSec">
       <summary><h2 class="section-title"><span data-t="recordTitle"></span><small data-t="recordSub"></small></h2>
         <span class="sec-prog"><span class="mono" id="recSum"></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </summary>
@@ -638,17 +777,29 @@ footer .li svg{width:13px;height:13px}
     </details>
   </section>
 
+  <!-- course ratings page: open to everyone, no plan needed (#reviews, #reviews/<course code>) -->
+  <section id="reviews" hidden></section>
+
+  <p class="contact" data-t="contact"></p>
+  <p class="contact connect" data-t="connect"></p>
   <footer data-t="footer"></footer>
 </div>
 
 <div class="scrim" id="scrim" hidden></div>
+<button type="button" class="bot-fab" id="botFab" aria-expanded="false"><span aria-hidden="true">🤖</span><span class="lbl" data-t="botName"></span></button>
+<section class="bot" id="bot" hidden aria-live="polite">
+  <header><span class="bot-title"><svg viewBox="0 0 64 72" aria-hidden="true"><use href="#logoMark"/></svg><b data-t="botName"></b></span><button type="button" class="x" id="botClose" aria-label="×">×</button></header>
+  <div class="bot-msgs" id="botMsgs"></div>
+  <div class="bot-quick" id="botQuick"></div>
+  <form class="bot-in" id="botForm"><input id="botQ" autocomplete="off"><button type="submit" class="btn primary" id="botSend" aria-label="send">↑</button></form>
+</section>
 <aside class="drawer" id="drawer" hidden aria-live="polite"></aside>
 
 <script>
 /* ---------- i18n ---------- */
 const T = {
   ar: {
-    brandSub:"آلة الزمن الجامعية", tagline:"<span>لطلاب</span><span>الإحصاء</span>",
+    brandSub:"آلة الزمن الجامعية", tagline:"<span>قسم</span><span>الإحصاء</span><span>وبحوث</span><span>العمليات</span>",
     heroTitle:"لو كملتي على نفس الطريق… <em>متى تتخرجين؟</em>",
     heroLead:"حددي المواد اللي خلصتيها ودرجاتها، و«لو» يحسب معدلك ويوريك كم باقي لك، وأي مواد تقدرين تسجلينها الحين. خطة بكالوريوس الإحصاء، كلية العلوم، جامعة الملك سعود.",
     figCap:"كل «لو» يرسم لك منحنى جديد لسنة تخرجك",
@@ -672,7 +823,7 @@ const T = {
     secCore:"مواد القسم الإجبارية", secCoreSub:"اضغطي أي مادة، متطلبها بيتلون لك بالأحمر، واللي بتفتحه لك بالأزرق",
     secElec:"المواد الاختيارية", secElecAi:"المواد الاختيارية والفرعي",
     level:n=>`المستوى ${["","الأول","الثاني","الثالث","الرابع","الخامس","السادس","السابع","الثامن"][n]}`,
-    hrsShort:"س", st:{done:"خلصتيها",open:"متاحة الحين",retry:"تحتاج إعادة",locked:"مقفلة"}, full:"المجموعة مكتملة",
+    hrsShort:"س", st:{done:"خلصتيها",open:"متاحة الحين",retry:"تحتاج إعادة",locked:"مقفلة",reg:"مسجّلة هالترم"}, full:"المجموعة مكتملة",
     groups:{
       isl:["مواد إسلامية","8 ساعات · كل مادة ساعتين · مادة وحدة بس في كل ترم"],
       out:["اختياري خارج القسم","9 ساعات · تنفتح بعد ما تخلصين كل مواد المستوى الثالث"],
@@ -706,13 +857,13 @@ const T = {
     passInfo:"<b>عديته ✓</b><span>يعلّم مواد المستوى كلها إنك خلصتيها بدون تسجيل تقديراتها، وهذي المواد <strong>ما تنحسب في المعدل التراكمي</strong>. لو تبين تنحسب، اضغطي على المادة واختاري تقديرها.</span>", noGradeShort:"بدون درجة",
     pNote:h=>`${h} ساعة عديتيها بدون درجة ما تنحسب في المعدل`, pPick:"عديتيها بدون درجة. لو تبين تنحسب في المعدل اختاري درجتك",
     lockedBox:"المادة مقفلة الحين. خلصي المتطلبات اللي عليها ✗ وتنفتح لك.",
-    footer:"فرح العصيمي <a class=\"li\" href=\"https://www.linkedin.com/in/farah-alosaimi-813946324\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z\"/></svg>LinkedIn</a> · موقع غير رسمي وغير تابع لجامعة الملك سعود · الحسابات تقديرية، وارجعي لمرشدتك الأكاديمية في القرارات الرسمية",
+    footer:"فرح العصيمي · موقع غير رسمي وغير تابع لجامعة الملك سعود · الحسابات تقديرية، وارجعي لمرشدتك الأكاديمية في القرارات الرسمية",
     themeDark:"المظهر الداكن", themeLight:"المظهر الفاتح",
   },
   en: {
-    brandSub:"The University Time Machine", tagline:"<span>for</span><span>statistics</span><span>students</span>",
+    brandSub:"The University Time Machine", tagline:"<span>Statistics</span><span>&amp;</span><span>OR</span><span>Dept.</span>",
     heroTitle:"If you keep going this way… <em>when will you graduate?</em>",
-    heroLead:"Mark the courses you’ve finished and their grades. What iF calculates your GPA, shows how much is left, and which courses you can register now. Statistics B.Sc. plan, College of Science, King Saud University.",
+    heroLead:"Mark the courses you’ve finished and their grades. What iF calculates your GPA, shows how much is left, and which courses you can register now. Statistics and Operations Research B.Sc. plans, College of Science, King Saud University.",
     figCap:"Every “what if” draws a new curve for your graduation year",
     figYou:"You are here", figAxis:"Graduation year",
     choose:"Choose your plan", chooseSub:"You can change it later from the top bar.",
@@ -734,7 +885,7 @@ const T = {
     secCore:"Core statistics courses", secCoreSub:"Tap any course: its prerequisites turn red, and what it unlocks turns blue",
     secElec:"Electives", secElecAi:"Electives and minor",
     level:n=>`Level ${n}`,
-    hrsShort:"h", st:{done:"Completed",open:"Available",retry:"Retake needed",locked:"Locked"}, full:"Group complete",
+    hrsShort:"h", st:{done:"Completed",open:"Available",retry:"Retake needed",locked:"Locked",reg:"Registered this term"}, full:"Group complete",
     groups:{
       isl:["Islamic studies","8 hours · 2 hours each · one per term at most"],
       out:["Electives outside the department","9 hours · open after completing all of level 3"],
@@ -768,7 +919,7 @@ const T = {
     passInfo:"<b>Passed ✓</b><span>marks a whole level as completed without recording grades. These courses <strong>are not counted in your cumulative GPA</strong>. To include one, tap it and pick its grade.</span>", noGradeShort:"no grade",
     pNote:h=>`${h} hours marked passed without a grade aren’t in the GPA`, pPick:"Marked passed without a grade. Pick one to include it in your GPA",
     lockedBox:"This course is locked. Finish the prerequisites marked ✗ to open it.",
-    footer:"Farah Alosaimi <a class=\"li\" href=\"https://www.linkedin.com/in/farah-alosaimi-813946324\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z\"/></svg>LinkedIn</a> · Unofficial site, not affiliated with King Saud University · estimates only; check with your academic advisor for official decisions",
+    footer:"Farah Alosaimi · Unofficial site, not affiliated with King Saud University · estimates only; check with your academic advisor for official decisions",
     themeDark:"Dark mode", themeLight:"Light mode",
   }
 };
@@ -776,13 +927,13 @@ const T = {
 /* Arabic, addressed to a male student (only the lines that change) */
 T.arm = {
   heroTitle:"لو كملت على نفس الطريق… <em>متى تتخرج؟</em>",
-  heroLead:"حدد المواد اللي خلصتها ودرجاتها، و«لو» يحسب معدلك ويوريك كم باقي لك، وأي مواد تقدر تسجلها الحين. خطة بكالوريوس الإحصاء، كلية العلوم، جامعة الملك سعود.",
+  heroLead:"حدد المواد اللي خلصتها ودرجاتها، و«لو» يحسب معدلك ويوريك كم باقي لك، وأي مواد تقدر تسجلها الحين. خطط بكالوريوس الإحصاء وبحوث العمليات، كلية العلوم، جامعة الملك سعود.",
   figYou:"أنت هنا", choose:"اختر خطتك", chooseSub:"تقدر تغيرها بعدين من فوق.", start:"ابدأ ←",
   noGrades:"اختر درجة أي مادة خلصتها من الخريطة تحت", graduated:"خلصت!", loadLabel:"كم ساعة تسجل بالترم عادة؟",
   est:n=>`تقريباً <b class="num">${n}</b> ${n===1?"ترم":n===2?"ترمين":n<=10?"أترام":"ترم"} وتتخرج`,
   lgDone:"خلصتها", lgOpen:"تقدر تسجلها الحين",
   secCoreSub:"اضغط أي مادة، متطلبها بيتلون لك بالأحمر، واللي بتفتحه لك بالأزرق",
-  st:{done:"خلصتها",open:"متاحة الحين",retry:"تحتاج إعادة",locked:"مقفلة"},
+  st:{done:"خلصتها",open:"متاحة الحين",retry:"تحتاج إعادة",locked:"مقفلة",reg:"مسجّلة هالترم"},
   recEmpty:"لما تختار درجة لأي مادة تطلع هنا.",
   confirmQ:"متأكد تبي تمسح كل الدرجات؟", yes:"إيه، امسح",
   r15:h=>`إتمام 15 ساعة من الفرعي (خلصت ${h})`,
@@ -893,7 +1044,7 @@ Object.assign(T.ar, {
   alHide:"إخفاء التنبيه", alTitle:"تنبيهات «لو» ⚠️", alSub:"أشياء تستاهل تنتبهين لها في خطتك",
   alMinor:h=>`بهالخطة بتتخرجين قبل ما تخلصين الفرعي، والفرعي بينلغي. باقي عليك ${h} ساعات منه.`,
   alImp:(c,n)=>`${c} لو تأخرت، تتأخر معها ${n} ${n >= 3 && n <= 10 ? "مواد" : "مادة"}`,
-  al497:r=>`تقدرين تسجلين مشروع التخرج (احص 497) لما يكون باقي عليك 43 ساعة أو أقل. باقي لك الحين ${r} ساعة.`,
+  al497:(r,c)=>`تقدرين تسجلين مشروع التخرج (${c}) لما يكون باقي عليك 43 ساعة أو أقل. باقي لك الحين ${r} ساعة.`,
   alIsl:n=>`باقي لك ${n} مواد إسلامية، وما تقدرين تاخذين إلا وحدة بالترم، فلا تأجلينها لآخر خطتك.`,
   alRetry:c=>`عندك مادة تحتاج إعادة: ${c}. سجليها بأقرب ترم عشان ما تتأخر المواد اللي بعدها.`,
   alOut:"صار تقدرين تسجلين مواد خارج القسم، لأنك خلصتي المستوى الثالث.",
@@ -904,7 +1055,7 @@ Object.assign(T.ar, {
 Object.assign(T.arm, {
   alSub:"أشياء تستاهل تنتبه لها في خطتك",
   alMinor:h=>`بهالخطة بتتخرج قبل ما تخلص الفرعي، والفرعي بينلغي. باقي عليك ${h} ساعات منه.`,
-  al497:r=>`تقدر تسجل مشروع التخرج (احص 497) لما يكون باقي عليك 43 ساعة أو أقل. باقي لك الحين ${r} ساعة.`,
+  al497:(r,c)=>`تقدر تسجل مشروع التخرج (${c}) لما يكون باقي عليك 43 ساعة أو أقل. باقي لك الحين ${r} ساعة.`,
   alIsl:n=>`باقي لك ${n} مواد إسلامية، وما تقدر تاخذ إلا وحدة بالترم، فلا تأجلها لآخر خطتك.`,
   alRetry:c=>`عندك مادة تحتاج إعادة: ${c}. سجلها بأقرب ترم عشان ما تتأخر المواد اللي بعدها.`,
   alOut:"صار تقدر تسجل مواد خارج القسم، لأنك خلصت المستوى الثالث.",
@@ -915,7 +1066,7 @@ Object.assign(T.en, {
   alHide:"Hide this alert", alTitle:"What iF alerts ⚠️", alSub:"Things worth watching in your plan",
   alMinor:h=>`With this plan you’d graduate before finishing the minor, and the minor would be dropped. ${h} minor hours left.`,
   alImp:(c,n)=>`If ${c} is delayed, ${n} courses are delayed with it`,
-  al497:r=>`You can register the graduation project (STAT 497) once 43 hours or fewer are left. You have ${r} left.`,
+  al497:(r,c)=>`You can register the graduation project (${c}) once 43 hours or fewer are left. You have ${r} left.`,
   alIsl:n=>`${n} Islamic studies courses left, and only one is allowed per term, so don’t leave them to the end.`,
   alRetry:c=>`A course needs a retake: ${c}. Register it as soon as possible so the courses after it aren’t delayed.`,
   alOut:"You can now register electives outside the department, since you’ve finished level 3.",
@@ -933,10 +1084,12 @@ Object.assign(T.ar, {
   rTooLong:"التعليق أطول من 200 حرف.", rNoTeacher:"ممنوع ذكر الدكاترة في التعليق، قيّمي المادة نفسها.", rNoBad:"التعليق فيه كلمات غير لائقة، عدليه لو سمحتي.",
   rFail:"ما قدرت أرسل التقييم، جربي مرة ثانية.", rReport:"إبلاغ", rReported:"تم الإبلاغ",
   rDemo:"وضع تجريبي: التقييمات تنحفظ في جهازك بس لين نربط قاعدة البيانات.",
+  rBackup:"قاعدة البيانات ما تستجيب الحين، فهذي التقييمات من آخر نسخة احتياطية. إضافة تقييم جديد متوقفة مؤقتًا، جربي بعد شوي.",
 });
 Object.assign(T.arm, {
   rNone:"ما أحد قيّم هالمادة لين الحين. كن أول واحد 🙌",
   rRule:"قيّم المادة مو الدكتور، وممنوع ذكر أسماء الدكاترة. تقييم واحد لكل مادة من كل جهاز، وتقدر تعدله بعدين.",
+  rBackup:"قاعدة البيانات ما تستجيب الحين، فهذي التقييمات من آخر نسخة احتياطية. إضافة تقييم جديد متوقفة مؤقتًا، جرب بعد شوي.",
   rSend:"أرسل تقييمك", rUpdate:"حدّث تقييمك", rNeed:"اختر «عجبتك؟» ومستوى الصعوبة أول.",
   rNoTeacher:"ممنوع ذكر الدكاترة في التعليق، قيّم المادة نفسها.", rNoBad:"التعليق فيه كلمات غير لائقة، عدله لو سمحت.", rFail:"ما قدرت أرسل التقييم، جرب مرة ثانية.",
 });
@@ -949,17 +1102,132 @@ Object.assign(T.en, {
   rTooLong:"The comment is over 200 characters.", rNoTeacher:"Please don’t mention instructors; rate the course itself.", rNoBad:"The comment has inappropriate words; please edit it.",
   rFail:"Couldn’t send the rating. Try again.", rReport:"Report", rReported:"Reported",
   rDemo:"Demo mode: ratings are saved on this device only until the database is connected.",
+  rBackup:"The database isn’t responding right now, so these ratings come from the latest backup. Adding a new rating is paused; try again shortly.",
 });
 T.ar.labTitle = "أدوات «لو»"; T.ar.labSub = "جربي مستقبلك قبل ما تعيشينه: سيناريوهات التخرج وأدوات المعدل"; T.arm.labSub = "جرب مستقبلك قبل ما تعيشه: سيناريوهات التخرج وأدوات المعدل";
 T.en.labTitle = "What iF tools"; T.en.labSub = "Try your future before you live it: graduation scenarios and GPA tools";
 T.ar.genderQ = "مين معنا؟"; T.ar.female = "طالبة"; T.ar.male = "طالب";
 T.en.genderQ = "Who’s here?"; T.en.female = "Female student"; T.en.male = "Male student";
+/* ---------- v2: two majors, admission rule, bypass / alternative exam, delay alerts, tips, course-ratings section ---------- */
+Object.assign(T.ar, {
+  minorQ:"هل لديك تخصص فرعي في الذكاء الاصطناعي؟", yesWord:"نعم",
+  statName:"الإحصاء", orName:"بحوث العمليات", plusMinor:"+ فرعي الذكاء الاصطناعي",
+  secY1Sub:"كلها تنفتح بدون متطلب. عشان تنتقلين للقسم تحتاجين احص 101 وريض 101 وتقن 101 ومعدل 3.25 فأعلى، والباقي تقدرين تاخذينه مع مواد القسم",
+  rAdmit:"شرط الانتقال للقسم: اجتياز احص 101 وريض 101 وتقن 101", rCo:"(قبلها أو معها في نفس الترم)", rByp:"تم تجاوزه",
+  inNote:h=>`${h} ساعة من مواد الإحصاء وبحوث العمليات · كل مادة تنفتح بعد ما تجتازين متطلباتها`,
+  projNote:(d,n)=>`شرط التسجيل: يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتازين 93 ساعة تقريبًا من ساعات التخصص. اجتزتِ ${d} ساعة، ${n > 0 ? `باقي لك ${n} ساعة عشان ينفتح.` : "وتحقق الشرط ✓"}`,
+  alAdmit:g=>`شرط الانتقال للقسم معدل 3.25 فأعلى، ومعدلك الحين ${g}. ركّزي على رفعه قبل التحويل.`,
+  qTitle:"هل تم تجاوز المتطلب السابق أو لديك اختبار بديل؟", qByp:"نعم، تم التجاوز", qAlt:c=>`عندي اختبار بديل في ${c}`,
+  qNo:"إذا لا، تظل المادة مقفلة لين تخلصين متطلباتها.", qTwice:c=>`رسبتِ في ${c} مرتين. تقدرين تسألين مسجل القسم عن إمكانية تجاوز المتطلب.`,
+  bypBox:"تم تجاوز المتطلب السابق لهذي المادة، فصارت متاحة لك وحطيناها أولوية في أقرب ترم. تأكدي من مسجل القسم إن التسجيل يناسب حالتك.", bypUndo:"تراجعي عن التجاوز",
+  altSelf:"عندي اختبار بديل في هالمادة", altShort:"اختبار بديل",
+  altBox:"<b>اختبار بديل:</b> المادة محسوبة مجتازة مؤقتًا، ولا تدخل في المعدل لين تطلع الدرجة. لما تطلع درجتك اختاريها من تحت.",
+  stByp:"متجاوز المتطلب", seeReviews:"شوف آراء الطلاب ←",
+  rvTitle:"تقييمات المقررات", rvSub:"ابحثي عن أي مقرر وشوفي تقييمات الطلاب وتعليقاتهم، أو أضيفي تقييمك",
+  rvPh:"اكتبي اسم المقرر أو رمزه… مثلاً: احتمال، بحث 213، STAT 332", rvNone:"ما لقيت مقرر بهالاسم. جربي الرمز أو جزء من الاسم.",
+  rvNoRate:"ما فيه تقييمات", rvDiffAvg:"متوسط الصعوبة", sortBy:"ترتيب التعليقات:", sNew:"الأحدث", sLiked:"اللي عجبتهم أولًا", sHard:"الأصعب أولًا",
+  entryLabel:"ترم دخولك الجامعة:", entryPick:"اختاري",
+  lateTitle:n=>`متأخرة عن الخطة ${n === 1 ? "ترم" : n === 2 ? "ترمين" : n + " أترام"} تقريبًا`,
+  lateProjTitle:n=>`بهالخطة بتتخرجين في ترمك رقم ${n}، والخطة الرسمية 8 أترام`,
+  lateLead:(c,d,e)=>`أنتِ الحين في ترمك رقم ${c}، واجتزتِ ${d} ساعة من ساعات التخصص، والمتوقع حسب الخطة تقريبًا ${e}. وهذي خطوات تساعدك ترجعين على المسار:`,
+  lateNext:"سجّلي الترم الجاي:", lateDont:(c,n)=>`لا تأجلين ${c} أكثر، لأنها تفتح لك ${n} ${n >= 3 && n <= 10 ? "مواد" : "مادة"} بعدها، وكل ترم تأجيل يأخر تخرجك.`,
+  lateLoad:(l,k)=>`لو رفعتي ساعاتك لـ ${l} ساعة بالترم، تتخرجين أبكر ${k === 1 ? "بترم" : k === 2 ? "بترمين" : "بـ" + k + " أترام"}.`,
+  lateAdv:"هذي اقتراحات تقديرية، ارجعي لمرشدتك الأكاديمية قبل التسجيل.",
+  limitTitle:"⛔ وصلتِ الحد الأعلى لمدة الدراسة (12 ترم)", limitLead:"الترم الجاي ممكن يجيك إيقاف أكاديمي. راجعي مرشدتك الأكاديمية ومسجل القسم بأسرع وقت.",
+  limitProj:n=>`بهالخطة بتتخرجين في ترمك رقم ${n}، وهذا أكثر من الحد الأعلى (12 ترم). ارفعي ساعاتك أو راجعي مرشدتك.`,
+  tips:["<b>ابدئي من الخريطة:</b> اضغطي على أي مادة وحددي درجتك، أو اضغطي «عديته ✓» عشان تعلّمين مستوى كامل.",
+        "<b>جربي «لو»:</b> في «أدوات لو» تقدرين تجربين سيناريوهات مثل تأجيل مادة، وتشوفين توقعات تخرجك ومعدلك.",
+        "<b>حددي ترم دخولك</b> عشان ننبهك إذا تأخرتي عن الخطة. وتذكري: الموقع أداة مساعدة للتخطيط، وللقرارات الرسمية ارجعي دائمًا لمرشدتك الأكاديمية."],
+  tipNext:"التالي", tipDone:"تمام", tipSkip:"تخطي",
+  connect:"🤝 يسعدني تواصلكم ومشاركتكم آراءكم حول المشروع عبر <a class=\"li\" href=\"https://www.linkedin.com/in/farah-alosaimi-813946324\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z\"/></svg>LinkedIn</a>",
+  contact:"✉️ عندك مشكلة أو اقتراح أو استفسار؟ راسلينا على <a href=\"mailto:whatif.ksu@gmail.com\">whatif.ksu@gmail.com</a>",
+  rvEntryDesc:"شوفي تقييمات الطلاب للمقررات وتعليقاتهم قبل لا تسجلين، وأضيفي تقييمك", rvGo:"ادخلي ←", back:"رجوع",
+  rvCheer:"💜 <b>تعليقك يفرق!</b> كل تقييم تكتبينه يصير مرجع للطلاب اللي بعدك. شاركينا تجربتك مع المواد اللي درستيها: وش صعوبتها؟ وكيف تذاكرينها؟",
+  qTitle:"هل تم تجاوز المتطلب السابق، أو لديك اختبار بديل، أو تمت الموافقة على التزامن؟", qConc:"تمت الموافقة على التزامن",
+  concBox:c=>`تمت الموافقة على التزامن: تقدرين تدرسين هالمادة مع متطلبها (${c}) في نفس الترم، والخطة بتحطهم مع بعض.`, concUndo:"تراجعي عن التزامن", rConc:"· بموافقة التزامن (معها في نفس الترم)",
+  regBtn:"سجّلتها هالترم ✓", regBox:"<b>مسجّلة هالترم:</b> نحسبها منجزة قبل الترم الجاي عشان يكون توقع تخرجك أدق، وما تدخل المعدل لين تحطين درجتك.", regUndo:"إلغاء التسجيل",
+  stReg:"مسجّلة هالترم", lgReg:"سجّلتيها هالترم", secReq:"المواد الإجبارية",
+  botName:"مساعد لو", botPh:"اكتبي سؤالك…", botHello:"هلا! أنا <b>مساعد لو</b> 👋 اسأليني عن خطتك أو أي مقرر، مثل: «وش متطلب احص 332؟» أو «كم باقي لي؟»",
+  botQuick:["كم باقي لي؟","وش أسجل الترم الجاي؟","كيف أنتقل للقسم؟","وش يعني اختبار بديل؟","متى أسجل مشروع التخرج؟"],
+  sugTitle:"🧭 مقترحة لك", sugNote:(w,l)=>`مواد نقترح تسجلينها في ${w}، حسب ${l} ساعة بالترم وقوانين خطتك. اضغطي على أي مادة للتفاصيل.`,
+});
+Object.assign(T.arm, {
+  secY1Sub:"كلها تنفتح بدون متطلب. عشان تنتقل للقسم تحتاج احص 101 وريض 101 وتقن 101 ومعدل 3.25 فأعلى، والباقي تقدر تاخذه مع مواد القسم",
+  inNote:h=>`${h} ساعة من مواد الإحصاء وبحوث العمليات · كل مادة تنفتح بعد ما تجتاز متطلباتها`,
+  projNote:(d,n)=>`شرط التسجيل: يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتاز 93 ساعة تقريبًا من ساعات التخصص. اجتزت ${d} ساعة، ${n > 0 ? `باقي لك ${n} ساعة عشان ينفتح.` : "وتحقق الشرط ✓"}`,
+  alAdmit:g=>`شرط الانتقال للقسم معدل 3.25 فأعلى، ومعدلك الحين ${g}. ركّز على رفعه قبل التحويل.`,
+  qNo:"إذا لا، تظل المادة مقفلة لين تخلص متطلباتها.", qTwice:c=>`رسبت في ${c} مرتين. تقدر تسأل مسجل القسم عن إمكانية تجاوز المتطلب.`,
+  bypBox:"تم تجاوز المتطلب السابق لهذي المادة، فصارت متاحة لك وحطيناها أولوية في أقرب ترم. تأكد من مسجل القسم إن التسجيل يناسب حالتك.", bypUndo:"تراجع عن التجاوز",
+  altBox:"<b>اختبار بديل:</b> المادة محسوبة مجتازة مؤقتًا، ولا تدخل في المعدل لين تطلع الدرجة. لما تطلع درجتك اخترها من تحت.",
+  rvSub:"ابحث عن أي مقرر وشوف تقييمات الطلاب وتعليقاتهم، أو أضف تقييمك",
+  rvPh:"اكتب اسم المقرر أو رمزه… مثلاً: احتمال، بحث 213، STAT 332", rvNone:"ما لقيت مقرر بهالاسم. جرب الرمز أو جزء من الاسم.", entryPick:"اختر",
+  lateTitle:n=>`متأخر عن الخطة ${n === 1 ? "ترم" : n === 2 ? "ترمين" : n + " أترام"} تقريبًا`,
+  lateProjTitle:n=>`بهالخطة بتتخرج في ترمك رقم ${n}، والخطة الرسمية 8 أترام`,
+  lateLead:(c,d,e)=>`أنت الحين في ترمك رقم ${c}، واجتزت ${d} ساعة من ساعات التخصص، والمتوقع حسب الخطة تقريبًا ${e}. وهذي خطوات تساعدك ترجع على المسار:`,
+  lateNext:"سجّل الترم الجاي:", lateDont:(c,n)=>`لا تأجل ${c} أكثر، لأنها تفتح لك ${n} ${n >= 3 && n <= 10 ? "مواد" : "مادة"} بعدها، وكل ترم تأجيل يأخر تخرجك.`,
+  lateLoad:(l,k)=>`لو رفعت ساعاتك لـ ${l} ساعة بالترم، تتخرج أبكر ${k === 1 ? "بترم" : k === 2 ? "بترمين" : "بـ" + k + " أترام"}.`,
+  lateAdv:"هذي اقتراحات تقديرية، ارجع لمرشدك الأكاديمي قبل التسجيل.",
+  limitTitle:"⛔ وصلت الحد الأعلى لمدة الدراسة (12 ترم)", limitLead:"الترم الجاي ممكن يجيك إيقاف أكاديمي. راجع مرشدك الأكاديمي ومسجل القسم بأسرع وقت.",
+  limitProj:n=>`بهالخطة بتتخرج في ترمك رقم ${n}، وهذا أكثر من الحد الأعلى (12 ترم). ارفع ساعاتك أو راجع مرشدك.`,
+  tips:["<b>ابدأ من الخريطة:</b> اضغط على أي مادة وحدد درجتك، أو اضغط «عديته ✓» عشان تعلّم مستوى كامل.",
+        "<b>جرب «لو»:</b> في «أدوات لو» تقدر تجرب سيناريوهات مثل تأجيل مادة، وتشوف توقعات تخرجك ومعدلك.",
+        "<b>حدد ترم دخولك</b> عشان ننبهك إذا تأخرت عن الخطة. وتذكر: الموقع أداة مساعدة للتخطيط، وللقرارات الرسمية ارجع دائمًا لمرشدك الأكاديمي."],
+  contact:"✉️ عندك مشكلة أو اقتراح أو استفسار؟ راسلنا على <a href=\"mailto:whatif.ksu@gmail.com\">whatif.ksu@gmail.com</a>",
+  rvEntryDesc:"شوف تقييمات الطلاب للمقررات وتعليقاتهم قبل لا تسجل، وأضف تقييمك", rvGo:"ادخل ←",
+  rvCheer:"💜 <b>تعليقك يفرق!</b> كل تقييم تكتبه يصير مرجع للطلاب اللي بعدك. شاركنا تجربتك مع المواد اللي درستها: وش صعوبتها؟ وكيف تذاكرها؟",
+  concBox:c=>`تمت الموافقة على التزامن: تقدر تدرس هالمادة مع متطلبها (${c}) في نفس الترم، والخطة بتحطهم مع بعض.`, concUndo:"تراجع عن التزامن",
+  regBox:"<b>مسجّلة هالترم:</b> نحسبها منجزة قبل الترم الجاي عشان يكون توقع تخرجك أدق، وما تدخل المعدل لين تحط درجتك.",
+  botPh:"اكتب سؤالك…", botHello:"هلا! أنا <b>مساعد لو</b> 👋 اسألني عن خطتك أو أي مقرر، مثل: «وش متطلب احص 332؟» أو «كم باقي لي؟»",
+  lgReg:"سجّلتها هالترم", sugNote:(w,l)=>`مواد نقترح تسجلها في ${w}، حسب ${l} ساعة بالترم وقوانين خطتك. اضغط على أي مادة للتفاصيل.`,
+});
+Object.assign(T.en, {
+  minorQ:"Do you have an AI minor?", yesWord:"Yes",
+  statName:"Statistics", orName:"Operations Research", plusMinor:"+ AI minor",
+  secY1Sub:"No prerequisites. To move into the department you need STAT 101, MATH 101 and CT 101 with a GPA of 3.25+; the rest can be taken alongside department courses",
+  rAdmit:"Department admission: pass STAT 101, MATH 101 and CT 101", rCo:"(before or in the same term)", rByp:"bypassed",
+  inNote:h=>`${h} hours of statistics and operations research · each opens once its prerequisites are passed`,
+  projNote:(d,n)=>`Registration rule: no more than 43 hours left to graduate, i.e. about 93 major hours passed. You have ${d}, ${n > 0 ? `${n} more to go.` : "so the rule is met ✓"}`,
+  alAdmit:g=>`Moving into the department needs a GPA of 3.25+, and yours is ${g}. Focus on raising it before transferring.`,
+  qTitle:"Was the prerequisite bypassed, or do you have an alternative exam?", qByp:"Yes, it was bypassed", qAlt:c=>`I have an alternative exam in ${c}`,
+  qNo:"If not, the course stays locked until you finish its prerequisites.", qTwice:c=>`You failed ${c} twice. You can ask the department registrar whether the prerequisite can be bypassed.`,
+  bypBox:"The prerequisite for this course was bypassed, so it’s open and placed first in your nearest term. Check with the department registrar that it suits your case.", bypUndo:"Undo bypass",
+  altSelf:"I have an alternative exam in this course", altShort:"Alternative exam",
+  altBox:"<b>Alternative exam:</b> the course counts as passed for now and stays out of your GPA until the grade is out. Pick your grade below when it arrives.",
+  stByp:"Prereq bypassed", seeReviews:"See student reviews →",
+  rvTitle:"Course ratings", rvSub:"Search any course to see students’ ratings and comments, or add yours",
+  rvPh:"Type a course name or code… e.g. Probability, OPER 213, احص 332", rvNone:"No course matches. Try the code or part of the name.",
+  rvNoRate:"No ratings yet", rvDiffAvg:"Average difficulty", sortBy:"Sort comments:", sNew:"Newest", sLiked:"Liked first", sHard:"Hardest first",
+  entryLabel:"Your first university term:", entryPick:"Pick",
+  lateTitle:n=>`About ${n} ${n === 1 ? "term" : "terms"} behind the plan`,
+  lateProjTitle:n=>`With this plan you’d graduate in your term ${n}; the official plan is 8 terms`,
+  lateLead:(c,d,e)=>`You’re in your term ${c}, with ${d} major hours passed; the plan expects about ${e}. These steps can help you get back on track:`,
+  lateNext:"Register next term:", lateDont:(c,n)=>`Don’t postpone ${c} again: it unlocks ${n} later courses, and each term of delay pushes graduation back.`,
+  lateLoad:(l,k)=>`At ${l} hours per term you’d graduate ${k} ${k === 1 ? "term" : "terms"} earlier.`,
+  lateAdv:"These are estimates; check with your academic advisor before registering.",
+  limitTitle:"⛔ You’ve reached the maximum study period (12 terms)", limitLead:"Next term may bring an academic suspension. Talk to your academic advisor and the department registrar as soon as possible.",
+  limitProj:n=>`With this plan you’d graduate in your term ${n}, beyond the 12-term maximum. Raise your load or talk to your advisor.`,
+  tips:["<b>Start with the map:</b> tap any course and pick your grade, or use “Passed ✓” to mark a whole level.",
+        "<b>Try “What iF”:</b> the What iF tools let you test scenarios like postponing a course, and show your graduation and GPA forecast.",
+        "<b>Set your first term</b> so we can tell you if you fall behind the plan. Remember: this site helps you plan; for official decisions always check with your academic advisor."],
+  tipNext:"Next", tipDone:"Got it", tipSkip:"Skip",
+  connect:"🤝 I’d be glad to connect and hear your thoughts on the project on <a class=\"li\" href=\"https://www.linkedin.com/in/farah-alosaimi-813946324\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z\"/></svg>LinkedIn</a>",
+  contact:"✉️ Found a problem, or have a suggestion or question? Email us at <a href=\"mailto:whatif.ksu@gmail.com\">whatif.ksu@gmail.com</a>",
+  rvEntryDesc:"See students’ ratings and comments on courses before you register, and add yours", rvGo:"Open →", back:"Back",
+  rvCheer:"💜 <b>Your review matters!</b> Every rating you write becomes a reference for the students after you. Share how the courses you took went: how hard were they, and how did you study?",
+  qTitle:"Was the prerequisite bypassed, do you have an alternative exam, or was taking them together approved?", qConc:"Taking them together was approved",
+  concBox:c=>`Concurrent enrollment approved: you can take this course in the same term as its prerequisite (${c}), and the plan will place them together.`, concUndo:"Undo", rConc:"· approved to take together",
+  regBtn:"Registered this term ✓", regBox:"<b>Registered this term:</b> counted as done before next term so your graduation estimate is sharper; it stays out of your GPA until you add the grade.", regUndo:"Unregister",
+  stReg:"Registered this term", lgReg:"Registered this term", secReq:"Required courses",
+  botName:"What iF assistant", botPh:"Type your question…", botHello:"Hi! I’m the <b>What iF assistant</b> 👋 Ask me about your plan or any course, e.g. “What are the prerequisites of STAT 332?” or “How many hours are left?”",
+  botQuick:["How many hours are left?","What should I register next term?","How do I move into the department?","What is an alternative exam?","When can I register the project?"],
+  sugTitle:"🧭 Suggested for you", sugNote:(w,l)=>`Courses we suggest for ${w}, at ${l} hours per term and your plan’s rules. Tap any course for details.`,
+});
 const PREFIX_EN = { "احص":"STAT","ريض":"MATH","عال":"CSC","بحث":"OPER","كيم":"CHEM","انجل":"ENGL","عرب":"ARAB","سلم":"IC","قرأ":"QURN",
-  "قصد":"ECON","ادا":"MGT","نما":"MIS","حسب":"ACCT","مال":"FIN","ريك":"ACTU","ذكا":"AI","ريد":"ENT","تقن":"CT","نهج":"UNI","فجب":"PHE" };
+  "قصد":"ECON","ادا":"MGT","نما":"MIS","حسب":"ACCT","مال":"FIN","ريك":"ACTU","ذكا":"AI","ريد":"ENT","تقن":"CT","نهج":"UNI","فجب":"PHE","صنع":"IE","هعم":"GE" };
 
 /* ---------- data: KSU Statistics plan ---------- */
 const C = (code, ar, en, hrs, level, group, pre = []) => ({ code, ar, en, hrs, level, group, pre });
-const COURSES = [
+const PLAN_STAT = [
   C("انجل 104-106","اللغة الإنجليزية (1)","English Language (1)",6,1,"y1"),
   C("ريض 101","حساب التفاضل","Differential Calculus",3,1,"y1"),
   C("ريد 101","ريادة الأعمال","Entrepreneurship",1,1,"y1"),
@@ -994,17 +1262,6 @@ const COURSES = [
   C("احص 498","مشروع تخرج (2)","Graduation Project (2)",2,8,"core",["احص 497"]),
   C("احص 439","تحليل البيانات","Data Analysis",3,8,"core",["احص 438"]),
   C("احص 415","احتمال (2)","Probability (2)",3,8,"core",["ريض 201","احص 419"]),
-  C("سلم 100","دراسات في السيرة النبوية","Studies in the Prophet’s Biography",2,0,"isl"),
-  C("سلم 101","مدخل إلى الثقافة الإسلامية","Intro to Islamic Culture",2,0,"isl"),
-  C("سلم 102","الأسرة في الإسلام","Family in Islam",2,0,"isl"),
-  C("سلم 103","النظام الاقتصادي في الإسلام","Islamic Economic System",2,0,"isl"),
-  C("سلم 104","النظام السياسي في الإسلام","Islamic Political System",2,0,"isl"),
-  C("سلم 105","حقوق الإنسان","Human Rights",2,0,"isl"),
-  C("سلم 106","الفقه الطبي","Medical Jurisprudence",2,0,"isl"),
-  C("سلم 107","أخلاقيات المهنة","Professional Ethics",2,0,"isl"),
-  C("سلم 108","قضايا معاصرة","Contemporary Issues",2,0,"isl"),
-  C("سلم 109","المرأة ودورها التنموي","Women and Development",2,0,"isl"),
-  C("قرأ 100","القرآن الكريم","The Holy Quran",2,0,"isl"),
   C("قصد 101","مبادئ الاقتصاد الجزئي","Principles of Microeconomics",3,0,"out"),
   C("قصد 102","مبادئ الاقتصاد الكلي","Principles of Macroeconomics",3,0,"out",["قصد 101"]),
   C("قصد 211","اقتصاديات النقود والبنوك","Money and Banking",3,0,"out",["قصد 102"]),
@@ -1032,6 +1289,91 @@ const COURSES = [
   C("بحث 351","تحليل الشبكات","Network Analysis",3,0,"in",["بحث 213"]),
   C("بحث 371","العمليات العشوائية ونماذج الصفوف","Stochastic Processes & Queues",4,0,"in",["ريض 201","احص 215"]),
   C("بحث 441","النمذجة والمحاكاة","Modeling & Simulation",4,0,"in",["بحث 371"]),
+];
+/* Operations Research plan (male students only), version 3 */
+const PLAN_OR = [
+  C("انجل 104-106","اللغة الإنجليزية (1)","English Language (1)",6,1,"y1"),
+  C("ريض 101","حساب التفاضل","Differential Calculus",3,2,"y1"),
+  C("ريد 101","ريادة الأعمال","Entrepreneurship",1,1,"y1"),
+  C("كيم 101","كيمياء عامة (1)","General Chemistry (1)",4,1,"y1"),
+  C("عرب 100","المهارات الكتابية","Writing Skills",2,1,"y1"),
+  C("انجل 111-113","اللغة الإنجليزية (2)","English Language (2)",6,2,"y1"),
+  C("نهج 101","مهارات جامعية","University Skills",3,2,"y1"),
+  C("تقن 101","مهارات الحاسب الآلي والذكاء الاصطناعي","Computer & AI Skills",3,2,"y1"),
+  C("احص 101","مدخل إلى الاحتمالات والإحصاء","Intro to Probability & Statistics",3,1,"y1"),
+  C("فجب 101","اللياقة والثقافة الصحية","Fitness and Health Culture",1,2,"y1"),
+  C("بحث 100","مقدمة في بحوث العمليات","Intro to Operations Research",4,3,"core",["احص 101","ريض 101"]),
+  C("احص 105","طرق إحصائية","Statistical Methods",4,3,"core",["احص 101"]),
+  C("ريض 111","حساب التكامل","Integral Calculus",4,3,"core",["ريض 101"]),
+  C("عال 111","برمجة حاسبات (1)","Computer Programming (1)",4,3,"core",["تقن 101"]),
+  { ...C("بحث 213","البرمجة الخطية","Linear Programming",4,4,"core",["بحث 100"]), co:["ريض 244"] },
+  C("احص 215","احتمال (1)","Probability (1)",4,4,"core",["احص 101","ريض 111"]),
+  C("ريض 244","الجبر الخطي","Linear Algebra",3,4,"core",["ريض 101"]),
+  C("احص 328","حزم إحصائية","Statistical Packages",3,4,"core",["احص 105","عال 111"]),
+  C("ريض 201","حساب التفاضل والتكامل","Differential & Integral Calculus",4,5,"core",["ريض 111"]),
+  C("بحث 313","البرمجة العددية","Integer Programming",3,5,"core",["بحث 213"]),
+  C("بحث 351","تحليل الشبكات","Network Analysis",3,5,"core",["بحث 213"]),
+  C("بحث 385","نظرية القرارات والمباريات","Decision & Game Theory",3,5,"core",["بحث 213"]),
+  C("بحث 322","ضبط ومراقبة المخزون","Inventory Control",3,6,"core",["بحث 213"]),
+  C("بحث 331","الأمثلية غير الخطية","Nonlinear Optimization",4,6,"core",["ريض 201","بحث 213"]),
+  C("احص 332","تحليل الانحدار","Regression Analysis",3,6,"core",["ريض 244","احص 328"]),
+  C("بحث 371","العمليات العشوائية ونماذج الصفوف","Stochastic Processes & Queues",4,6,"core",["ريض 201","احص 215"]),
+  C("احص 423","مراقبة الجودة","Quality Control",2,7,"core",["احص 332"]),
+  C("بحث 435","طرق الحسابات في بحوث العمليات","Computational Methods in OR",3,7,"core",["بحث 331"]),
+  C("بحث 441","النمذجة والمحاكاة","Modeling & Simulation",4,7,"core",["بحث 371"]),
+  C("بحث 497","مشروع تخرج (1)","Graduation Project (1)",1,7,"core",["بحث 313","بحث 371"]),
+  C("احص 336","سلاسل زمنية وتنبؤ","Time Series & Forecasting",3,8,"core",["احص 332"]),
+  C("احص 340","نظرية الإحصاء (1)","Statistical Theory (1)",3,8,"core",["احص 332"]),
+  C("بحث 498","مشروع تخرج (2)","Graduation Project (2)",2,8,"core",["بحث 497"]),
+  C("ادا 101","مبادئ الإدارة والأعمال","Principles of Management",3,0,"out"),
+  C("قصد 101","مبادئ الاقتصاد الجزئي","Principles of Microeconomics",3,0,"out"),
+  C("عال 113","برمجة حاسبات (2)","Computer Programming (2)",4,0,"out",["عال 111"]),
+  C("حسب 201","مبادئ المحاسبة والتقرير المالي","Accounting & Financial Reporting",3,0,"out"),
+  C("صنع 214","إدارة العمليات الصناعية (1)","Industrial Operations Management (1)",3,0,"out",["احص 101"]),
+  C("ريك 262","مالية الشركات الاكتوارية","Actuarial Corporate Finance",3,0,"out",["ريض 111"]),
+  C("ريك 371","الرياضيات المالية","Financial Mathematics",4,0,"out",["ريض 111"]),
+  C("هعم 402","إدارة المشاريع الهندسية","Engineering Project Management",3,0,"out"),
+  C("هعم 403","الاقتصاد الهندسي","Engineering Economics",2,0,"out"),
+  C("قصد 102","مبادئ الاقتصاد الكلي","Principles of Macroeconomics",3,0,"out",["قصد 101"]),
+  C("مال 200","مبادئ المالية","Principles of Finance",3,0,"out",["حسب 201"]),
+  C("نما 201","نظم المعلومات الإدارية","Management Information Systems",3,0,"out",["ادا 101"]),
+  C("ادا 202","إدارة الموارد البشرية","Human Resource Management",3,0,"out",["ادا 101"]),
+  C("عال 212","تراكيب البيانات","Data Structures",3,0,"out",["عال 113"]),
+  C("صنع 314","إدارة العمليات الصناعية (2)","Industrial Operations Management (2)",3,0,"out",["صنع 214"]),
+  C("ادا 371","إدارة العمليات","Operations Management",3,0,"out",["ادا 101"]),
+  C("ريك 471","المشتقات المالية","Financial Derivatives",3,0,"out",["ريك 371"]),
+  C("قصد 211","اقتصاديات النقود والبنوك","Money and Banking",3,0,"out",["قصد 102"]),
+  C("مال 220","أساسيات الاستثمار","Investment Fundamentals",3,0,"out",["مال 200"]),
+  C("مال 240","أساسيات الخطر والتأمين","Risk & Insurance Fundamentals",3,0,"out",["مال 200"]),
+  C("عال 380","أسس نظم قواعد البيانات","Database Systems",3,0,"out",["عال 212"]),
+  C("احص 322","نظرية القرارات","Decision Theory",2,0,"in",["احص 215"]),
+  C("احص 331","تقنيات المعاينة","Sampling Techniques",3,0,"in",["احص 215"]),
+  C("احص 333","طرق إحصائية لا معلمية","Nonparametric Methods",3,0,"in",["احص 105"]),
+  C("احص 337","تصميم وتحليل التجارب","Design & Analysis of Experiments",3,0,"in",["احص 328"]),
+  C("احص 339","تحليل بيانات","Data Analysis",3,0,"in",["احص 332"]),
+  C("احص 362","نظرية الموثوقية","Reliability Theory",3,0,"in",["احص 215"]),
+  C("احص 402","اقتصاد قياسي","Econometrics",2,0,"in",["احص 332"]),
+  C("بحث 415","البرمجة الديناميكية","Dynamic Programming",3,0,"in",["بحث 331"]),
+  C("بحث 453","الجدولة والتتابع","Scheduling & Sequencing",3,0,"in",["بحث 331"]),
+  C("بحث 490","تطبيقات خاصة في بحوث العمليات","Special Applications in OR",3,0,"in",["بحث 331"]),
+  C("بحث 492","إدارة الأسعار والعوائد","Pricing & Revenue Management",3,0,"in",["بحث 331"]),
+  C("احص 429","طرق المسح الإحصائي","Survey Methods",3,0,"in",["احص 331"]),
+  C("احص 434","نماذج خطية","Linear Models",3,0,"in",["ريض 244"]),
+];
+const ISL = [
+  C("سلم 100","دراسات في السيرة النبوية","Studies in the Prophet’s Biography",2,0,"isl"),
+  C("سلم 101","مدخل إلى الثقافة الإسلامية","Intro to Islamic Culture",2,0,"isl"),
+  C("سلم 102","الأسرة في الإسلام","Family in Islam",2,0,"isl"),
+  C("سلم 103","النظام الاقتصادي في الإسلام","Islamic Economic System",2,0,"isl"),
+  C("سلم 104","النظام السياسي في الإسلام","Islamic Political System",2,0,"isl"),
+  C("سلم 105","حقوق الإنسان","Human Rights",2,0,"isl"),
+  C("سلم 106","الفقه الطبي","Medical Jurisprudence",2,0,"isl"),
+  C("سلم 107","أخلاقيات المهنة","Professional Ethics",2,0,"isl"),
+  C("سلم 108","قضايا معاصرة","Contemporary Issues",2,0,"isl"),
+  C("سلم 109","المرأة ودورها التنموي","Women and Development",2,0,"isl"),
+  C("قرأ 100","القرآن الكريم","The Holy Quran",2,0,"isl"),
+];
+const MINOR = [
   C("ذكا 300","البرمجة بلغة بايثون وتراكيب البيانات","Python Programming & Data Structures",4,0,"ai"),
   C("ذكا 310","أسس الذكاء الاصطناعي","Foundations of AI",3,0,"ai",["ذكا 300"]),
   C("ذكا 311","أخلاقيات الذكاء الاصطناعي والمجتمع","AI Ethics and Society",2,0,"ai"),
@@ -1043,8 +1385,12 @@ const COURSES = [
   C("ذكا 415","معالجة اللغة الطبيعية","Natural Language Processing",3,0,"aiel",["ذكا 410"]),
   C("ذكا 416","التعلم المعزز","Reinforcement Learning",3,0,"aiel",["ذكا 410"]),
 ];
-const BY = Object.fromEntries(COURSES.map(c => [c.code, c]));
-const CAPS = { isl:8, out:9, in:14, ai:14, aiel:6 };
+const PLAN_CAPS = { stat:{ isl:8, out:9, in:14, ai:14, aiel:6 }, or:{ isl:8, out:9, in:12, ai:14, aiel:6 } };
+let COURSES = [], BY = {}, CAPS = PLAN_CAPS.stat;
+function loadPlan() { const k = S.track === "or" ? "or" : "stat"; COURSES = [...(k === "or" ? PLAN_OR : PLAN_STAT), ...ISL, ...MINOR]; BY = Object.fromEntries(COURSES.map(c => [c.code, c])); CAPS = PLAN_CAPS[k]; }
+/* every course across both plans, for the course-ratings search (first plan's wording wins) */
+const CATALOG = (() => { const m = new Map(); for (const c of [...PLAN_STAT, ...PLAN_OR, ...ISL, ...MINOR]) if (!m.has(c.code)) m.set(c.code, c); return [...m.values()]; })();
+const ADMIT = ["احص 101","ريض 101","تقن 101"]; // direct-admission rule: these three + GPA 3.25 to move into the department
 const GCOLOR = { y1:"var(--g7)", core:"var(--g1)", isl:"var(--g6)", out:"var(--g5)", in:"var(--g3)", ai:"var(--f)", aiel:"var(--g4)" };
 const GRADES = [["A+",5],["A",4.75],["B+",4.5],["B",4],["C+",3.5],["C",3],["D+",2.5],["D",2],["F",1]];
 const PTS = Object.fromEntries(GRADES);
@@ -1053,6 +1399,9 @@ const PTS = Object.fromEntries(GRADES);
 const KEY = "whatif.v1";
 let S = { gender:"f", track:null, att:{}, load:16, lang:"ar", theme:null, open:{} };
 try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && typeof s === "object") { if (s.sample) { s.att = {}; delete s.sample; } S = { ...S, ...s }; } } catch(e) {}
+if (S.track === "ai") { S.track = "stat"; S.minor = true; } // older saves: "ai" meant statistics + AI minor
+S.byp = S.byp || {}; S.conc = S.conc || {}; S.reg = S.reg || {};
+loadPlan();
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} };
 let selected = null, confirming = false;
 const L = () => S.lang === "ar" && S.gender === "m" ? { ...T.ar, ...T.arm } : T[S.lang];
@@ -1060,13 +1409,21 @@ const nm = c => S.lang === "en" ? c.en : c.ar;
 const cd = c => { if (S.lang !== "en") return c.code; const [p, n] = c.code.split(" "); return `${PREFIX_EN[p] || p} ${n}`; };
 
 /* ---------- logic ---------- */
-const ai = () => S.track === "ai";
+const ai = () => !!S.minor;
+const isOR = () => S.track === "or";
+const NOGPA = g => g === "P" || g === "X"; // P = passed without a grade ("عديته"), X = alternative exam pending: counts as passed, not in the GPA
 const inTrack = c => c.code === "سلم 109" && S.gender === "m" ? false : (c.group === "ai" || c.group === "aiel") ? ai() : true;
 const attempts = code => S.att[code] || [];
 const passed = code => { const a = attempts(code); return a.length > 0 && a[a.length-1] !== "F"; };
 const failedLast = code => { const a = attempts(code); return a.length > 0 && a[a.length-1] === "F"; };
 const visible = () => COURSES.filter(inTrack);
 const total = () => ai() ? 156 : 136;
+const projCode = () => isOR() ? "بحث 497" : "احص 497";
+const admitted = () => ADMIT.every(passed);
+const bypassed = c => !!S.byp[c.code] && !passed(c.code);
+const concOk = c => !!S.conc[c.code] && !passed(c.code);   // registrar approved taking the course in the same term as its prerequisite
+const isReg = code => !!S.reg[code] && !passed(code);      // registered this term, no grade yet
+const majorLeft = () => { const p = counted(); return 136 - (p.total - (p.ai || 0) - (p.aiel || 0)); }; // project rule counts major hours only
 const sumHrs = list => list.reduce((s,c) => s + c.hrs, 0);
 const passedIn = g => visible().filter(c => c.group === g && passed(c.code));
 function counted() {
@@ -1076,20 +1433,25 @@ function counted() {
   return p;
 }
 const y1Done = () => COURSES.filter(c => c.group === "y1").every(c => passed(c.code));
+const failCount = code => attempts(code).filter(g => g === "F").length;
 const l3Done = () => COURSES.filter(c => c.level === 3).every(c => passed(c.code));
 const minorHrs = () => ai() ? sumHrs(passedIn("ai")) + sumHrs(passedIn("aiel")) : 0;
+const coOk = p => passed(p) || (BY[p] && ["open","retry","reg"].includes(status(BY[p])));
 function reqs(c) {
-  const r = [], t = L();
-  if (!["y1","isl","ai","aiel"].includes(c.group)) r.push({ label:t.rY1, ok:y1Done() });
+  const r = [], t = L(), byp = bypassed(c);
+  if (["core","in","out"].includes(c.group)) r.push({ label:t.rAdmit, ok:admitted() });
   if (c.group === "out") r.push({ label:t.rL3, ok:l3Done() });
-  for (const p of c.pre) r.push({ code:p, ok:passed(p) });
-  if (c.code === "احص 497") { const rem = total() - counted().total; r.push({ label:t.r43(rem), ok: rem <= 43 }); }
+  const cc = concOk(c);
+  for (const p of c.pre) { const okc = cc && !passed(p) && coOk(p); r.push({ code:p, ok: passed(p) || byp || okc, byp: byp && !passed(p), conc: cc && !passed(p) && !byp, pre:true }); }
+  for (const p of c.co || []) r.push({ code:p, ok: coOk(p) || byp, co:true, byp: byp && !coOk(p), pre:true });
+  if (c.code === projCode()) { const rem = majorLeft(); r.push({ label:t.r43(rem), ok: rem <= 43 }); }
   if (c.code === "ذكا 411") r.push({ label:t.r15(minorHrs()), ok: minorHrs() >= 15 });
   return r;
 }
 function status(c) {
   if (passed(c.code)) return "done";
   if (!reqs(c).every(x => x.ok)) return "locked";
+  if (isReg(c.code)) return "reg";
   return failedLast(c.code) ? "retry" : "open";
 }
 const groupFull = g => g in CAPS && sumHrs(passedIn(g)) >= CAPS[g];
@@ -1097,18 +1459,19 @@ const unlocks = code => visible().filter(c => c.pre.includes(code));
 function gpa() {
   let pts = 0, hrs = 0;
   let p = 0;
-  for (const c of visible()) for (const g of attempts(c.code)) { if (g === "P") { p += c.hrs; continue; } pts += PTS[g] * c.hrs; hrs += c.hrs; }
-  return hrs ? { v: pts / hrs, hrs, pts, p } : (p ? { v: null, hrs: 0, pts: 0, p } : null);
+  let x = 0;
+  for (const c of visible()) for (const g of attempts(c.code)) { if (g === "P") { p += c.hrs; continue; } if (g === "X") { x += c.hrs; continue; } pts += PTS[g] * c.hrs; hrs += c.hrs; }
+  return hrs ? { v: pts / hrs, hrs, pts, p, x } : (p || x ? { v: null, hrs: 0, pts: 0, p, x } : null);
 }
 const rankIdx = v => v >= 4.5 ? 0 : v >= 3.75 ? 1 : v >= 2.75 ? 2 : v >= 2 ? 3 : 4;
 function chainDepth() {
-  const memo = {}, req = visible().filter(c => ["y1","core","ai"].includes(c.group)), y1 = req.filter(c => c.group === "y1");
+  const memo = {}, req = visible().filter(c => ["y1","core","ai"].includes(c.group)), y1 = req.filter(c => ADMIT.includes(c.code));
   const d = c => {
     if (passed(c.code)) return 0;
     if (memo[c.code] != null) return memo[c.code];
     memo[c.code] = 1; let m = 0;
     if (c.group === "core") for (const y of y1) m = Math.max(m, d(y));
-    for (const p of c.pre) if (BY[p]) m = Math.max(m, d(BY[p]));
+    if (!bypassed(c)) { for (const p of c.pre) if (BY[p]) m = Math.max(m, d(BY[p]) - (concOk(c) ? 1 : 0)); for (const p of c.co || []) if (BY[p]) m = Math.max(m, d(BY[p]) - 1); }
     if (c.code === "ذكا 411") for (const x of req) if (x.group === "ai" && x.code !== "ذكا 411") m = Math.max(m, d(x));
     return memo[c.code] = m + 1;
   };
@@ -1139,10 +1502,14 @@ const START_OPTS = [0,1,2,3]; // next term choices
 /* ---------- scheduler: greedy list scheduling by longest remaining chain ---------- */
 function buildItems() {
   const items = [];
-  for (const c of visible()) if (["y1","core","ai"].includes(c.group) && !passed(c.code)) items.push({ id:c.code, hrs:c.hrs, group:c.group, pre:c.pre, course:c });
+  const mk = (c, real) => ({ id:c.code, hrs:c.hrs, group:c.group, course:c, real, byp: bypassed(c), conc: concOk(c) && !bypassed(c), reg: isReg(c.code),
+    pre: bypassed(c) || concOk(c) ? [] : c.pre, co: bypassed(c) ? [] : [...(c.co || []), ...(concOk(c) ? c.pre : [])] });
+  for (const c of visible()) if (["y1","core","ai"].includes(c.group) && !passed(c.code)) items.push(mk(c, false));
+  // an elective the student already picked (registered, bypassed, or taken with its prerequisite) is scheduled as itself
+  for (const c of visible()) if (["isl","out","in","aiel"].includes(c.group) && !passed(c.code) && (bypassed(c) || concOk(c) || isReg(c.code))) items.push(mk(c, true));
   const slotGroups = ["isl","out","in", ...(ai() ? ["aiel"] : [])];
   for (const g of slotGroups) {
-    let r = CAPS[g] - Math.min(CAPS[g], sumHrs(passedIn(g))), k = 0;
+    let r = CAPS[g] - Math.min(CAPS[g], sumHrs(passedIn(g)) + sumHrs(items.filter(i => i.real && i.group === g))), k = 0;
     const unit = g === "isl" ? 2 : 3;
     while (r > 0) { const h = Math.min(unit, r); items.push({ id:`slot:${g}:${++k}`, hrs:h, group:g, pre:[], slot:true }); r -= h; }
   }
@@ -1151,43 +1518,55 @@ function buildItems() {
   const height = i => {
     if (memo[i.id] != null) return memo[i.id];
     memo[i.id] = 1; let m = 0;
-    for (const j of req) if (j.pre.includes(i.id) || (i.group === "y1" && j.group === "core")) m = Math.max(m, height(j));
+    for (const j of req) if (j.pre.includes(i.id) || (j.co || []).includes(i.id) || (ADMIT.includes(i.id) && j.group === "core")) m = Math.max(m, height(j));
     return memo[i.id] = m + 1;
   };
-  for (const i of items) i.prio = i.slot ? (i.group === "aiel" ? 2.5 : i.group === "isl" ? 1.5 : 1) : height(i); // minor electives feed the 15-hour seminar rule
+  for (const i of items) i.prio = (i.slot ? (i.group === "aiel" ? 2.5 : i.group === "isl" ? 1.5 : 1) : i.group === "y1" ? Math.max(3, height(i)) : height(i)) + (i.byp ? 100 : i.conc ? 50 : 0); // minor electives feed the 15-hour seminar rule; a bypassed course goes first
   return items;
 }
 function simulate(o) {
   const TT = total(), items = buildItems().map(i => ({ ...i, left: 1 + ((o.fails || {})[i.id] ? 1 : 0), from: (o.from || {})[i.id] || 0, last: -1 }));
   const done = new Set(visible().filter(c => passed(c.code)).map(c => c.code));
   let counted0 = counted().total, minor = minorHrs();
-  const y1 = COURSES.filter(c => c.group === "y1").map(c => c.code), l3 = COURSES.filter(c => c.level === 3).map(c => c.code);
+  const l3 = COURSES.filter(c => c.level === 3).map(c => c.code), PJ = projCode();
+  for (const i of items) if (i.reg && !(o.fails || {})[i.id]) { i.left = 0; done.add(i.id); counted0 += i.hrs; if (["ai","aiel"].includes(i.group)) minor += i.hrs; }
   const seq = termSeq(o.start || 0, !!o.summer && ai(), 60), terms = [], termOf = {}, seqOf = {};
   let ti = 0, idle = 0;
   while (items.some(i => i.left > 0) && ti < seq.length) {
-    const tm = seq[ti], cap = tm.summer ? (o.summerLoad || 6) : o.load, remGrad = TT - counted0;
+    const tm = seq[ti], cap = tm.summer ? (o.summerLoad || 6) : o.load, remGrad = 136 - (counted0 - minor);
     const all = list => list.every(x => done.has(x));
     const ok = i => {
       if (i.left <= 0 || ti < i.from || i.last === ti) return false;
       if (tm.summer && !["ai","aiel"].includes(i.group)) return false;
       if (!i.pre.every(x => done.has(x))) return false;
-      if (["core","out","in"].includes(i.group) && !all(y1)) return false;
+      if ((i.co || []).some(x => !done.has(x) && !items.some(j => j.id === x && j.left > 0 && ti >= j.from && j.pre.every(y => done.has(y))))) return false;
+      if (["core","out","in"].includes(i.group) && !i.byp && !all(ADMIT)) return false;
       if (i.group === "out" && !all(l3)) return false;
       if (i.group === "aiel" && !done.has("ذكا 300")) return false;
-      if (i.id === "احص 497" && remGrad > 43) return false;
+      if (i.id === PJ && remGrad > 43) return false;
       if (i.id === "ذكا 411" && minor < 15) return false;
       return true;
     };
     const avail = items.filter(ok).sort((a, b) => b.prio - a.prio || (a.slot ? 1 : 0) - (b.slot ? 1 : 0) || (a.course?.level || 9) - (b.course?.level || 9));
     let hrs = 0; const picked = [];
-    let isl = 0; // KSU rule: at most one Islamic studies course per term
-    for (const i of avail) { if (i.group === "isl" && isl >= 1) continue; if (hrs + i.hrs <= cap) { picked.push(i); hrs += i.hrs; if (i.group === "isl") isl++; } }
+    let isl = 0; // KSU rule: at most one Islamic studies course per term; a student expected to graduate this term may take two
+    const islMax = remGrad <= cap ? 2 : 1;
+    for (const i of avail) {
+      if (picked.includes(i) || (i.group === "isl" && isl >= islMax)) continue;
+      // a co-requisite must sit in the same term: take it along if it's available and both fit
+      const need = [], miss = { v:false };
+      const gather = it => { for (const x of it.co || []) { if (done.has(x) || picked.some(j => j.id === x) || need.some(j => j.id === x)) continue; const j = avail.find(j => j.id === x); if (!j) { miss.v = true; return; } need.push(j); gather(j); } };
+      gather(i); if (miss.v) continue;
+      const add = need.reduce((h, j) => h + j.hrs, 0);
+      if (hrs + i.hrs + add <= cap) { for (const j of need) { picked.push(j); hrs += j.hrs; } picked.push(i); hrs += i.hrs; if (i.group === "isl") isl++; }
+    }
     const rec = { tm, items: [], hrs };
     for (const i of picked) {
       i.left--; i.last = ti;
       const fail = i.left > 0;
       rec.items.push({ id:i.id, hrs:i.hrs, group:i.group, slot:i.slot, fail });
       if (!fail) { done.add(i.id); counted0 += i.hrs; if (["ai","aiel"].includes(i.group)) minor += i.hrs; termOf[i.id] = terms.length; seqOf[i.id] = ti; }
+      else done.delete(i.id);
     }
     if (picked.length || !tm.summer) terms.push(rec);
     if (!picked.length) { if (++idle > 6) break; } else idle = 0;
@@ -1301,7 +1680,7 @@ const snap = z => z < 1.5 ? 1 : LADDER.reduce((b, v) => Math.abs(v - z) < Math.a
 function studentModel() {
   // hour-weighted mean and SD of past grade points, shrunk toward a prior when there is little data
   const xs = [];
-  for (const c of visible()) for (const g of attempts(c.code)) if (g !== "P") xs.push([PTS[g], c.hrs]);
+  for (const c of visible()) for (const g of attempts(c.code)) if (!NOGPA(g)) xs.push([PTS[g], c.hrs]);
   const n = xs.length, W = xs.reduce((s, [, w]) => s + w, 0);
   const mean = n ? xs.reduce((s, [x, w]) => s + x * w, 0) / W : null;
   const sd = n > 1 ? Math.sqrt(xs.reduce((s, [x, w]) => s + w * (x - mean) ** 2, 0) / W) : null;
@@ -1413,14 +1792,16 @@ function alertsList() {
   const imp = visible().filter(c => ["core","ai"].includes(c.group) && status(c) === "open").map(c => [c, dependents(c.code)]).filter(([, n]) => n >= 3).sort((a, b) => b[1] - a[1]).slice(0, 3);
   for (const [c, n] of imp) out.push({ id:"imp:" + c.code, ic:"🔗", tx:t.alImp(`<button type="button" class="link" data-go="${esc(c.code)}">${esc(cd(c))} ${esc(nm(c))}</button>`, n) });
   // 3. graduation project rule
-  if (!passed("احص 497") && rem > 43 && rem <= 75) out.push({ id:"p497", ic:"🎓", tx:t.al497(rem) });
+  const ml = majorLeft(); if (!passed(projCode()) && ml > 43 && ml <= 75) out.push({ id:"p497", ic:"🎓", tx:t.al497(ml, cd(BY[projCode()])) });
   // 4. Islamic studies: one per term
   const islLeft = Math.ceil((CAPS.isl - Math.min(CAPS.isl, sumHrs(passedIn("isl")))) / 2);
   if (islLeft >= 2) out.push({ id:"isl", ic:"🕌", tx:t.alIsl(islLeft) });
   // 5. retakes
   for (const c of visible().filter(c => status(c) === "retry")) out.push({ id:"retry:" + c.code, cls:"bad", ic:"🔁", tx:t.alRetry(`<button type="button" class="link" data-go="${esc(c.code)}">${esc(cd(c))} ${esc(nm(c))}</button>`) });
   // 6. outside electives just opened
-  if (l3Done() && y1Done() && !sumHrs(passedIn("out"))) out.push({ id:"out", ic:"🔓", tx:t.alOut });
+  if (l3Done() && admitted() && !sumHrs(passedIn("out"))) out.push({ id:"out", ic:"🔓", tx:t.alOut });
+  // direct-admission GPA rule, while the student hasn't started department courses yet
+  const g0 = gpa(); if (g0 && g0.v !== null && g0.v < 3.25 && !visible().some(c => c.group === "core" && passed(c.code))) out.push({ id:"admit", cls:"warn", ic:"🎯", tx:t.alAdmit(g0.v.toFixed(2)) });
   // 7. probation
   const g = gpa(); if (g && g.v !== null && g.v < 2) out.push({ id:"prob", cls:"bad", ic:"🚨", tx:t.alProb });
   return out.filter(a => !(S.hideAlerts || {})[a.id]);
@@ -1458,7 +1839,13 @@ function deviceId() {
   catch(e) { return window.__dev || (window.__dev = crypto.randomUUID()); }
 }
 const Ratings = {
-  remote: !!(SUPA.url && SUPA.key), stats: null,
+  remote: !!(SUPA.url && SUPA.key), stats: null, backup: null, fromBackup: false,
+  // if the database can't be reached, show the latest backup saved in the repo (backups/ratings.json) read-only
+  async loadBackup() {
+    if (this.backup !== null) return this.backup;
+    try { const r = await fetch("backups/ratings.json", { cache:"no-store" }); if (!r.ok) throw 0; const j = await r.json(); this.backup = Array.isArray(j) ? j : false; } catch(e) { this.backup = false; }
+    return this.backup;
+  },
   async call(fn, body) {
     const r = await fetch(`${SUPA.url}/rest/v1/rpc/${fn}`, { method:"POST", headers:{ apikey:SUPA.key, ...(SUPA.key.startsWith("eyJ") ? { Authorization:`Bearer ${SUPA.key}` } : {}), "Content-Type":"application/json" }, body: JSON.stringify(body || {}) });
     if (!r.ok) throw new Error(await r.text());
@@ -1468,25 +1855,30 @@ const Ratings = {
   saveLocal(o) { try { localStorage.setItem("whatif.ratings", JSON.stringify(o)); } catch(e) { window.__lr = o; } },
   async getStats() {
     if (this.remote) { try { const rows = await this.call("get_stats"); this.stats = Object.fromEntries(rows.map(r => [r.course_code, { n:+r.n, likes:+r.likes, diff:+r.diff }])); return this.stats; } catch(e) { this.remote = false; } }
+    const b = await this.loadBackup();
+    if (b) { this.fromBackup = true; const out = {}; for (const x of b) { const o = out[x.course_code] || (out[x.course_code] = { n:0, likes:0, sum:0 }); o.n++; if (x.liked) o.likes++; o.sum += x.difficulty; } for (const c in out) out[c].diff = out[c].sum / out[c].n; return this.stats = out; }
     const o = this.local(), out = {};
     for (const c in o) { const a = o[c]; if (a.length) out[c] = { n:a.length, likes:a.filter(x => x.liked).length, diff: a.reduce((s, x) => s + x.difficulty, 0) / a.length }; }
     return this.stats = out;
   },
   async getComments(code) {
     if (this.remote) { try { return await this.call("get_comments", { c: code }); } catch(e) { this.remote = false; } }
+    const b = await this.loadBackup();
+    if (b) { this.fromBackup = true; return b.filter(x => x.course_code === code && x.comment).sort((a, c) => c.created_at.localeCompare(a.created_at)); }
     return (this.local()[code] || []).filter(x => x.comment && !x.hidden).sort((a, b) => b.created_at.localeCompare(a.created_at));
   },
   async mine(code) { return (this.local()["__mine"] || {})[code] || null; },
   async rate(code, liked, difficulty, comment) {
     const mine = this.local(); mine.__mine = { ...(mine.__mine || {}), [code]: { liked, difficulty, comment } };
     if (this.remote) { await this.call("rate", { c: code, d: deviceId(), l: liked, df: difficulty, cm: comment }); this.saveLocal(mine); return; }
+    if (this.fromBackup) throw new Error("read-only backup");
     const list = (mine[code] || []).filter(x => x.device !== deviceId());
     list.push({ id: Date.now(), device: deviceId(), liked, difficulty, comment, created_at: new Date().toISOString() });
     mine[code] = list; this.saveLocal(mine);
   },
   async report(code, id) {
     if (this.remote) return this.call("report", { rid: id });
-    const o = this.local(); const x = (o[code] || []).find(x => x.id === id); if (x) { x.reports = (x.reports || 0) + 1; if (x.reports >= 3) x.hidden = true; } this.saveLocal(o);
+    const o = this.local(); const x = (o[code] || []).find(x => x.id === id); if (x) { x.reports = (x.reports || 0) + 1; if (x.reports >= 5) x.hidden = true; } this.saveLocal(o);
   },
 };
 // light moderation before anything is sent
@@ -1506,9 +1898,10 @@ async function renderRating(code) {
   if (!$("rateBox") || $("rateBox").dataset.for !== code) return;
   const dr = rateDraft[code] || (rateDraft[code] = mine ? { ...mine } : { liked:null, difficulty:null, comment:"" });
   const pct = stats ? Math.round(stats.likes / stats.n * 100) : 0, dl = stats ? (stats.diff < 1.67 ? 1 : stats.diff < 2.34 ? 2 : 3) : 0;
-  let h = `<h3>${t.rTitle}</h3>`;
-  if (!Ratings.remote) h += `<div class="demo">${t.rDemo}</div>`;
-  h += stats ? `<div class="rsum"><span>👍 <b>${pct}${S.lang === "ar" ? "٪" : "%"}</b> ${t.rLiked}</span><span>${t.rDiff}: ${DIFF[dl][0]} ${t.rDiffName[dl]}</span><span class="hint">${t.rCount(stats.n)}</span><span class="rbar"><i style="width:${pct}%"></i></span></div>` : `<p class="hint" style="margin:0">${t.rNone}</p>`;
+  let h = "";
+  if (!Ratings.remote) h += `<div class="demo">${Ratings.fromBackup ? t.rBackup : t.rDemo}</div>`;
+  h += stats ? `<div class="rsum"><span>👍 <b>${pct}${S.lang === "ar" ? "٪" : "%"}</b> ${t.rLiked}</span><span class="hint">${t.rCount(stats.n)}</span><span class="rbar"><i style="width:${pct}%"></i></span></div>
+    <div class="dbar"><span>${t.rvDiffAvg}: ${DIFF[dl][0]} <b>${t.rDiffName[dl]}</b> <span class="mono" style="direction:ltr;unicode-bidi:isolate">${(+stats.diff).toFixed(1)} / 3</span></span><div class="tr"><i style="left:${((stats.diff - 1) / 2 * 100).toFixed(1)}%"></i></div><div class="lb"><span>${t.rDiffName[1]}</span><span>${t.rDiffName[3]}</span></div></div>` : `<p class="hint" style="margin:0">${t.rNone}</p>`;
   h += `<div class="rform">
     <div class="rrow"><span class="lbl">${t.rQ1}</span><button type="button" class="rchip${dr.liked === true ? " on" : ""}" data-rlike="1">👍 ${t.rYes}</button><button type="button" class="rchip${dr.liked === false ? " on" : ""}" data-rlike="0">👎 ${t.rNo}</button></div>
     <div class="rrow"><span class="lbl">${t.rDiff}</span>${[1,2,3].map(n => `<button type="button" class="rchip${dr.difficulty === n ? " on" : ""}" data-rdiff="${n}">${DIFF[n][0]} ${t.rDiffName[n]}</button>`).join("")}</div>
@@ -1517,9 +1910,260 @@ async function renderRating(code) {
     <div class="rnote">${t.rRule}</div>
     <div class="rrow"><button type="button" class="btn primary" id="rSend">${mine ? t.rUpdate : t.rSend}</button><span id="rMsg"></span></div>
   </div>`;
-  if (comments.length) h += `<div class="comments">${comments.map(c => `<div class="cmt"><div class="meta"><span>${c.liked ? "👍" : "👎"} ${DIFF[c.difficulty][0]}</span><span>${new Date(c.created_at).toLocaleDateString(S.lang === "ar" ? "ar-SA-u-ca-gregory" : "en-GB")}</span><button type="button" class="rep" data-rep="${c.id}">${t.rReport}</button></div><div>${esc(c.comment)}</div></div>`).join("")}</div>`;
+  const sorted = [...comments].sort(rv.sort === "liked" ? (a, b) => (b.liked ? 1 : 0) - (a.liked ? 1 : 0) || b.created_at.localeCompare(a.created_at) : rv.sort === "hard" ? (a, b) => b.difficulty - a.difficulty || b.created_at.localeCompare(a.created_at) : (a, b) => b.created_at.localeCompare(a.created_at));
+  if (comments.length > 1) h += `<div class="sortrow">${t.sortBy}${[["new",t.sNew],["liked",t.sLiked],["hard",t.sHard]].map(([k, n]) => `<button type="button" data-rvsort="${k}" class="${rv.sort === k ? "on" : ""}">${n}</button>`).join("")}</div>`;
+  if (comments.length) h += `<div class="comments">${sorted.map(c => `<div class="cmt"><div class="meta"><span>${c.liked ? "👍" : "👎"} ${DIFF[c.difficulty][0]}</span><span>${new Date(c.created_at).toLocaleDateString(S.lang === "ar" ? "ar-SA-u-ca-gregory" : "en-GB")}</span>${c.id ? `<button type="button" class="rep" data-rep="${c.id}">${t.rReport}</button>` : ""}</div><div>${esc(c.comment)}</div></div>`).join("")}</div>`;
   box.innerHTML = h;
 }
+
+/* ---------- v2: where the student is in their studies (regular terms only) ---------- */
+// term key k = (Hijri year − 1440)·2 + (term − 1). Fall (Aug–Jan) is term 1, spring (Feb–Jul) is term 2.
+function curTerm() { const d = new Date(), m = d.getMonth() + 1, g = d.getFullYear(); const y = m >= 8 ? g - 2026 + 1448 : m === 1 ? g - 1 - 2026 + 1448 : g - 2027 + 1448; const sem = m >= 8 || m === 1 ? 1 : 2; return (y - 1440) * 2 + sem - 1; }
+const entryOpts = () => { const c = curTerm(), o = []; for (let k = c; k >= Math.max(0, c - 15); k--) o.push(k); return o; };
+const termNo = () => S.entry == null || S.entry === "" ? null : curTerm() - S.entry + 1;
+function lateInfo() {
+  const n = termNo(); if (n == null || n < 1) return null;
+  const left = majorLeft(); if (left <= 0) return null;
+  const done = 136 - left, expected = Math.round(Math.min(8, n - 1) * 17), deficit = expected - done;
+  const r = runPlan(planA()), proj = n + (r.regular || 0); // terms already behind + terms still to go (the next one is term n+1 if registration for this one is over)
+  const behind = deficit >= 12 ? Math.max(1, Math.round(deficit / 17)) : 0;
+  return { n, done, expected, deficit, behind, proj, r };
+}
+function renderLate() {
+  const host = $("late"), t = L(), I = lateInfo();
+  if (!I || (!I.behind && I.proj <= 8 && I.n < 12)) { host.innerHTML = ""; return; }
+  const red = I.n >= 12 || I.proj > 12;
+  let h = `<div class="late${red ? " red" : ""}" role="status">`;
+  if (I.n >= 12) h += `<h3>${t.limitTitle}</h3><p class="lead">${t.limitLead}</p>`;
+  else if (I.proj > 12) h += `<h3>⚠️ ${t.limitProj(I.proj)}</h3>`;
+  if (I.behind || I.proj > 8) {
+    if (I.n < 12) h += `<h3>${I.behind ? "🧭 " + t.lateTitle(I.behind) : "🧭 " + t.lateProjTitle(I.proj)}</h3>`;
+    h += `<p class="lead">${t.lateLead(I.n, I.done, Math.min(136, I.expected))}</p><ul>`;
+    const first = I.r.terms[0];
+    if (first && first.items.length) h += `<li>${t.lateNext}<div class="reg">${first.items.map(it => `<span>${esc(itemLabel(it))}</span>`).join("")}</div></li>`;
+    // required courses already two or more terms past their place in the plan, that hold others up
+    const overdue = visible().filter(c => c.group === "core" && !passed(c.code) && c.level && c.level <= I.n - 2).map(c => [c, dependents(c.code)]).filter(([, k]) => k >= 1).sort((a, b) => b[1] - a[1]).slice(0, 3);
+    for (const [c, k] of overdue) h += `<li>${t.lateDont(`<button type="button" class="link" data-go="${esc(c.code)}">${esc(cd(c))} ${esc(nm(c))}</button>`, k)}</li>`;
+    // would a heavier load help?
+    for (let l = S.load + 1; l <= 20; l++) { const r2 = runPlan({ ...planA(), load:l }), k = I.r.regular - r2.regular; if (k > 0) { h += `<li>${t.lateLoad(l, k)}</li>`; break; } }
+    for (const c of visible().filter(c => failCount(c.code) >= 2 && !passed(c.code))) h += `<li>🔁 ${esc(t.qTwice(cd(c)))}</li>`;
+    h += `</ul>`;
+  }
+  h += `<p class="adv">${t.lateAdv}</p></div>`;
+  host.innerHTML = h;
+}
+function renderSuggest() {
+  const host = $("suggest"), t = L();
+  if (counted().total >= total()) { host.innerHTML = ""; return; }
+  const r = runPlan(planA()), first = r.terms[0]; if (!first) { host.innerHTML = ""; return; }
+  // the next planned term; elective slots are filled with the best electives that are open now
+  const groups = ["isl","out","in","aiel"], used = new Set();
+  const cands = visible().filter(c => groups.includes(c.group) && !passed(c.code) && !groupFull(c.group) && status(c) === "open")
+    .map(c => ({ c, sc: 3 + visible().filter(x => groups.includes(x.group) && x.pre.includes(c.code)).length * 2 + (c.pre.length ? 0 : 1) }))
+    .sort((a, b) => b.sc - a.sc || a.c.hrs - b.c.hrs);
+  const cells = first.items.map(it => {
+    if (!it.slot) return BY[it.id] ? `<div class="sug">${tile(BY[it.id])}</div>` : "";
+    const x = cands.find(x => x.c.group === it.group && !used.has(x.c.code));
+    if (x) { used.add(x.c.code); return `<div class="sug">${tile(x.c)}<div class="why"><span class="g">${t.groups[x.c.group][0]}</span></div></div>`; }
+    return `<div class="slotc">${esc(slotName(it.group))} · ${it.hrs}${t.hrsShort}</div>`;
+  }).join("");
+  host.innerHTML = `<section class="sugbox"><h2>${t.sugTitle}</h2><p class="note">${t.sugNote(termLabel(first.tm).name, S.load)}</p><div class="sugs">${cells}</div></section>`;
+}
+function renderTips() {
+  const host = $("tips"), t = L(), i = S.tip == null ? 0 : S.tip;
+  if (i >= t.tips.length) { host.innerHTML = ""; return; }
+  host.innerHTML = `<div class="tipcard"><span class="n">${i + 1}/${t.tips.length}</span><span class="tx">${t.tips[i]}</span><span class="act">${i < t.tips.length - 1 ? `<button type="button" class="btn" data-tipskip>${t.tipSkip}</button><button type="button" class="btn primary" data-tipnext>${t.tipNext}</button>` : `<button type="button" class="btn primary" data-tipnext>${t.tipDone}</button>`}</span></div>`;
+}
+
+/* ---------- v2: course-ratings section with search ---------- */
+const normAr = s => String(s).toLowerCase().replace(/[ً-ْـ]/g, "").replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي").replace(/\s+/g, " ").trim();
+const PREFIX_AR = Object.fromEntries(Object.entries(PREFIX_EN).map(([a, e]) => [e.toLowerCase(), a]));
+function searchCourses(q) {
+  const raw = normAr(q); if (!raw) return [];
+  // "stat332", "oper 213" → Arabic prefix + number; Arabic prefix glued to the number too
+  let qq = raw.replace(/^([a-z]+)\s*(\d)/, (m, p, d) => (PREFIX_AR[p] || p) + " " + d).replace(/^([؀-ۿ]+)(\d)/, "$1 $2");
+  const words = qq.split(" ");
+  const scored = [];
+  for (const c of CATALOG) {
+    const [pa, num] = c.code.split(" "), pe = (PREFIX_EN[pa] || "").toLowerCase();
+    const ar = normAr(c.ar), en = c.en.toLowerCase(), code = normAr(c.code), codeEn = `${pe} ${num}`;
+    const initials = c.en.replace(/[()&]/g, " ").split(/\s+/).filter(w => w && !/^(of|and|in|the|to|&)$/i.test(w)).map(w => w[0].toLowerCase()).join("");
+    let sc = 0;
+    if (qq === code || raw === codeEn) sc = 100;
+    else if (/^\d+$/.test(qq) && num.startsWith(qq)) sc = num === qq ? 90 : 75;
+    else if (code.startsWith(qq) || codeEn.startsWith(raw)) sc = 80 - (num.length ? 0 : 1);
+    else if (ar.startsWith(qq) || en.startsWith(raw)) sc = 70;
+    else if (ar.includes(qq) || en.includes(raw)) sc = 60;
+    else if (words.length > 1 && words.every(w => ar.includes(w) || en.includes(w) || code.includes(w))) sc = 55;
+    else if (raw.length >= 2 && initials === raw.replace(/\s/g, "")) sc = 50;
+    else if (qq.length >= 3) { // small typos in a name word
+      const ws = [...ar.split(" "), ...en.split(" ")];
+      if (words.every(w => w.length >= 3 && ws.some(x => lev(x.slice(0, w.length + 1), w) <= (w.length > 5 ? 2 : 1)))) sc = 30;
+    }
+    if (sc) scored.push({ c, sc: sc + (S.track && BY[c.code] ? 3 : 0) });
+  }
+  scored.sort((a, b) => b.sc - a.sc || a.c.code.localeCompare(b.c.code, "ar", { numeric:true }));
+  const out = scored.slice(0, 5).map(x => x.c);
+  // a precise hit: fill up with related courses (its prerequisites, what it opens, then same subject with the nearest number)
+  if (out.length && out.length < 5) {
+    const top = out[0], [tp, tn] = top.code.split(" ");
+    const rel = [...(top.pre || []).map(x => CBY[x]), ...CATALOG.filter(c => (c.pre || []).includes(top.code)),
+      ...CATALOG.filter(c => c.code.split(" ")[0] === tp).sort((a, b) => Math.abs(parseInt(a.code.split(" ")[1]) - parseInt(tn)) - Math.abs(parseInt(b.code.split(" ")[1]) - parseInt(tn)))];
+    for (const c of rel) if (c && out.length < 5 && !out.includes(c)) out.push(c);
+  }
+  return out;
+}
+function lev(a, b) { const m = a.length, n = b.length, d = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]); for (let j = 1; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)); return d[m][n]; }
+const CBY = Object.fromEntries(CATALOG.map(c => [c.code, c]));
+let rv = { q:"", sel:null, sort:"new" };
+const diffLevel = d => d < 1.67 ? 1 : d < 2.34 ? 2 : 3;
+function rvStatLine(code) { const t = L(), st = (Ratings.stats || {})[code]; return st ? `${DIFF[diffLevel(st.diff)][0]} ${t.rDiffName[diffLevel(st.diff)]} · ${t.rCount(st.n)}` : t.rvNoRate; }
+function renderReviews() {
+  const host = $("reviews"), t = L();
+  host.innerHTML = `<div class="rv"><button type="button" class="btn rv-back" id="rvBack">${S.lang === "ar" ? "→" : "←"} ${t.back}</button><div class="rv-head"><h2>💬 ${t.rvTitle}</h2><p>${t.rvSub}</p></div>
+    <div class="rv-cheer">${t.rvCheer}</div>
+    <div class="rv-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="rvQ" autocomplete="off" placeholder="${t.rvPh}" value="${esc(rv.q)}" aria-label="${t.rvTitle}"></div>
+    <div class="rv-res" id="rvRes"></div>
+    <div id="rvCard"></div></div>`;
+  renderRvResults(); renderRvCard();
+  if (!Ratings.stats) Ratings.getStats().then(() => renderRvResults());
+}
+function renderRvResults() {
+  const host = $("rvRes"), t = L(); if (!host) return;
+  if (!rv.q.trim()) { host.innerHTML = ""; return; }
+  const list = searchCourses(rv.q);
+  host.innerHTML = list.length ? list.map(c => `<button type="button" class="rv-item${rv.sel === c.code ? " on" : ""}" data-rvpick="${esc(c.code)}"><span class="c">${esc(cd(c))}</span><span class="n">${esc(nm(c))}<small>${t.creditHrs(c.hrs)}</small></span><span class="s">${rvStatLine(c.code)}</span></button>`).join("") : `<p class="rv-empty">${t.rvNone}</p>`;
+}
+function renderRvCard() {
+  const host = $("rvCard"); if (!host) return;
+  if (!rv.sel || !CBY[rv.sel]) { host.innerHTML = ""; return; }
+  const c = CBY[rv.sel], t = L();
+  host.innerHTML = `<div class="card rv-card"><div><h3>${esc(nm(c))}</h3><div class="sub"><span class="mono">${esc(cd(c))}</span><span>${t.creditHrs(c.hrs)}</span></div></div><div class="rate" id="rateBox" data-for="${esc(c.code)}"></div></div>`;
+  renderRating(c.code);
+}
+
+/* ---------- v2: «مساعد لو» — answers from the plan data and a fixed FAQ (no AI service, nothing leaves the device) ---------- */
+const G = (f, m) => S.gender === "m" ? m : f;
+const AR = () => S.lang === "ar";
+const plural = (n, one, two, few, many) => n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? `${n} ${few}` : `${n} ${many}`;
+const cLink = c => S.track && BY[c.code] && !location.hash.startsWith("#reviews") ? `<button type="button" class="link" data-go="${esc(c.code)}">${esc(cd(c))} ${esc(nm(c))}</button>` : `<b>${esc(cd(c))} ${esc(nm(c))}</b>`;
+function findCourse(q) {
+  const raw = normAr(q);
+  // a code: "احص 332", "احص332", "STAT 332", "stat332"
+  const m = raw.match(/([\u0600-\u06FF]{3,4}|[a-z]{2,4})\s*(\d{3})/);
+  if (m) { const pre = /[a-z]/.test(m[1]) ? (PREFIX_AR[m[1]] || m[1]) : m[1]; const c = CATALOG.find(c => normAr(c.code).startsWith(pre + " " + m[2])); if (c) return c; }
+  const n = raw.match(/\b(\d{3})\b/); if (n) { const hits = CATALOG.filter(c => c.code.split(" ")[1] === n[1]); if (hits.length === 1) return hits[0]; if (hits.length && S.track) { const h = hits.find(c => BY[c.code]); if (h) return h; } }
+  // a course name inside the question (longest match wins)
+  let best = null, bl = 0;
+  for (const c of CATALOG) for (const name of [normAr(c.ar), c.en.toLowerCase()]) { const core = name.replace(/\s*\(\d\)\s*$/, ""); if (core.length >= 5 && raw.includes(core) && core.length > bl) { best = c; bl = core.length; } }
+  if (best) return best;
+  // one distinctive word of a course name ("الانحدار", "regression")
+  const STOP = new Set(["مقدمه","مبادئ","نظريه","البرمجه","الاداره","اداره","تطبيقات","العمليات","الاحصاء","اللغه","حساب","طرق","اساسيات","الاسلام","الاسلامي","introduction","principles","theory","programming","management","applications","methods","statistical","language","computer","operations"]);
+  const hits = CATALOG.filter(c => [...normAr(c.ar).split(" "), ...c.en.toLowerCase().split(/[\s()&]+/)].some(w => w.length >= 5 && !STOP.has(w) && raw.split(/[\s؟?.,،]+/).includes(w)));
+  const pref = hits.filter(c => S.track && BY[c.code]);
+  return (pref.length === 1 ? pref[0] : hits.length === 1 ? hits[0] : null);
+}
+const FAQ = [
+  { k:/انتقل|انتقال|التحويل|احول|اتحول|القبول|قبول|3\.25|admission|transfer|move into/, a:() => AR() ? G("تحتاجين معدل 3.25 فأعلى، وتجتازين احص 101 وريض 101 وتقن 101. وباقي مواد السنة الأولى تقدرين تاخذينها مع مواد القسم.","تحتاج معدل 3.25 فأعلى، وتجتاز احص 101 وريض 101 وتقن 101. وباقي مواد السنة الأولى تقدر تاخذها مع مواد القسم.") : "You need a GPA of 3.25+ and to pass STAT 101, MATH 101 and CT 101. The rest of the first year can be taken alongside department courses." },
+  { k:/اختبار بديل|بديل|alternative exam|makeup/, a:() => AR() ? G("اختبار نهائي بديل لمن غاب عن الاختبار الأصلي بعذر مقبول، يُرفع العذر للشؤون الأكاديمية ويصدر فيه قرار مجلس الكلية. في «لو» تنحسب المادة مجتازة مؤقتًا بدون ما تدخل المعدل لين تطلع الدرجة: افتحي المادة واضغطي «عندي اختبار بديل».","اختبار نهائي بديل لمن غاب عن الاختبار الأصلي بعذر مقبول، يُرفع العذر للشؤون الأكاديمية ويصدر فيه قرار مجلس الكلية. في «لو» تنحسب المادة مجتازة مؤقتًا بدون ما تدخل المعدل لين تطلع الدرجة: افتح المادة واضغط «عندي اختبار بديل».") : "A replacement final exam for students who missed the original with an accepted excuse; the excuse goes to Academic Affairs and the college council decides. In What iF the course counts as passed for now, outside your GPA, until the grade is out." },
+  { k:/تجاوز|bypass|waive/, a:() => AR() ? G("إن مسجل القسم أو الكلية يسمح لك تسجلين مادة قبل ما تجتازين متطلبها، حسب حالتك. اسألي مسجل القسم، ولو تمت الموافقة افتحي المادة في «لو» واضغطي «نعم، تم التجاوز».","إن مسجل القسم أو الكلية يسمح لك تسجل مادة قبل ما تجتاز متطلبها، حسب حالتك. اسأل مسجل القسم، ولو تمت الموافقة افتح المادة في «لو» واضغط «نعم، تم التجاوز».") : "The department or college registrar may let you register a course before passing its prerequisite, depending on your case. Ask the registrar; if approved, open the course and tap “Yes, it was bypassed”." },
+  { k:/تزامن|متزامن|نفس الترم|concurren|together|same term/, a:() => AR() ? G("الموافقة إنك تدرسين المادة ومتطلبها في نفس الترم، مثل الجبر الخطي مع بحث 213.","الموافقة إنك تدرس المادة ومتطلبها في نفس الترم، مثل الجبر الخطي مع بحث 213.") : "Approval to take a course in the same term as its prerequisite, like Linear Algebra with OPER 213." },
+  { k:/اسلامي|سلم|islamic/, a:() => AR() ? G("وحدة بس بالترم. وفيه استثناء للمتوقع تخرجهم: يقدرون يسجلون مادتين إسلامية في نفس الترم.","وحدة بس بالترم. وفيه استثناء للمتوقع تخرجهم: يقدرون يسجلون مادتين إسلامية في نفس الترم.") : "Only one per term. Students expected to graduate that term may take two." },
+  { k:/خارج القسم|خارج الكليه|outside/, a:() => AR() ? G("بعد ما تخلصين كل مواد المستوى الثالث.","بعد ما تخلص كل مواد المستوى الثالث.") : "After you finish all level 3 courses." },
+  { k:/داخل القسم|inside the department|department elective/, a:() => AR() ? G("كل مادة تنفتح لما تجتازين متطلباتها.","كل مادة تنفتح لما تجتاز متطلباتها.") : "Each one opens once you pass its prerequisites." },
+  { k:/صيفي|الصيف|summer/, a:() => AR() ? "الصيفي في «لو» محسوب لمواد الفرعي بس." : "In What iF, summer counts for minor courses only." },
+  { k:/فرعي|الذكاء الاصطناعي|minor|ذكا 411/, a:() => AR() ? "الفرعي 20 ساعة: 14 إجباري و6 اختياري. وذكا 411 تحتاج 15 ساعة من الفرعي قبلها." : "The minor is 20 hours: 14 required and 6 elective. AI 411 needs 15 minor hours first." },
+  { k:/اقصى|اطول|مده|12 ترم|ايقاف|طي قيد|maximum|suspension|how long/, a:() => AR() ? G("12 ترم. بعدها ممكن يجيك إيقاف أكاديمي، فراجعي مرشدتك الأكاديمية.","12 ترم. بعدها ممكن يجيك إيقاف أكاديمي، فراجع مرشدك الأكاديمي.") : "12 terms. After that an academic suspension may follow, so talk to your advisor." },
+  { k:/رسبت|ارسب|اعيد|اعاده|retake|failed/, a:() => AR() ? "كل المحاولات تنحسب في المعدل، حتى الرسوب." : "Every attempt counts toward your GPA, failed ones included." },
+  { k:/عديته|passed ✓/, a:() => AR() ? G("يعلّم المستوى كامل إنك خلصتيه بدون درجات، وهالمواد ما تدخل المعدل.","يعلّم المستوى كامل إنك خلصته بدون درجات، وهالمواد ما تدخل المعدل.") : "Marks a whole level as done without grades; those courses stay out of your GPA." },
+  { k:/سجلتها|مسجله|registered this term/, a:() => AR() ? G("تعلّمين المواد اللي تدرسينها الحين، عشان يصير توقع التخرج أدق.","تعلّم المواد اللي تدرسها الحين، عشان يصير توقع التخرج أدق.") : "Mark the courses you’re taking now, so the graduation estimate is sharper." },
+  { k:/شرف|honou?r/, a:() => AR() ? "الأولى 4.75 فأعلى، والثانية من 4.25 إلى 4.74." : "First-class 4.75+, second-class 4.25 – 4.74." },
+  { k:/انذار|probation/, a:() => AR() ? G("إذا نزل معدلك تحت 2.","إذا نزل معدلك تحت 2.") : "If your GPA drops below 2." },
+  { k:/توقع|محاكاه|مونتي|كيف يحسب|forecast|monte/, a:() => AR() ? "«لو» يعيش مستقبلك 1000 مرة بمحاكاة مونتي كارلو، ويعطيك احتمالات مو رقم واحد. تلقاها في «أدوات لو» ← «توقعات لو»." : "What iF lives your future 1,000 times with a Monte Carlo simulation and gives probabilities, not one number. See What iF tools → forecast." },
+  { k:/بياناتي|خصوصي|محفوظ|privacy|my data/, a:() => AR() ? "في جهازك بس، ما تنرسل لأي مكان. التقييمات بس هي اللي تنحفظ، وبدون اسم." : "On your device only; nothing is sent anywhere. Only ratings are stored, anonymously." },
+  { k:/رسمي|official/, a:() => AR() ? "لا، موقع غير رسمي وغير تابع للجامعة، والحسابات تقديرية." : "No, it’s an unofficial site not affiliated with the university; the numbers are estimates." },
+  { k:/كيف اقيم|اقيم|اضيف تقييم|rate a course|how to rate/, a:() => AR() ? G("من «تقييمات المقررات» في الصفحة الرئيسية: ابحثي عن المادة وقيّميها.","من «تقييمات المقررات» في الصفحة الرئيسية: ابحث عن المادة وقيّمها.") + ` <button type="button" class="link" id="botToReviews">${L().rvTitle} ←</button>` : `From “Course ratings” on the home page: search the course and rate it. <button type="button" class="link" id="botToReviews">${L().rvTitle} →</button>` },
+  { k:/بحوث العمليات.*(طالبات|بنات|للطالبه)|(طالبات|بنات).*بحوث العمليات|operations research.*(female|women)/, a:() => AR() ? "لا، تخصص بحوث العمليات متاح للطلاب بس." : "No, the Operations Research major is offered to male students only." },
+];
+const needPlan = () => AR() ? G("اختاري خطتك أول من الصفحة الرئيسية، عشان أقدر أحسب لك.","اختر خطتك أول من الصفحة الرئيسية، عشان أقدر أحسب لك.") : "Pick your plan on the home page first so I can calculate this for you.";
+function botAnswer(q) {
+  const raw = normAr(q), t = L(), c = findCourse(q), has = !!S.track;
+  const ar = AR(), has2 = re => re.test(raw);
+  // --- course questions ---
+  if (c) {
+    const inPlan = has && BY[c.code], C0 = inPlan ? BY[c.code] : c;
+    if (has2(/متطلب|يحتاج|تحتاج|prereq|require/)) {
+      const pre = [...(C0.pre || []), ...(C0.co || [])];
+      if (!pre.length) return ar ? `${cLink(C0)} ما لها متطلبات من المواد.` : `${cLink(C0)} has no course prerequisites.`;
+      return (ar ? `متطلبات ${cLink(C0)}:` : `Prerequisites of ${cLink(C0)}:`) + `<ul>${pre.map(p => { const x = BY[p] || CBY[p]; const ok = has && passed(p); return `<li>${x ? cLink(x) : esc(p)}${has ? (ok ? (ar ? G(" ✓ خلصتيها"," ✓ خلصتها") : " ✓ done") : (ar ? " ✗ باقية عليك" : " ✗ still to do")) : ""}${(C0.co || []).includes(p) ? (ar ? " (أو معها في نفس الترم)" : " (or in the same term)") : ""}</li>`; }).join("")}</ul>`;
+    }
+    if (has2(/تفتح|يفتح|بعدها|unlock|opens/)) {
+      const un = (has ? visible() : CATALOG).filter(x => (x.pre || []).includes(C0.code) || (x.co || []).includes(C0.code));
+      return un.length ? (ar ? `${cLink(C0)} تفتح لك:` : `${cLink(C0)} unlocks:`) + `<ul>${un.map(u => `<li>${cLink(u)}</li>`).join("")}</ul>` : (ar ? `${cLink(C0)} ما تفتح مواد بعدها مباشرة.` : `${cLink(C0)} doesn’t directly unlock other courses.`);
+    }
+    const st = (Ratings.stats || {})[C0.code];
+    const rateLine = st ? (ar ? `متوسط صعوبتها <b>${t.rDiffName[diffLevel(st.diff)]}</b>، و<b>${Math.round(st.likes / st.n * 100)}٪</b> عجبتهم (${t.rCount(st.n)}).` : `Average difficulty <b>${t.rDiffName[diffLevel(st.diff)]}</b>, <b>${Math.round(st.likes / st.n * 100)}%</b> liked it (${t.rCount(st.n)}).`) : (ar ? "ما فيها تقييمات لين الحين." : "No ratings yet.");
+    const revBtn = ` <button type="button" class="link" data-review="${esc(C0.code)}">${ar ? G("شوفي التعليقات ←","شوف التعليقات ←") : "See comments →"}</button>`;
+    if (has2(/صعب|صعوب|تقييم|راي|اراء|كيف ماده|كيفها|hard|difficult|rating|review|how is/)) return `${cLink(C0)}: ${rateLine}${revBtn}`;
+    const lv = inPlan && C0.level ? (ar ? `، ${t.level(C0.level)}` : `, ${t.level(C0.level)}`) : "";
+    const grp = inPlan && C0.group in CAPS ? (ar ? `، ${t.groups[C0.group][0]}` : `, ${t.groups[C0.group][0]}`) : "";
+    const stx = inPlan ? (ar ? `<br>حالتها عندك: <b>${t.st[status(C0)]}</b>` : `<br>Your status: <b>${t.st[status(C0)]}</b>`) : "";
+    return `${cLink(C0)}: ${t.creditHrs(C0.hrs)}${lv}${grp}.${stx}<br>${rateLine}${revBtn}`;
+  }
+  // --- personal numbers ---
+  if (has2(/مشروع|497|project/)) {
+    if (!has) return ar ? G("تقدرين تسجلين مشروع التخرج لما يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتازين 93 ساعة.","تقدر تسجل مشروع التخرج لما يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتاز 93 ساعة.") : "You can register the graduation project once 43 hours or fewer are left, i.e. about 93 hours passed.";
+    const dn = 136 - majorLeft(), need = Math.max(0, 93 - dn);
+    return ar ? G(`تقدرين تسجلين مشروع التخرج (${cd(BY[projCode()])}) لما يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتازين 93 ساعة. اجتزتِ ${dn}، ${need ? `باقي لك ${need}.` : "وتحقق الشرط ✓"}`,`تقدر تسجل مشروع التخرج (${cd(BY[projCode()])}) لما يكون الباقي على التخرج 43 ساعة أو أقل، يعني تجتاز 93 ساعة. اجتزت ${dn}، ${need ? `باقي لك ${need}.` : "وتحقق الشرط ✓"}`) : `You can register the project (${cd(BY[projCode()])}) once 43 hours or fewer are left (about 93 passed). You have ${dn}${need ? `, ${need} to go.` : " — the rule is met ✓"}`;
+  }
+  if (has2(/متاخر|متأخر|behind|late/)) {
+    if (!has) return needPlan();
+    const I = lateInfo();
+    if (S.entry == null) return ar ? G("حددي «ترم دخولك الجامعة» في بطاقة عداد التخرج، وبعدها أقولك.","حدد «ترم دخولك الجامعة» في بطاقة عداد التخرج، وبعدها أقولك.") : "Set “Your first university term” in the graduation card first.";
+    if (!I || (!I.behind && I.proj <= 8)) return ar ? G("لا، أنتِ ماشية على الخطة 👏","لا، أنت ماشي على الخطة 👏") : "No, you’re on track 👏";
+    return (I.behind ? t.lateTitle(I.behind) : t.lateProjTitle(I.proj)) + (ar ? G(". شوفي البطاقة اللي تحت «مقترحة لك» فيها خطوات تساعدك.",". شوف البطاقة اللي تحت «مقترحة لك» فيها خطوات تساعدك.") : ". The card under “Suggested for you” has steps that help.");
+  }
+  if (has2(/الترم الجاي|الترم القادم|اسجل|انزل|اخذ وش|register|next term/)) {
+    if (!has) return needPlan();
+    const r = runPlan(planA()), f = r.terms[0]; if (!f) return t.estDone;
+    return (ar ? `اقتراحي لـ ${termLabel(f.tm).name} (${f.hrs} ساعة):` : `My suggestion for ${termLabel(f.tm).name} (${f.hrs} hours):`) + `<ul>${f.items.map(it => `<li>${it.slot ? esc(slotName(it.group)) : cLink(BY[it.id])}</li>`).join("")}</ul>` + (ar ? G("وتلقينها كاملة في «مقترحة لك».","وتلقاها كاملة في «مقترحة لك».") : "Full details are under “Suggested for you”.");
+  }
+  const tg = raw.match(/([1-5](?:\.\d{1,2})?)/);
+  if (has2(/اوصل|احتاج|هدف|target|reach/) && tg && +tg[1] >= 1 && +tg[1] <= 5) {
+    if (!has) return needPlan();
+    S.target = +tg[1]; const r = targetCalc();
+    if (!r.R) return t.estDone;
+    if (r.need > 5) return t.tgBest(r.best.toFixed(2));
+    if (r.need <= 2) return `${t.tgEasy} ${t.tgWorst(r.worst.toFixed(2))}`;
+    return (ar ? `عشان توصل${G("ين","")} ${(+tg[1]).toFixed(2)} عند التخرج تحتاج${G("ين","")} معدل <b>${r.need.toFixed(2)}</b> في الـ ${r.R} ساعة الباقية.` : `To reach ${(+tg[1]).toFixed(2)} at graduation you need <b>${r.need.toFixed(2)}</b> over the remaining ${r.R} hours.`);
+  }
+  if (has2(/معدلي|معدلي كم|كم معدل|my gpa|gpa/)) {
+    if (!has) return needPlan();
+    const g = gpa(); if (!g || g.v === null) return t.noGrades;
+    const v = g.v, r2 = Math.round(v * 100) / 100;
+    return (ar ? `معدلك <b>${v.toFixed(2)}</b> (${t.ranks[rankIdx(v)]})` : `Your GPA is <b>${v.toFixed(2)}</b> (${t.ranks[rankIdx(v)]})`) + (r2 >= 4.75 ? ` · ${t.onHonor1}` : r2 >= 4.25 ? ` · ${t.onHonor2}` : "");
+  }
+  if (has2(/باقي|متى اتخرج|متى بتخرج|تخرجي|اتخرج|left|graduat/)) {
+    if (!has) return needPlan();
+    const rem = Math.max(0, total() - counted().total); if (!rem) return t.estDone;
+    const r = runPlan(planA());
+    return ar ? `باقي لك <b>${rem}</b> ساعة من ${total()}، وبهالخطة (${S.load} ساعة بالترم) ${G("تتخرجين","تتخرج")} تقريبًا <b>${r.last ? termLabel(r.last.tm).name : "—"}</b>.` : `<b>${rem}</b> of ${total()} hours left; at ${S.load} hours per term you’d graduate around <b>${r.last ? termLabel(r.last.tm).name : "—"}</b>.`;
+  }
+  for (const f of FAQ) if (f.k.test(raw)) return f.a();
+  return ar ? G("ما عندي جواب لهالسؤال 🙏 جربي تكتبينه بطريقة ثانية، أو راسلينا على <a href=\"mailto:whatif.ksu@gmail.com\">whatif.ksu@gmail.com</a>، وللقرارات الرسمية ارجعي لمرشدتك الأكاديمية.","ما عندي جواب لهالسؤال 🙏 جرب تكتبه بطريقة ثانية، أو راسلنا على <a href=\"mailto:whatif.ksu@gmail.com\">whatif.ksu@gmail.com</a>، وللقرارات الرسمية ارجع لمرشدك الأكاديمي.") : "I don’t have an answer for that 🙏 Try rephrasing, or email <a href=\"mailto:whatif.ksu@gmail.com\">whatif.ksu@gmail.com</a>. For official decisions, check with your academic advisor.";
+}
+let botLog = [];
+function renderBot() {
+  const t = L(), box = $("botMsgs"); if (!box) return;
+  if (!botLog.length) botLog.push({ who:"b", html: t.botHello });
+  box.innerHTML = botLog.map(m => `<div class="msg ${m.who}">${m.html}</div>`).join("");
+  box.scrollTop = box.scrollHeight;
+  $("botQuick").innerHTML = t.botQuick.map(q => `<button type="button" data-ask="${esc(q)}">${esc(q)}</button>`).join("");
+  $("botQ").placeholder = t.botPh;
+}
+function botAsk(q) { q = q.trim(); if (!q) return; botLog.push({ who:"u", html: esc(q) }); botLog.push({ who:"b", html: botAnswer(q) }); renderBot(); }
 /* ---------- render helpers ---------- */
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[ch]));
@@ -1574,10 +2218,12 @@ function drawHero() {
   $("heroCurve").setAttribute("aria-label", t.figCap);
 }
 
+const planHrs = k => { const P = k === "or" ? PLAN_OR : PLAN_STAT, cp = PLAN_CAPS[k]; return { y1: sumHrs(P.filter(c => c.group === "y1")), core: sumHrs(P.filter(c => c.group === "core")), el: cp.isl + cp.out + cp.in }; };
+const trackName = () => `${isOR() ? L().orName : L().statName}${ai() ? " " + L().plusMinor : ""}`;
 function trackCard(id) {
-  const t = L(), isAi = id === "ai", T0 = isAi ? 156 : 136;
-  const parts = [["kY1",32,"var(--g7)"],["kCore",73,"var(--g1)"],["kElec",31,"var(--g3)"], ...(isAi ? [["kAi",20,"var(--f)"]] : [])];
-  return `<div class="top-row"><span class="t">${t[id === "ai" ? "ai" : "stat"]}</span><span class="h num">${T0}<small>${t.hours}</small></span></div>
+  const t = L(), isAi = ai(), T0 = isAi ? 156 : 136, H = planHrs(id);
+  const parts = [["kY1",H.y1,"var(--g7)"],["kCore",H.core,"var(--g1)"],["kElec",H.el,"var(--g3)"], ...(isAi ? [["kAi",20,"var(--f)"]] : [])];
+  return `<div class="top-row"><span class="t">${id === "or" ? t.orName : t.statName}${isAi ? `<span class="plus">${t.plusMinor}</span>` : ""}</span><span class="h num">${T0}<small>${t.hours}</small></span></div>
     <div class="stack">${parts.map(([,h,c]) => `<i style="width:${h / T0 * 100}%;background:${c}"></i>`).join("")}</div>
     <div class="keys">${parts.map(([k,h,c]) => `<span style="--c:${c}">${t[k]} <b class="mono">${h}</b></span>`).join("")}</div>
     <span class="go">${t.start}</span>`;
@@ -1593,14 +2239,15 @@ function drawRuler(g) {
   $("gpaRuler").innerHTML = s;
 }
 
-const STATE_COLOR = { done:"var(--done)", open:"var(--open)", retry:"var(--retry)", locked:"var(--lock)" };
+const STATE_COLOR = { done:"var(--done)", open:"var(--open)", retry:"var(--retry)", locked:"var(--lock)", reg:"var(--accent)" };
 function tile(c) {
   const t = L(), st = status(c), a = attempts(c.code), extra = st !== "done" && groupFull(c.group);
   const rel = selected ? (BY[selected].pre.includes(c.code) ? " is-pre" : (c.pre.includes(selected) ? " is-unl" : "")) : "";
-  return `<button type="button" class="tile ${st}${extra ? " extra" : ""}${selected === c.code ? " sel" : ""}${rel}" data-code="${esc(c.code)}">
-    <span class="code"><span class="c">${esc(cd(c))}</span><span>${a.length ? `<span class="grade">${a[a.length-1] === "P" ? "✓" : esc(a[a.length-1])}</span> · ` : ""}${c.hrs}${t.hrsShort}</span></span>
+  const byp = bypassed(c), lastG = a[a.length - 1];
+  return `<button type="button" class="tile ${st}${extra ? " extra" : ""}${byp ? " byp" : ""}${selected === c.code ? " sel" : ""}${rel}" data-code="${esc(c.code)}">
+    <span class="code"><span class="c">${esc(cd(c))}</span><span>${a.length ? `<span class="grade">${lastG === "P" ? "✓" : lastG === "X" ? "⏳" : esc(lastG)}</span> · ` : ""}${c.hrs}${t.hrsShort}</span></span>
     <span class="name">${esc(nm(c))}</span>
-    <span class="st">${st === "locked" ? ICON.lock : `<i class="pt${st === "open" ? " hollow" : ""}" style="--c:${STATE_COLOR[st]}"></i>`}${extra ? t.full : t.st[st]}</span>
+    <span class="st">${st === "locked" ? ICON.lock : `<i class="pt${st === "open" ? " hollow" : ""}" style="--c:${STATE_COLOR[st]}"></i>`}${extra ? t.full : lastG === "X" ? t.altShort : st === "reg" ? t.stReg : byp ? t.stByp : t.st[st]}</span>
   </button>`;
 }
 function levelRow(lv, v) {
@@ -1622,19 +2269,19 @@ function renderPlan() {
   const y1 = v.filter(c => c.group === "y1"), core = v.filter(c => c.group === "core");
   const egs = ["isl","out","in", ...(ai() ? ["ai","aiel"] : [])], el = v.filter(c => egs.includes(c.group));
   const elDone = egs.reduce((s, g) => s + Math.min(CAPS[g], sumHrs(passedIn(g))), 0);
-  let h = section("y1", t.secY1, 32, t.secY1Sub, `<div class="card">${[1,2].map(lv => levelRow(lv, v)).join("")}</div>`, prog(y1));
-  h += section("core", t.secCore, 73, t.secCoreSub, `<div class="card">${[3,4,5,6,7,8].map(lv => levelRow(lv, v)).join("")}</div>`, prog(core));
-  let g2 = electiveHelper() + `<div class="groups">`;
+  const req = [...y1, ...core];
+  let h = section("core", t.secReq, sumHrs(req), t.secCoreSub, `<div class="card"><p class="admit-note">${t.secY1Sub}</p>${[1,2,3,4,5,6,7,8].map(lv => levelRow(lv, v)).join("")}</div>`, prog(req));
+  let g2 = `<div class="groups">`;
   for (const g of egs) {
     const done = Math.min(CAPS[g], sumHrs(passedIn(g)));
     g2 += `<div class="card group">
       <h3><span>${t.groups[g][0]}</span><span class="num">${done}/${CAPS[g]}</span></h3>
-      <p class="note">${t.groups[g][1]}</p>
+      <p class="note">${g === "in" ? t.inNote(CAPS.in) : t.groups[g][1]}</p>
       <div class="minibar" style="--c:${GCOLOR[g]}"><i style="width:${done / CAPS[g] * 100}%"></i></div>
       <div class="tiles">${v.filter(c => c.group === g).map(tile).join("")}</div></div>`;
   }
   g2 += `</div>`;
-  h += section("el", ai() ? t.secElecAi : t.secElec, ai() ? 51 : 31, "", g2, { done: elDone, open: el.filter(c => !groupFull(c.group) && ["open","retry"].includes(status(c))).length });
+  h += section("el", ai() ? t.secElecAi : t.secElec, egs.reduce((s, g) => s + CAPS[g], 0), "", g2, { done: elDone, open: el.filter(c => !groupFull(c.group) && ["open","retry"].includes(status(c))).length });
   $("plan").innerHTML = h;
   $("plan").classList.toggle("dim", !!selected);
 }
@@ -1652,7 +2299,9 @@ function renderSummary() {
   const p = counted(), TT = total(), rem = Math.max(0, TT - p.total);
   $("remainVal").textContent = rem === 0 ? t.graduated : rem;
   $("remainOf").textContent = rem === 0 ? "" : `${t.left} ${t.of(TT)}`;
-  $("trackChip").textContent = ai() ? t.ai : t.stat;
+  $("trackChip").textContent = trackName();
+  const es = $("entryTerm"), cur = curTerm();
+  es.innerHTML = `<option value="">${t.entryPick}</option>` + entryOpts().map(k => `<option value="${k}"${S.entry === k ? " selected" : ""}>${termLabel({ y: 1440 + Math.floor(k / 2), sem: k % 2 + 1 }).name}</option>`).join("");
   const segs = [["y1","kY1"],["core","kCore"],["isl",null],["out",null],["in",null], ...(ai() ? [["ai",null],["aiel",null]] : [])];
   const nameOf = (k, key) => key ? t[key] : t.groups[k][0];
   $("bar").innerHTML = segs.map(([k]) => p[k] ? `<i style="width:${p[k] / TT * 100}%;background:${GCOLOR[k]}"></i>` : "").join("");
@@ -1668,7 +2317,7 @@ function renderSummary() {
 
 function renderRecord() {
   const t = L(), rows = [];
-  for (const c of visible()) attempts(c.code).forEach((g, i, arr) => { if (g !== "P") rows.push({ c, g, n: i, multi: arr.filter(x => x !== "P").length > 1 }); });
+  for (const c of visible()) attempts(c.code).forEach((g, i, arr) => { if (!NOGPA(g)) rows.push({ c, g, n: i, multi: arr.filter(x => !NOGPA(x)).length > 1 }); });
   $("recSec").open = !!(S.open || {}).rec;
   const G0 = gpa(), G = G0 && G0.v !== null ? G0 : null;
   $("recSum").textContent = G ? `x̄ = ${G.v.toFixed(2)} · ${rows.length}` : "";
@@ -1683,24 +2332,37 @@ function renderDrawer() {
   if (!selected) { d.hidden = true; $("scrim").hidden = true; return; }
   const c = BY[selected], st = status(c), a = attempts(c.code), rq = reqs(c), un = unlocks(c.code), last = a[a.length - 1];
   const where = c.group in CAPS ? t.groups[c.group][0] : (c.group === "y1" ? t.secY1 : t.level(c.level));
-  const soft = { done:"var(--done-soft)", open:"var(--open-soft)", retry:"var(--retry-soft)", locked:"var(--sunk)" }[st];
+  const soft = { done:"var(--done-soft)", open:"var(--open-soft)", retry:"var(--retry-soft)", locked:"var(--sunk)", reg:"var(--accent-soft)" }[st];
   let h = `<button class="x" type="button" id="closeD" aria-label="${t.close}">×</button>
     <div><h2>${esc(nm(c))}</h2><div class="sub"><span class="mono">${esc(cd(c))}</span><span>${t.creditHrs(c.hrs)}</span><span>${where}</span></div></div>
     <span class="chip" style="background:${soft};color:${STATE_COLOR[st]}">${t.st[st]}</span>`;
   if (st !== "done" && groupFull(c.group)) h += `<div class="box warn">${t.fullWarn}</div>`;
-  h += `<div><h4>${t.reqs}</h4>${rq.length ? `<ul class="reqs">${rq.map(r => `<li><span class="${r.ok ? "ok" : "no"}">${r.ok ? "✓" : "✗"}</span>${r.code ? `<button type="button" data-go="${esc(r.code)}"><span class="mono">${esc(cd(BY[r.code]))}</span> · ${esc(nm(BY[r.code]))}</button>` : `<span>${esc(r.label)}</span>`}</li>`).join("")}</ul>` : `<p class="hint" style="margin:0">${t.noReqs}</p>`}</div>`;
+  h += `<div><h4>${t.reqs}</h4>${rq.length ? `<ul class="reqs">${rq.map(r => `<li><span class="${r.byp ? "bp" : r.ok ? "ok" : "no"}">${r.byp ? "⤳" : r.ok ? "✓" : "✗"}</span>${r.code ? `<button type="button" data-go="${esc(r.code)}"><span class="mono">${esc(cd(BY[r.code]))}</span> · ${esc(nm(BY[r.code]))}</button>${r.co ? ` <span class="hint">${t.rCo}</span>` : ""}${r.conc ? ` <span class="hint">${t.rConc}</span>` : ""}${r.byp ? ` <span class="hint">· ${t.rByp}</span>` : ""}` : `<span>${esc(r.label)}</span>`}</li>`).join("")}</ul>` : `<p class="hint" style="margin:0">${t.noReqs}</p>`}</div>`;
+  if (c.code === projCode() && st !== "done") { const left = majorLeft(), dn = 136 - left; h += `<div class="box">${t.projNote(dn, Math.max(0, 93 - dn))}</div>`; }
+  // prerequisite missing: bypassed by the registrar, or an alternative exam pending in the prerequisite
+  const missing = rq.filter(r => r.pre && !r.ok).map(r => r.code);
+  if (st === "locked" && missing.length) {
+    const twice = missing.filter(x => failCount(x) >= 2);
+    h += `<div class="qbox"><b>${t.qTitle}</b><div class="acts"><button type="button" class="btn" data-byp="${esc(c.code)}">${t.qByp}</button>${concOk(c) ? "" : `<button type="button" class="btn" data-conc="${esc(c.code)}">${t.qConc}</button>`}${missing.map(x => `<button type="button" class="btn" data-alt="${esc(x)}">${esc(t.qAlt(cd(BY[x])))}</button>`).join("")}</div><span class="hint">${t.qNo}</span>${twice.map(x => `<span class="hint">🔁 ${esc(t.qTwice(cd(BY[x])))}</span>`).join("")}</div>`;
+  }
+  if (bypassed(c)) h += `<div class="qbox"><span>${t.bypBox}</span><button type="button" class="linkbtn" data-unbyp="${esc(c.code)}">${t.bypUndo}</button></div>`;
+  if (concOk(c)) h += `<div class="qbox"><span>${t.concBox(c.pre.filter(p => !passed(p)).map(p => cd(BY[p] || CBY[p])).join("، "))}</span><button type="button" class="linkbtn" data-unconc="${esc(c.code)}">${t.concUndo}</button></div>`;
+  if (last === "X") h += `<div class="box alt">${t.altBox}</div>`;
+  if (["open","retry","reg"].includes(st)) h += st === "reg"
+    ? `<div class="qbox"><span>${t.regBox}</span><button type="button" class="linkbtn" data-unreg="${esc(c.code)}">${t.regUndo}</button></div>`
+    : `<button type="button" class="btn" data-reg="${esc(c.code)}" style="justify-self:start">${t.regBtn}</button>`;
   if (un.length) h += `<div><h4>${t.opens}</h4><ul class="reqs">${un.map(u => `<li><span style="color:var(--open)">${S.lang === "ar" ? "←" : "→"}</span><button type="button" data-go="${esc(u.code)}"><span class="mono">${esc(cd(u))}</span> · ${esc(nm(u))}</button></li>`).join("")}</ul></div>`;
   if (st !== "locked" || a.length) {
-    h += `<div><h4>${last === "P" ? t.pPick : a.length ? (last === "F" ? t.retakeGrade : t.yourGrade) : t.pickGrade}</h4>
+    h += `<div><h4>${last === "P" ? t.pPick : last === "X" ? t.yourGrade : a.length ? (last === "F" ? t.retakeGrade : t.yourGrade) : t.pickGrade}</h4>
       <div class="grades">${GRADES.map(([gr, pt]) => `<button type="button" class="${gr === "F" ? "fbtn " : ""}${a.length && last === gr ? "on" : ""}" data-grade="${gr}">${gr}<small>${pt}</small></button>`).join("")}</div></div>`;
     if (a.length) {
-      h += `<div><h4>${t.attempts} <span class="hint">${t.attHint}</span></h4><div class="attempts">${a.map((gr, i) => `<span class="att${gr === "F" ? " f" : ""}">${a.length > 1 ? (i === 0 ? t.first : t.retake(i)) : t.single} <b>${gr === "P" ? "✓ " + t.noGradeShort : gr}</b><button type="button" data-del="${i}" aria-label="×">×</button></span>`).join("")}</div></div>
-      ${last === "P" ? "" : `<div><button class="btn" type="button" id="addRetake">${last !== "F" ? t.addF : t.addRetake}</button></div>`}`;
+      h += `<div><h4>${t.attempts} <span class="hint">${t.attHint}</span></h4><div class="attempts">${a.map((gr, i) => `<span class="att${gr === "F" ? " f" : ""}">${a.length > 1 ? (i === 0 ? t.first : t.retake(i)) : t.single} <b${NOGPA(gr) ? ' style="font-family:var(--font-body)"' : ""}>${gr === "P" ? "✓ " + t.noGradeShort : gr === "X" ? "⏳ " + t.altShort : gr}</b><button type="button" data-del="${i}" aria-label="×">×</button></span>`).join("")}</div></div>
+      ${NOGPA(last) ? "" : `<div><button class="btn" type="button" id="addRetake">${last !== "F" ? t.addF : t.addRetake}</button></div>`}`;
     }
-  } else h += `<div class="box">${t.lockedBox}</div>`;
-  h += `<div class="rate" id="rateBox" data-for="${esc(c.code)}"></div>`;
+    if (!a.length || last === "F") h += `<button type="button" class="linkbtn" data-alt="${esc(c.code)}">${t.altSelf}</button>`;
+  } else if (!missing.length) h += `<div class="box">${t.lockedBox}</div>`;
+  h += `<button type="button" class="linkbtn" data-review="${esc(c.code)}">${t.seeReviews}</button>`;
   d.innerHTML = h; d.hidden = false; $("scrim").hidden = false;
-  renderRating(c.code);
 }
 
 function slotName(g) { return L().slot[g]; }
@@ -1770,39 +2432,75 @@ function renderBanners() {
 function renderLegend() {
   const t = L();
   $("passNote").innerHTML = t.passInfo;
-  $("legend").innerHTML = `<span><i class="pt" style="--c:var(--done)"></i>${t.lgDone}</span><span><i class="pt hollow" style="--c:var(--open)"></i>${t.lgOpen}</span><span><i class="pt" style="--c:var(--retry)"></i>${t.lgRetry}</span><span style="color:var(--lock)">${ICON.lock}</span><span style="margin-inline-start:-12px">${t.lgLock}</span>`;
+  $("legend").innerHTML = `<span><i class="pt" style="--c:var(--done)"></i>${t.lgDone}</span><span><i class="pt hollow" style="--c:var(--open)"></i>${t.lgOpen}</span><span><i class="pt" style="--c:var(--retry)"></i>${t.lgRetry}</span><span><i class="pt" style="--c:var(--accent)"></i>${t.lgReg}</span><span style="color:var(--lock)">${ICON.lock}</span><span style="margin-inline-start:-12px">${t.lgLock}</span>`;
 }
 
 function render() {
+  if (S.track === "or" && S.gender !== "m") S.track = null; // Operations Research is offered to male students only
+  loadPlan();
   applyChrome();
-  const has = !!S.track;
+  const has = !!S.track, page = location.hash.match(/^#reviews(?:\/(.+))?$/);
+  $("reviews").hidden = !page;
+  if (page) {
+    $("onboard").hidden = true; $("app").hidden = true; $("appTools").hidden = true; $("drawer").hidden = true; $("scrim").hidden = true;
+    const code = page[1] ? decodeURIComponent(page[1]) : null;
+    if (code && CBY[code] && code !== rv.sel) { rv.sel = code; rv.q = cd(CBY[code]); }
+    renderReviews(); return;
+  }
   $("onboard").hidden = has; $("app").hidden = !has; $("appTools").hidden = !has;
   if (!has) {
-    drawHero(); $("trackStat").innerHTML = trackCard("stat"); $("trackAi").innerHTML = trackCard("ai");
+    $("openReviews").innerHTML = `<span class="ic" aria-hidden="true">💬</span><span><span class="t">${L().rvTitle}</span><span class="d">${L().rvEntryDesc}</span></span><span class="go">${L().rvGo}</span>`;
+    drawHero(); $("trackStat").innerHTML = trackCard("stat"); $("trackOr").innerHTML = trackCard("or");
+    $("trackOr").hidden = S.gender !== "m"; $("tracks").classList.toggle("one", S.gender !== "m");
+    $("minorBox").classList.toggle("on", ai()); $("minorBox").setAttribute("aria-pressed", ai());
     $("drawer").hidden = true; $("scrim").hidden = true; return;
   }
-  renderBanners(); renderSummary(); renderAlerts(); renderLegend(); renderPlan(); renderLab(); renderWhatIf(); renderTools(); renderRecord(); renderDrawer();
+  renderBanners(); renderTips(); renderSummary(); renderLegend(); renderPlan(); renderSuggest(); renderLate(); renderAlerts(); renderLab(); renderWhatIf(); renderTools(); renderRecord(); renderDrawer();
 }
+let rvFrom = false;
+addEventListener("hashchange", () => { render(); scrollTo(0, 0); });
+$("botForm").addEventListener("submit", e => { e.preventDefault(); const i = $("botQ"); botAsk(i.value); i.value = ""; });
 
 /* ---------- actions ---------- */
 document.addEventListener("click", e => {
   const t = e.target.closest("button"); if (!t) return;
+  if (t.closest("#bot") && (t.dataset.go || t.dataset.review) && matchMedia("(max-width:640px)").matches) { $("bot").hidden = true; $("botFab").hidden = false; }
   if (t.dataset.track) { S.track = t.dataset.track; save(); render(); scrollTo(0, 0); return; }
   if (t.dataset.code) { selected = selected === t.dataset.code ? null : t.dataset.code; render(); return; }
   if (t.dataset.go) { selected = t.dataset.go; render(); return; }
-  if (t.dataset.grade) { const a = [...attempts(selected)]; if (!a.length) a.push(t.dataset.grade); else a[a.length - 1] = t.dataset.grade; S.att[selected] = a; save(); render(); return; }
+  if (t.dataset.grade) { if (S.reg[selected]) { const r = { ...S.reg }; delete r[selected]; S.reg = r; } const a = [...attempts(selected)]; if (!a.length) a.push(t.dataset.grade); else a[a.length - 1] = t.dataset.grade; S.att[selected] = a; save(); render(); return; }
   if (t.dataset.pass) { for (const c of visible().filter(c => c.level === +t.dataset.pass)) if (!passed(c.code)) S.att[c.code] = [...attempts(c.code), "P"]; save(); render(); return; }
   if (t.dataset.unpass) { for (const c of visible().filter(c => c.level === +t.dataset.unpass)) { const a = attempts(c.code).filter(x => x !== "P"); if (a.length) S.att[c.code] = a; else delete S.att[c.code]; } save(); render(); return; }
   if (t.dataset.gender) { S.gender = t.dataset.gender; save(); render(); return; }
-  if (t.dataset.rlike != null) { rateDraft[selected] = { ...rateDraft[selected], liked: t.dataset.rlike === "1" }; renderRating(selected); return; }
-  if (t.dataset.rdiff) { rateDraft[selected] = { ...rateDraft[selected], difficulty: +t.dataset.rdiff }; renderRating(selected); return; }
-  if (t.dataset.rep) { Ratings.report(selected, +t.dataset.rep).then(() => { t.textContent = L().rReported; t.disabled = true; }); return; }
+  const rc = $("rateBox") ? $("rateBox").dataset.for : null;
+  if (t.dataset.rlike != null) { rateDraft[rc] = { ...rateDraft[rc], liked: t.dataset.rlike === "1" }; renderRating(rc); return; }
+  if (t.dataset.rdiff) { rateDraft[rc] = { ...rateDraft[rc], difficulty: +t.dataset.rdiff }; renderRating(rc); return; }
+  if (t.dataset.rep) { Ratings.report(rc, +t.dataset.rep).then(() => { t.textContent = L().rReported; t.disabled = true; }); return; }
+  if (t.dataset.rvsort) { rv.sort = t.dataset.rvsort; renderRating(rc); return; }
+  if (t.dataset.rvpick) { rv.sel = t.dataset.rvpick; history.replaceState(null, "", "#reviews/" + encodeURIComponent(rv.sel)); renderRvResults(); renderRvCard(); return; }
+  if (t.dataset.review) { selected = null; rvFrom = true; location.hash = "reviews/" + encodeURIComponent(t.dataset.review); return; }
+  if (t.dataset.conc) { S.conc = { ...S.conc, [t.dataset.conc]: true }; save(); render(); return; }
+  if (t.dataset.unconc) { const b = { ...S.conc }; delete b[t.dataset.unconc]; S.conc = b; save(); render(); return; }
+  if (t.dataset.reg) { S.reg = { ...S.reg, [t.dataset.reg]: true }; save(); render(); return; }
+  if (t.dataset.unreg) { const b = { ...S.reg }; delete b[t.dataset.unreg]; S.reg = b; save(); render(); return; }
+  if (t.id === "botFab") { $("bot").hidden = false; t.hidden = true; t.setAttribute("aria-expanded", "true"); renderBot(); $("botQ").focus(); return; }
+  if (t.id === "botClose") { $("bot").hidden = true; $("botFab").hidden = false; $("botFab").setAttribute("aria-expanded", "false"); return; }
+  if (t.dataset.ask) { botAsk(t.dataset.ask); return; }
+  if (t.id === "botToReviews") { rvFrom = true; location.hash = "reviews"; return; }
+  if (t.id === "openReviews") { rvFrom = true; location.hash = "reviews"; return; }
+  if (t.id === "rvBack") { if (rvFrom) history.back(); else location.hash = ""; return; }
+  if (t.dataset.byp) { S.byp = { ...S.byp, [t.dataset.byp]: true }; save(); render(); return; }
+  if (t.dataset.unbyp) { const b = { ...S.byp }; delete b[t.dataset.unbyp]; S.byp = b; save(); render(); return; }
+  if (t.dataset.alt) { const a = attempts(t.dataset.alt).filter(g => g === "F"); S.att[t.dataset.alt] = [...a, "X"]; save(); render(); return; }
+  if (t.dataset.tipnext != null) { S.tip = (S.tip || 0) + 1; save(); renderTips(); return; }
+  if (t.dataset.tipskip != null) { S.tip = 99; save(); renderTips(); return; }
+  if (t.id === "minorBox") { S.minor = !S.minor; save(); render(); return; }
   if (t.id === "rSend") {
-    const tt = L(), dr = rateDraft[selected] || {}, msg = $("rMsg"), tx = ($("rText").value || "").trim();
+    const tt = L(), dr = rateDraft[rc] || {}, msg = $("rMsg"), tx = ($("rText").value || "").trim();
     if (dr.liked == null || !dr.difficulty) { msg.className = "rerr"; msg.textContent = tt.rNeed; return; }
     const err = checkComment(tx); if (err) { msg.className = "rerr"; msg.textContent = err; return; }
     t.disabled = true;
-    Ratings.rate(selected, dr.liked, dr.difficulty, tx).then(() => { rateDraft[selected] = { ...dr, comment: tx }; return renderRating(selected); })
+    Ratings.rate(rc, dr.liked, dr.difficulty, tx).then(() => { rateDraft[rc] = { ...dr, comment: tx }; Ratings.stats = null; return Ratings.getStats(); }).then(() => renderRating(rc)).then(() => renderRvResults())
       .then(() => { const m = $("rMsg"); if (m) { m.className = "rok"; m.textContent = L().rThanks; } })
       .catch(() => { t.disabled = false; msg.className = "rerr"; msg.textContent = tt.rFail; });
     return;
@@ -1823,7 +2521,7 @@ document.addEventListener("click", e => {
     case "resetBtn": confirming = true; render(); break;
     case "noReset": confirming = false; render(); break;
     case "yesReset": S.att = {}; confirming = false; selected = null; save(); render(); break;
-    case "langBtn": S.lang = S.lang === "ar" ? "en" : "ar"; save(); render(); break;
+    case "langBtn": S.lang = S.lang === "ar" ? "en" : "ar"; save(); botLog = []; render(); renderBot(); break;
     case "_": break;
     case "genderBtn": S.gender = S.gender === "m" ? "f" : "m"; save(); render(); break;
     case "themeBtn": S.theme = isDark() ? "light" : "dark"; save(); render(); break;
@@ -1834,7 +2532,8 @@ $("load").addEventListener("input", e => { S.load = +e.target.value; save(); ren
 document.addEventListener("input", e => {
   const el = e.target;
   if (el.id === "loadA" || el.id === "loadB") el.nextElementSibling.textContent = el.value;
-  if (el.id === "rText") { rateDraft[selected] = { ...rateDraft[selected], comment: el.value }; $("rCnt").textContent = `${el.value.length}/200`; }
+  if (el.id === "rText") { const rc = $("rateBox").dataset.for; rateDraft[rc] = { ...rateDraft[rc], comment: el.value }; $("rCnt").textContent = `${el.value.length}/200`; }
+  if (el.id === "rvQ") { rv.q = el.value; const top = searchCourses(rv.q)[0]; if (!rv.q.trim()) rv.sel = null; renderRvResults(); if (top && !rv.sel) { /* wait for a pick */ } }
   if (el.id === "tgIn") { const v = +el.value; if (v >= 1 && v <= 5) { S.target = v; save(); updateTools(); document.querySelectorAll("[data-tpreset]").forEach(b => b.classList.toggle("on", +b.dataset.tpreset === v)); } }
   if (el.id === "fnCur" || el.id === "fnMax") { S.fin = { cur: +$("fnCur").value || 0, finMax: +$("fnMax").value || 40 }; save(); updateTools(); }
 });
@@ -1845,6 +2544,7 @@ document.addEventListener("change", e => {
   if (el.id === "summerA") { S.wiA = { ...(S.wiA || {}), summer: el.checked }; save(); render(); }
   if (el.id === "summerB") { S.wiB = { ...planB(), summer: el.checked }; save(); render(); }
   if (el.id === "startTerm") { S.start = +el.value; save(); render(); }
+  if (el.id === "entryTerm") { S.entry = el.value === "" ? null : +el.value; save(); render(); }
   if (el.dataset.mod != null) { const B = { ...planB() }; B.mods = B.mods.map((m, i) => i === +el.dataset.mod ? { ...m, [el.dataset.f]: el.dataset.f === "n" ? +el.value : el.value } : m); S.wiB = B; save(); render(); }
 });
 function refocus(id) { const el = $(id); if (el) el.focus(); }
