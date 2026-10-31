@@ -544,5 +544,12 @@
   "difficulty": 1,
   "comment": "دروب Pte",
   "created_at": "2026-10-22T06:04:42.342078+00:00"
+ },
+ {
+  "course_code": "ريض 111",
+  "liked": true,
+  "difficulty": 2,
+  "comment": null,
+  "created_at": "2026-10-29T10:59:23.947648+00:00"
  }
 ]
